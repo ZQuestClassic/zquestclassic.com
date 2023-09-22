@@ -25,4 +25,4 @@ if [ ! -d .tmp/zscript/$SHA.html ]; then
     cd ../..
 fi
 
-mv .tmp/zscript/$SHA.html content/docs/zscript/index.html
+cp .tmp/zscript/$SHA.html content/docs/zscript/index.html
