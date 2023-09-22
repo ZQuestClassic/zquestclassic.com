@@ -2,7 +2,7 @@
 	"private": true,
 	"scripts": {
 		"build": "npx @11ty/eleventy",
-		"build-all": "bash scripts/update-zscript-docs.sh && npx @11ty/eleventy && bash scripts/update-web-version.sh",
+		"build-all": "bash scripts/update-zscript-docs.sh && npx @11ty/eleventy && bash scripts/update-web-version.sh && cp _redirects _site",
 		"start": "npx @11ty/eleventy --serve --quiet",
 		"debug": "DEBUG=Eleventy* npx @11ty/eleventy",
 		"debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
