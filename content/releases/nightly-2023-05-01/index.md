@@ -1,0 +1,28 @@
+---
+title: Nightly 2023-05-01
+description: 
+date: 2023-05-01T19:34:59Z
+assets: 
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-05-01/nightly-2023-05-01-linux.tar.gz
+    name: nightly-2023-05-01-linux.tar.gz
+    channel: linux
+
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-05-01/nightly-2023-05-01-mac.dmg
+    name: nightly-2023-05-01-mac.dmg
+    channel: mac
+
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-05-01/nightly-2023-05-01-windows-x64.zip
+    name: nightly-2023-05-01-windows-x64.zip
+    channel: windows-x64
+
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-05-01/nightly-2023-05-01-windows-x86.zip
+    name: nightly-2023-05-01-windows-x86.zip
+    channel: windows-win32
+prerelease: true
+id: 101496625
+tag_name: nightly-2023-05-01
+tags:
+  - releases
+---
+
+**Full Changelog**: https://github.com/ArmageddonGames/ZQuestClassic/compare/nightly-2023-04-29...nightly-2023-05-01

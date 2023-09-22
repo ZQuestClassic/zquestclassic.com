@@ -1,0 +1,141 @@
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+<style>
+	li {
+		margin-bottom: 10px;
+	}
+
+	.release-header {
+		display: flex;
+		justify-content: space-between;
+    	width: 100%;
+		padding: 10px;
+	}
+
+	.release-navigation {
+	}
+	.release-meta {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+
+	.title {
+		font-size: 2em;
+	}
+</style>
+
+<div class="release-header">
+	<div class="release-navigation">
+		<span><a href="/releases">All Releases</a></span>
+	
+		{%- set previousRelease = collections.releases | getPreviousCollectionItem %}
+		{%- set nextRelease = collections.releases | getNextCollectionItem %}
+		{%- if nextRelease or previousRelease %}
+		<span>| </span>
+		{%- if previousRelease %}<span><a href="{{ previousRelease.url }}">{{ previousRelease.data.title }}</a> -> </span>{%
+		endif %}
+		<span>{{ title }}</span>
+		{%- if nextRelease %}<span> -> <a href="{{ nextRelease.url }}">{{ nextRelease.data.title }}</a></span>{% endif %}
+		{%- endif %}
+	</div>
+
+	<div class="release-meta">
+		<div>
+			<time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+		</div>
+		<div>Downloads: <span class="download-count"></span></div>
+		<a href="https://www.github.com/ZQuestClassic/ZQuestClassic/releases/tag/{{ tag_name }}" target="_blank">View on GitHub</a>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="title">{{ title }}</div>
+
+{%- if description %}
+	<h2>{{ description }}</h2>
+{%- endif %}
+
+<style>
+	.assets {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 10px;
+	}
+
+	.download-asset {
+		flex: 1;
+		display: flex;
+		align-items: center;
+    	justify-content: space-evenly;
+		padding: 10px;
+		margin: 10px;
+		border: 2px solid black;
+		border-radius: 25px;
+		background-color: #423f56;
+		text-decoration: none;
+	}
+	.download-asset:hover {
+		background-color: #4d4964;
+	}
+	.download-asset.selected {
+		border-color: #73AD21;
+	}
+
+	.download-asset img {
+		width: 40px;
+		height: 40px;
+	}
+	.download-asset .label {
+		padding: 10px;
+		text-align: center;
+	}
+</style>
+
+<div class="assets">
+	{% for asset in assets %}
+		<a class="download-asset" alt="{{ asset.channel }}" data-channel="{{ asset.channel }}" href="{{ asset.name }}">
+			{% if 'windows' in asset.channel %}
+				<img src="/img/windows.svg">
+			{% else %}
+				<img src="/img/{{ asset.channel }}.svg">
+			{% endif %}
+			<div class="label">
+				{% if asset.channel == 'windows-x64' %}
+					<div>Windows</div>
+					<div>64-bit</div>
+				{% elif asset.channel == 'windows-win32' %}
+					<div>Windows</div>
+					<div>32-bit</div>
+				{% else %}
+					{{ asset.channel | capitalize }}
+				{% endif %}
+			</div>
+		</a>
+	{% endfor %}
+</div>
+
+<script>
+	const assets = Website.sortAssets({{ assets | json | safe }});
+	const channel = Website.getChannel();
+	let order = 0;
+	for (const asset of assets) {
+		const el = document.querySelector(`[data-channel="${asset.channel}"]`);
+		el.style.order = order++;
+		if (asset.channel === channel) el.classList.add('selected');
+	}
+
+	(async () => {
+		const json = await Website.getReleaseInfo('{{ tag_name }}');
+		let downloads = 0;
+		for (const asset of json.assets) downloads += asset.download_count;
+		document.querySelector('.download-count').textContent = downloads;
+	})();
+</script>
+
+
+{{ super() | safe }}
+{% endblock %}
