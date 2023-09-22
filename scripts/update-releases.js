@@ -138,7 +138,7 @@ const octokit = process.env.CI ? new OctokitCI() : new Octokit({auth: process.en
 const {
   data: { login },
 } = await octokit.rest.users.getAuthenticated();
-console.log(`Auth'd as %s`, login);
+if (!process.env.CI) console.log(`Auth'd as %s`, login);
 
 let mode = process.argv[2] || 'recent';
 if (mode === 'all') {
