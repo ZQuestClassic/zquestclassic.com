@@ -1,5 +1,6 @@
 import fs from 'fs';
 import {Octokit} from 'octokit';
+import {createActionAuth} from '@octokit/auth-action';
 
 async function getRelease(id) {
 	const ghResponse = await octokit.rest.repos.getRelease({
@@ -133,7 +134,8 @@ async function update(amount) {
 	}
 }
 
-const octokit = new Octokit({ auth: process.env.GH_PAT });
+const auth = process.env.CI ? await createActionAuth()() : process.env.GH_PAT;
+const octokit = new Octokit({auth});
 const {
   data: { login },
 } = await octokit.rest.users.getAuthenticated();
