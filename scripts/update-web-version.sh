@@ -12,8 +12,8 @@ unzip .tmp/web.zip -d .tmp/web
 rm -rf _site/{play,create,timidity}
 rm .tmp/web/dist/index.html
 mv .tmp/web/dist/* _site
-sed -i 's@/zc/@/@g' _site/create/index.html || sed 's@/zc/@/@g' _site/create/index.html > out.html && mv out.html _site/create/index.html
-sed -i 's@/zc/@/@g' _site/play/index.html || sed 's@/zc/@/@g' _site/play/index.html > out.html && mv out.html _site/play/index.html
+sed -i 's@/zc/@/@g' _site/create/index.html || (sed 's@/zc/@/@g' _site/create/index.html > out.html && mv out.html _site/create/index.html)
+sed -i 's@/zc/@/@g' _site/play/index.html || (sed 's@/zc/@/@g' _site/play/index.html > out.html && mv out.html _site/play/index.html)
 npx --yes json -I -f _site/manifest.json -e "this.scope='https://zquestclassic.com'"
 cp _headers _site
 
