@@ -133,6 +133,13 @@ function renderRelease(nightly) {
 	} else {
 		el.classList.add('failed');
 	}
+
+	if (channel === 'linux' && !nightly) {
+		const flatpakEl = document.createElement('a');
+		flatpakEl.textContent = 'Flatpak';
+		flatpakEl.href = 'https://flathub.org/apps/com.zquestclassic.ZQuest';
+		el.querySelector('.meta').append('| ', flatpakEl);
+	}
 }
 
 function setToFailed(message) {
