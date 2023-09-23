@@ -20,9 +20,9 @@ if [ ! -f .tmp/zscript/$SHA.html ]; then
     fi
 
     $PYTHON -m pip install pytz
-    mkdir -p ../../content/docs/zscript
     $PYTHON webdocs/docjson_main.py --in webdocs/zsdocs_main.json --out ../../.tmp/zscript/$SHA.html -c
     cd ../..
 fi
 
+mkdir -p content/docs/zscript
 cp .tmp/zscript/$SHA.html content/docs/zscript/index.html
