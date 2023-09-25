@@ -100,17 +100,16 @@ a[href]:active {
 
 main {
 	padding: 1rem;
+	max-width: max(60vw, 800px);
 }
-/* main :first-child {
-	margin-top: 0;
-} */
+main.wide {
+	max-width: unset;
+}
 
 .center {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	max-width: 60vw;
-	/* margin: 0 100px; */
 }
 
 header {

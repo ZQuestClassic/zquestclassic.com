@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+eleventyNavigation:
+  key: Docs
+  order: 3
+items:
+  - title: How to play a quest
+    url: /docs/how-to-play-a-quest
+  - title: Editor tutorials
+    url: /docs/tutorials
+  - title: ZScript
+    url: /docs/zscript
+    target: _blank
+---
+
+<style>
+  .doc-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .doc-item {
+    border: solid 1px black;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #423f56;
+  }
+  .doc-item:hover {
+    background-color: #4d4964;
+  }
+</style>
+
+<div class="doc-items">
+
+{% for item in items -%}
+  <a class="doc-item" href="{{ item.url }}" target={{ item.target }}>{{ item.title }}</a>
+{% endfor %}
+
+</div>

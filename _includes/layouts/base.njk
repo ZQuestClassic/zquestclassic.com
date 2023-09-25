@@ -68,12 +68,10 @@
 			{% endblock %}
 		</header>
 
-		<main class="{% if page.url != "/" %}center{% endif %}">
-			<div>
-				{% block content %}
-					{{ content | safe }}
-				{% endblock %}
-			</div>
+		<main class="{% if page.url == "/" %}wide{% endif %}">
+			{% block content %}
+				{{ content | safe }}
+			{% endblock %}
 		</main>
 
 		<footer></footer>
