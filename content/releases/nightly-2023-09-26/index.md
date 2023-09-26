@@ -7,6 +7,10 @@ assets:
     name: nightly-2023-09-26-linux.tar.gz
     channel: linux
 
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-09-26/nightly-2023-09-26-mac.dmg
+    name: nightly-2023-09-26-mac.dmg
+    channel: mac
+
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-09-26/nightly-2023-09-26-windows-x64.zip
     name: nightly-2023-09-26-windows-x64.zip
     channel: windows-x64
