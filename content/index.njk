@@ -83,6 +83,28 @@ sotw:
 			text-align: center;
 		}
 
+		.gallery {
+			position: relative;
+			z-index: 1;
+			background-color: black;
+			overflow: hidden;
+			display: grid;
+			width: 100%;
+		}
+		.gallery-images {
+			display: flex;
+			justify-content: space-around;
+		}
+		.gallery-preview {
+			width: 50%;
+		}
+		.gallery-thumbnails {
+			display: flex;
+			width: auto;
+			height: 80px;
+			gap: 10px;
+		}
+
 		main {
 			padding: unset;
 		}
@@ -147,28 +169,18 @@ sotw:
 		}
 	</style>
 
-	<div class="hero">
-		{# <div class="download-overlay">
-			<div class="download-option">
-				Download Stable
-			</div>
-
-			<div class="download-option">
-				Download Nightly
-			</div>
-		</div> #}
-
-		<div class="background-image-wrapper">
-			<img class="background-image" src="/img/sotw-785-architect-abdiel.png">
-			{# <video class="background-image" loop autoplay muted>
-				<source src="/assets/zquest.webm" type="video/webm">
-				<source src="/assets/zquest.mp4" type="video/mp4">
-			</video> #}
+	<div class="gallery">
+		<div class="gallery-images">
+			{# <img class="gallery-preview gallery-previous" src="/img/sotw-785-architect-abdiel.png"> #}
+			<img width="600px" height="600px" class="gallery-current" src="/img/sotw-785-architect-abdiel.png">
+			{# <img class="gallery-preview gallery-next" src="/img/sotw-785-architect-abdiel.png"> #}
 		</div>
 
-		{# <div class="hero-overlay">
-			Make 
-		</div> #}
+		<div class="gallery-thumbnails">
+			{% for pic in sotw -%}
+				<img class="gallery-preview" src="{{ pic.img }}">
+			{% endfor %}
+		</div>
 
 		<div class="credits"><a target="_blank" href="https://www.purezc.net/index.php?page=tilesets&id=106">Cambria Tileset - by Matthew</a></div>
 	</div>
