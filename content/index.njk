@@ -181,7 +181,8 @@ sotw:
 			z-index: 1;
 			background-color: black;
 			overflow: hidden;
-			width: 100%;
+			/* width: 100%; */
+			width: 100vw;
 		}
 		.gallery img {
 			aspect-ratio: 512/448;
@@ -189,6 +190,11 @@ sotw:
 		.gallery-current {
 			display: grid;
 			place-items: center;
+		}
+		.gallery-current img {
+			/* max-height: 40vh; */
+			max-width: calc(max(40vw, 500px));
+			width: 100%;
 		}
 		.gallery-thumbnails {
 			display: flex;
@@ -267,7 +273,7 @@ sotw:
 	<div class="gallery">
 		<div class="gallery-current">
 			{% set first_pic = sotw | first %}
-			<img width="512px" height="448px" src="{{ first_pic.img }}">
+			<img src="{{ first_pic.img }}">
 			<div class="credits">by <a target="_blank" href="{{ first_pic.url }}">{{ first_pic.author }}</a></div>
 		</div>
 
