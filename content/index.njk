@@ -183,6 +183,9 @@ sotw:
 			overflow: hidden;
 			width: 100%;
 		}
+		.gallery img {
+			aspect-ratio: 512/448;
+		}
 		.gallery-current {
 			display: grid;
 			place-items: center;
@@ -263,8 +266,9 @@ sotw:
 
 	<div class="gallery">
 		<div class="gallery-current">
-			<img width="600px" height="600px" src="/img/sotw-785-architect-abdiel.png">
-			<div class="credits"><a target="_blank" href="https://www.purezc.net/index.php?page=tilesets&id=106">Cambria Tileset - by Matthew</a></div>
+			{% set first_pic = sotw | first %}
+			<img width="512px" height="448px" src="{{ first_pic.img }}">
+			<div class="credits">by <a target="_blank" href="{{ first_pic.url }}">{{ first_pic.author }}</a></div>
 		</div>
 
 		<div class="gallery-thumbnails">
