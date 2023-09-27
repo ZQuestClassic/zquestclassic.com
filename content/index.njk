@@ -45,6 +45,99 @@ sotw:
   - img: /img/sotw-795-anthus.gif
     author: Anthus
     url: /
+
+
+  - img: /img/sotw-785-architect-abdiel.png
+    author: Architect Abdiel
+    url: /
+  - img: /img/sotw-785-joel.png
+    author: Joel
+    url: /
+  - img: /img/sotw-786-architect-abdiel.png
+    author: Architect Abdiel
+    url: /
+  - img: /img/sotw-787-matthew.png
+    author: Matthew
+    url: /
+  - img: /img/sotw-789-joel.png
+    author: Joel
+    url: /
+  - img: /img/sotw-789-moosh.gif
+    author: Moosh
+    url: /
+  - img: /img/sotw-789-russ.png
+    author: Russ
+    url: /
+  - img: /img/sotw-791-joel.png
+    author: Joel
+    url: /
+  - img: /img/sotw-791-shane.png
+    author: Shane
+    url: /
+  - img: /img/sotw-792-anthus.gif
+    author: Anthus
+    url: /
+  - img: /img/sotw-792-architect-abdiel.png
+    author: Architect Abdiel
+    url: /
+  - img: /img/sotw-793-architect-abdiel.png
+    author: Architect Abdiel
+    url: /
+  - img: /img/sotw-793-joel.png
+    author: Joel
+    url: /
+  - img: /img/sotw-794-anthus.gif
+    author: Anthus
+    url: /
+  - img: /img/sotw-795-anthus.gif
+    author: Anthus
+    url: /
+
+  - img: /img/sotw-785-architect-abdiel.png
+    author: Architect Abdiel
+    url: /
+  - img: /img/sotw-785-joel.png
+    author: Joel
+    url: /
+  - img: /img/sotw-786-architect-abdiel.png
+    author: Architect Abdiel
+    url: /
+  - img: /img/sotw-787-matthew.png
+    author: Matthew
+    url: /
+  - img: /img/sotw-789-joel.png
+    author: Joel
+    url: /
+  - img: /img/sotw-789-moosh.gif
+    author: Moosh
+    url: /
+  - img: /img/sotw-789-russ.png
+    author: Russ
+    url: /
+  - img: /img/sotw-791-joel.png
+    author: Joel
+    url: /
+  - img: /img/sotw-791-shane.png
+    author: Shane
+    url: /
+  - img: /img/sotw-792-anthus.gif
+    author: Anthus
+    url: /
+  - img: /img/sotw-792-architect-abdiel.png
+    author: Architect Abdiel
+    url: /
+  - img: /img/sotw-793-architect-abdiel.png
+    author: Architect Abdiel
+    url: /
+  - img: /img/sotw-793-joel.png
+    author: Joel
+    url: /
+  - img: /img/sotw-794-anthus.gif
+    author: Anthus
+    url: /
+  - img: /img/sotw-795-anthus.gif
+    author: Anthus
+    url: /
 ---
 
 {% extends "layouts/base.njk" %}
@@ -88,21 +181,20 @@ sotw:
 			z-index: 1;
 			background-color: black;
 			overflow: hidden;
-			display: grid;
 			width: 100%;
 		}
-		.gallery-images {
-			display: flex;
-			justify-content: space-around;
-		}
-		.gallery-preview {
-			width: 50%;
+		.gallery-current {
+			display: grid;
+			place-items: center;
 		}
 		.gallery-thumbnails {
 			display: flex;
-			width: auto;
-			height: 80px;
 			gap: 10px;
+			margin-top: 10px;
+		}
+		.gallery-thumbnails img {
+			/* width: auto; */
+			height: 100px;
 		}
 
 		main {
@@ -170,19 +262,17 @@ sotw:
 	</style>
 
 	<div class="gallery">
-		<div class="gallery-images">
-			{# <img class="gallery-preview gallery-previous" src="/img/sotw-785-architect-abdiel.png"> #}
-			<img width="600px" height="600px" class="gallery-current" src="/img/sotw-785-architect-abdiel.png">
-			{# <img class="gallery-preview gallery-next" src="/img/sotw-785-architect-abdiel.png"> #}
+		<div class="gallery-current">
+			<img width="600px" height="600px" src="/img/sotw-785-architect-abdiel.png">
+			<div class="credits"><a target="_blank" href="https://www.purezc.net/index.php?page=tilesets&id=106">Cambria Tileset - by Matthew</a></div>
 		</div>
 
 		<div class="gallery-thumbnails">
 			{% for pic in sotw -%}
-				<img class="gallery-preview" src="{{ pic.img }}">
+				<img loading="lazy" class="gallery-preview" src="{{ pic.img }}">
 			{% endfor %}
 		</div>
 
-		<div class="credits"><a target="_blank" href="https://www.purezc.net/index.php?page=tilesets&id=106">Cambria Tileset - by Matthew</a></div>
 	</div>
 
 	<style>

@@ -57,7 +57,7 @@
 				<div style="flex-grow: 1; font-size: 2em">🚧⚔️ Under Construction ⚔️🚧</div>
 
 				<nav class="nav">
-					<a class="nav-item" href="/releases"{% if '/releases' == page.url %} aria-current="page"{% endif %}>Get ZC!</a>
+					<a class="nav-item" href="/releases/"{% if '/releases' == page.url %} aria-current="page"{% endif %}>Get ZC!</a>
 				{%- for entry in collections.all | eleventyNavigation %}
 					<a class="nav-item" href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
 				{%- endfor %}
