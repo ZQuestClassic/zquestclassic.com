@@ -187,14 +187,22 @@ sotw:
 		.gallery img {
 			aspect-ratio: 512/448;
 		}
+		.gallery-images {
+			display: flex;
+			justify-content: space-around;
+		}
 		.gallery-current {
 			display: grid;
 			place-items: center;
 		}
 		.gallery-current img {
-			/* max-height: 40vh; */
 			max-width: calc(max(40vw, 500px));
 			width: 100%;
+		}
+
+		.gallery-prev, .gallery-next {
+			opacity: 0.4;
+			/* width: 50%; */
 		}
 		.gallery-thumbnails {
 			display: flex;
@@ -271,10 +279,22 @@ sotw:
 	</style>
 
 	<div class="gallery">
-		<div class="gallery-current">
-			{% set first_pic = sotw | first %}
-			<img src="{{ first_pic.img }}">
-			<div class="credits">by <a target="_blank" href="{{ first_pic.url }}">{{ first_pic.author }}</a></div>
+		{% set prev_pic = sotw[0] %}
+		{% set first_pic = sotw[1] %}
+		{% set next_pic = sotw[2] %}
+		<div class="gallery-images">
+			<div class="gallery-prev">
+				<img src="{{ prev_pic.img }}">
+			</div>
+
+			<div class="gallery-current">
+				<img src="{{ first_pic.img }}">
+				<div class="credits">by <a target="_blank" href="{{ first_pic.url }}">{{ first_pic.author }}</a></div>
+			</div>
+
+			<div class="gallery-next">
+				<img src="{{ next_pic.img }}">
+			</div>
 		</div>
 
 		<div class="gallery-thumbnails">
