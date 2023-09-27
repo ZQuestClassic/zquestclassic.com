@@ -1,50 +1,50 @@
 ---
 sotw:
-	- img: /img/sotw-785-architect-abdiel.png
-	  author: Architect Abdiel
-	  url: /
-	- img: /img/sotw-785-joel.png
-	  author: Joel
-	  url: /
-	- img: /img/sotw-786-architect-abdiel.png
-	  author: Architect Abdiel
-	  url: /
-	- img: /img/sotw-787-matthew.png
-	  author: Matthew
-	  url: /
-	- img: /img/sotw-789-joel.png
-	  author: Joel
-	  url: /
-	- img: /img/sotw-789-moosh.gif
-	  author: Moosh
-	  url: /
-	- img: /img/sotw-789-russ.png
-	  author: Russ
-	  url: /
-	- img: /img/sotw-791-joel.png
-	  author: Joel
-	  url: /
-	- img: /img/sotw-791-shane.png
-	  author: Shane
-	  url: /
-	- img: /img/sotw-792-anthus.gif
-	  author: Anthus
-	  url: /
-	- img: /img/sotw-792-architect-abdiel.png
-	  author: Architect Abdiel
-	  url: /
-	- img: /img/sotw-793-architect-abdiel.png
-	  author: Architect Abdiel
-	  url: /
-	- img: /img/sotw-793-joel.png
-	  author: Joel
-	  url: /
-	- img: /img/sotw-794-anthus.gif
-	  author: Anthus
-	  url: /
-	- img: /img/sotw-795-anthus.gif
-	  author: Anthus
-	  url: /
+  - img: /img/sotw-785-architect-abdiel.png
+    author: Architect Abdiel
+    url: /
+  - img: /img/sotw-785-joel.png
+    author: Joel
+    url: /
+  - img: /img/sotw-786-architect-abdiel.png
+    author: Architect Abdiel
+    url: /
+  - img: /img/sotw-787-matthew.png
+    author: Matthew
+    url: /
+  - img: /img/sotw-789-joel.png
+    author: Joel
+    url: /
+  - img: /img/sotw-789-moosh.gif
+    author: Moosh
+    url: /
+  - img: /img/sotw-789-russ.png
+    author: Russ
+    url: /
+  - img: /img/sotw-791-joel.png
+    author: Joel
+    url: /
+  - img: /img/sotw-791-shane.png
+    author: Shane
+    url: /
+  - img: /img/sotw-792-anthus.gif
+    author: Anthus
+    url: /
+  - img: /img/sotw-792-architect-abdiel.png
+    author: Architect Abdiel
+    url: /
+  - img: /img/sotw-793-architect-abdiel.png
+    author: Architect Abdiel
+    url: /
+  - img: /img/sotw-793-joel.png
+    author: Joel
+    url: /
+  - img: /img/sotw-794-anthus.gif
+    author: Anthus
+    url: /
+  - img: /img/sotw-795-anthus.gif
+    author: Anthus
+    url: /
 ---
 
 {% extends "layouts/base.njk" %}
@@ -66,9 +66,9 @@ sotw:
 		.hero .background-image {
 			max-height: 90vh;
 			max-width: calc(max(90vw, 500px));
-			width: 100%;
+			/* width: 100%; */
 			/* margin-top: 7vh; */
-			aspect-ratio: 3384/2240;
+			/* aspect-ratio: 3384/2240; */
 			/* position: absolute; */
 			/* opacity: 0.6; */
 			background-position: center;
@@ -78,10 +78,24 @@ sotw:
 			background-color: var(--transparent-cover);
 			will-change: transform;
 		}
-		.hero .credits {
-			background: var(--hero-text-background-color);
+		.credits {
 			padding: 10px;
 			text-align: center;
+		}
+
+		main {
+			padding: unset;
+		}
+
+		.video-wrapper {
+			display: grid;
+			place-items: center;
+			background-color: black;
+		}
+		.video-wrapper video {
+			max-width: calc(max(50vw, 500px));
+			aspect-ratio: 3384/2240;
+			width: 100%;
 		}
 
 		.hero-overlay {
@@ -145,10 +159,11 @@ sotw:
 		</div> #}
 
 		<div class="background-image-wrapper">
-			<video class="background-image" loop autoplay muted>
+			<img class="background-image" src="/img/sotw-785-architect-abdiel.png">
+			{# <video class="background-image" loop autoplay muted>
 				<source src="/assets/zquest.webm" type="video/webm">
 				<source src="/assets/zquest.mp4" type="video/mp4">
-			</video>
+			</video> #}
 		</div>
 
 		{# <div class="hero-overlay">
@@ -164,13 +179,21 @@ sotw:
 		}
 		.section-title {
 			font-size: 2em;
-			padding: 20px 0;
+			padding: 20px 1rem;
 		}
 		.section {
 			margin: 0 10vw;
-			display: flex;
+			/* display: flex; */
 			align-items: center;
 			justify-content: center;
+		}
+
+		.cta {
+			font-size: 3em;
+			background-color: rgb(17, 68, 17);
+			text-align: center;
+			margin: 10px 0;
+			padding: 10vh 0;
 		}
 
 		div {
@@ -198,6 +221,15 @@ sotw:
 
 	<div class="section-title">
 		... or make your own!
+	</div>
+
+	<div class="video-wrapper">
+		<video loop autoplay muted>
+			<source src="/assets/zquest.webm" type="video/webm">
+			<source src="/assets/zquest.mp4" type="video/mp4">
+		</video>
+
+		<div class="credits"><a target="_blank" href="https://www.purezc.net/index.php?page=tilesets&id=106">Cambria Tileset - by Matthew</a></div>
 	</div>
 
 	<div class="section">
@@ -287,4 +319,11 @@ sotw:
 			</div>
 		</div>
 	</div>
+
+	<a href="/releases/">
+		<div class="cta">
+			Get ZC!
+		</div>
+	</a>
+	
 {% endblock %}
