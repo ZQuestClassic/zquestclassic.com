@@ -1,5 +1,8 @@
 ---
 sotw:
+  - img: /img/sotw-787-matthew.png
+    author: Matthew
+    url: /
   - img: /img/sotw-785-architect-abdiel.png
     author: Architect Abdiel
     url: /
@@ -8,9 +11,6 @@ sotw:
     url: /
   - img: /img/sotw-786-architect-abdiel.png
     author: Architect Abdiel
-    url: /
-  - img: /img/sotw-787-matthew.png
-    author: Matthew
     url: /
   - img: /img/sotw-789-joel.png
     author: Joel
@@ -91,20 +91,33 @@ sotw:
 			/* width: 100%; */
 			width: 100vw;
 		}
-		.gallery img {
-			aspect-ratio: 512/448;
-		}
 		.gallery-images {
 			display: flex;
 			justify-content: space-around;
 		}
+		.gallery-images img {
+			height: 60vh;
+		}
 		.gallery-current {
-			display: grid;
-			place-items: center;
+			/* display: grid; */
+			/* place-items: center; */
 		}
 		.gallery-current img {
-			max-width: calc(max(40vw, 500px));
+			/* max-width: calc(max(40vw, 500px)); */
 			/* width: 100%; */
+		}
+
+		.gallery-frame {
+			/* width: 100px; */
+		}
+		.gallery-frame--current {
+			/* width: 100px; */
+		}
+		.gallery-frame img {
+			height: 100px;
+		}
+		.gallery-frame--current img {
+			height: 100%;
 		}
 
 		.gallery-prev, .gallery-next {
@@ -190,29 +203,103 @@ sotw:
 		{% set first_pic = sotw[1] %}
 		{% set next_pic = sotw[2] %}
 		<div class="gallery-images">
-			<div class="gallery-frame gallery-prev">
+			<style>
+				.splide__slide {
+					opacity: 0.6;
+				}
+				.splide__slide.is-active {
+					opacity: 1;
+				}
+
+				.splide {
+					/* width: 50%; */
+					/* height: 10vh; */
+				}
+				
+				.splide__slide {
+					align-self: center;
+					/* aspect-ratio: 512/448; */
+					/* height: 100%; */
+					/* width: 200px; */
+				}
+
+			</style>
+			{# <div class="gallery-frame gallery-prev">
 				<img src="{{ prev_pic.img }}">
+			</div> #}
+
+			{# {% for pic in sotw -%}
+				<img class="gallery-frame {{ 'gallery-frame--current' if pic == first_pic else '' }}" loading="lazy" src="{{ pic.img }}">
+			{% endfor %} #}
+
+			
+			<div class="gallery-current">
+				<img class="current-image" src="{{ sotw[0].img }}">
+				<div class="credits">by <a target="_blank" href="{{ sotw[0].url }}">{{ sotw[0].author }}</a></div>
 			</div>
 
-			<div class="gallery-frame gallery-current">
-				<img src="{{ first_pic.img }}">
-				<div class="credits">by <a target="_blank" href="{{ first_pic.url }}">{{ first_pic.author }}</a></div>
+			{# <div class="gallery-frame gallery-current">
 			</div>
 
 			<div class="gallery-frame gallery-next">
 				<img src="{{ next_pic.img }}">
+			</div> #}
+		</div>
+		<div class="splide">
+			<div class="splide__track">
+				<ul class="splide__list">
+					{% for pic in sotw -%}
+						{# <li class="splide__slide"> #}
+							<img class="splide__slide" src="{{ pic.img }}">
+						{# </li> #}
+					{% endfor %}
+				</ul>
 			</div>
 		</div>
 
-		<div class="gallery-thumbnails">
+		{# <div class="gallery-thumbnails">
 			{% for pic in sotw -%}
 				<img loading="lazy" class="gallery-preview" src="{{ pic.img }}">
 			{% endfor %}
-		</div>
+		</div> #}
 
 		<script>
 			const images = {{ sotw | json | safe }};
-			let i = 0;
+
+			var splide = new Splide( '.splide', {
+				focus: 'center',
+				// height: '100%',
+				// fixedWidth  : 100,
+				fixedWidth: 200,
+				// fixedHeight : 100,
+				gap         : 10,
+				rewind      : true,
+				pagination  : false,
+				isNavigation: true,
+				breakpoints : {
+					// 600: {
+						// fixedWidth : 60,
+					// 	fixedHeight: 44,
+					// },
+				},
+				// // type   : 'loop',
+				// perPage: 3,
+				// perMove: 1,
+				// focus  : 'center',
+				// // autoWidth: true,
+				// // autoplay: true,
+				// lazyLoad: true,
+				// pagination: false,
+			}).mount();
+
+			splide.on('move', (newIndex, prevIndex) => {
+				document.querySelector('.current-image').src = images[newIndex].img;
+				document.querySelector('.credits').innerHTML = `by <a href="${images[newIndex].url}">${images[newIndex].author}</a>`;
+			});
+			// splide.on('moved', (newIndex, prevIndex) => {
+			// 	const el = document.querySelector('.splide__track').children.item(newIndex);
+			// 	el.classList.remove('moving');
+			// });
 
 			// interface FlexItemInfo {
 			// 	element: Element
@@ -280,18 +367,18 @@ sotw:
 			// 	}
 			// 	}
 
-			setInterval(() => {
-				let getIndex = i => i > 0 ? i % images.length : images.length - 1;
-				i = getIndex(i + 1);
+			// setInterval(() => {
+			// 	let getIndex = i => i > 0 ? i % images.length : images.length - 1;
+			// 	i = getIndex(i + 1);
 
-				const prevEl = document.querySelector('.gallery-prev');
-				const curEl = document.querySelector('.gallery-current');
-				const nextEl = document.querySelector('.gallery-next');
+			// 	const prevEl = document.querySelector('.gallery-prev');
+			// 	const curEl = document.querySelector('.gallery-current');
+			// 	const nextEl = document.querySelector('.gallery-next');
 
-				prevEl.querySelector('img').src = images[getIndex(i - 1)].img;
-				curEl.querySelector('img').src = images[i].img;
-				nextEl.querySelector('img').src = images[getIndex(i + 1)].img;
-			}, 300);
+			// 	prevEl.querySelector('img').src = images[getIndex(i - 1)].img;
+			// 	curEl.querySelector('img').src = images[i].img;
+			// 	nextEl.querySelector('img').src = images[getIndex(i + 1)].img;
+			// }, 300);
 		</script>
 	</div>
 
