@@ -45,99 +45,6 @@ sotw:
   - img: /img/sotw-795-anthus.gif
     author: Anthus
     url: /
-
-
-  - img: /img/sotw-785-architect-abdiel.png
-    author: Architect Abdiel
-    url: /
-  - img: /img/sotw-785-joel.png
-    author: Joel
-    url: /
-  - img: /img/sotw-786-architect-abdiel.png
-    author: Architect Abdiel
-    url: /
-  - img: /img/sotw-787-matthew.png
-    author: Matthew
-    url: /
-  - img: /img/sotw-789-joel.png
-    author: Joel
-    url: /
-  - img: /img/sotw-789-moosh.gif
-    author: Moosh
-    url: /
-  - img: /img/sotw-789-russ.png
-    author: Russ
-    url: /
-  - img: /img/sotw-791-joel.png
-    author: Joel
-    url: /
-  - img: /img/sotw-791-shane.png
-    author: Shane
-    url: /
-  - img: /img/sotw-792-anthus.gif
-    author: Anthus
-    url: /
-  - img: /img/sotw-792-architect-abdiel.png
-    author: Architect Abdiel
-    url: /
-  - img: /img/sotw-793-architect-abdiel.png
-    author: Architect Abdiel
-    url: /
-  - img: /img/sotw-793-joel.png
-    author: Joel
-    url: /
-  - img: /img/sotw-794-anthus.gif
-    author: Anthus
-    url: /
-  - img: /img/sotw-795-anthus.gif
-    author: Anthus
-    url: /
-
-  - img: /img/sotw-785-architect-abdiel.png
-    author: Architect Abdiel
-    url: /
-  - img: /img/sotw-785-joel.png
-    author: Joel
-    url: /
-  - img: /img/sotw-786-architect-abdiel.png
-    author: Architect Abdiel
-    url: /
-  - img: /img/sotw-787-matthew.png
-    author: Matthew
-    url: /
-  - img: /img/sotw-789-joel.png
-    author: Joel
-    url: /
-  - img: /img/sotw-789-moosh.gif
-    author: Moosh
-    url: /
-  - img: /img/sotw-789-russ.png
-    author: Russ
-    url: /
-  - img: /img/sotw-791-joel.png
-    author: Joel
-    url: /
-  - img: /img/sotw-791-shane.png
-    author: Shane
-    url: /
-  - img: /img/sotw-792-anthus.gif
-    author: Anthus
-    url: /
-  - img: /img/sotw-792-architect-abdiel.png
-    author: Architect Abdiel
-    url: /
-  - img: /img/sotw-793-architect-abdiel.png
-    author: Architect Abdiel
-    url: /
-  - img: /img/sotw-793-joel.png
-    author: Joel
-    url: /
-  - img: /img/sotw-794-anthus.gif
-    author: Anthus
-    url: /
-  - img: /img/sotw-795-anthus.gif
-    author: Anthus
-    url: /
 ---
 
 {% extends "layouts/base.njk" %}
@@ -197,7 +104,7 @@ sotw:
 		}
 		.gallery-current img {
 			max-width: calc(max(40vw, 500px));
-			width: 100%;
+			/* width: 100%; */
 		}
 
 		.gallery-prev, .gallery-next {
@@ -283,16 +190,16 @@ sotw:
 		{% set first_pic = sotw[1] %}
 		{% set next_pic = sotw[2] %}
 		<div class="gallery-images">
-			<div class="gallery-prev">
+			<div class="gallery-frame gallery-prev">
 				<img src="{{ prev_pic.img }}">
 			</div>
 
-			<div class="gallery-current">
+			<div class="gallery-frame gallery-current">
 				<img src="{{ first_pic.img }}">
 				<div class="credits">by <a target="_blank" href="{{ first_pic.url }}">{{ first_pic.author }}</a></div>
 			</div>
 
-			<div class="gallery-next">
+			<div class="gallery-frame gallery-next">
 				<img src="{{ next_pic.img }}">
 			</div>
 		</div>
@@ -303,6 +210,89 @@ sotw:
 			{% endfor %}
 		</div>
 
+		<script>
+			const images = {{ sotw | json | safe }};
+			let i = 0;
+
+			// interface FlexItemInfo {
+			// 	element: Element
+
+			// 	x: number
+			// 	y: number
+			// 	width: number
+			// 	height: number
+			// 	}
+
+			// 	const container = document.querySelector('.container')
+			// 	for (const item of container.children) {
+			// 	item.addEventListener('click', () => {
+			// 		removeFlexItem(container, item)
+			// 	})
+			// 	}
+
+			// 	function removeFlexItem(container: Element, item: Element): void {
+			// 	const oldFlexItemsInfo = getFlexItemsInfo(container)
+			// 	container.removeChild(item)
+			// 	const newFlexItemsInfo = getFlexItemsInfo(container)
+
+			// 	aminateFlexItems(oldFlexItemsInfo, newFlexItemsInfo)
+			// 	}
+
+			// 	function getFlexItemsInfo(container: Element): FlexItemInfo[] {
+			// 	return Array.from(container.children).map((item) => {
+			// 		const rect = item.getBoundingClientRect()
+			// 		return {
+			// 		element: item,
+			// 		x: rect.left,
+			// 		y: rect.top,
+			// 		width: rect.right - rect.left,
+			// 		height: rect.bottom - rect.top,
+			// 		}
+			// 	})
+			// 	}
+
+			// 	function aminateFlexItems(
+			// 	oldFlexItemsInfo: FlexItemInfo[],
+			// 	newFlexItemsInfo: FlexItemInfo[]
+			// 	): void {
+			// 	for (const newFlexItemInfo of newFlexItemsInfo) {
+			// 		const oldFlexItemInfo = oldFlexItemsInfo.find(
+			// 		(itemInfo) => itemInfo.element === newFlexItemInfo.element
+			// 		)
+
+			// 		const translateX = oldFlexItemInfo.x - newFlexItemInfo.x
+			// 		const translateY = oldFlexItemInfo.y - newFlexItemInfo.y
+			// 		const scaleX = oldFlexItemInfo.width / newFlexItemInfo.width
+			// 		const scaleY = oldFlexItemInfo.height / newFlexItemInfo.height
+
+			// 		newFlexItemInfo.element.animate(
+			// 		[
+			// 			{
+			// 			transform: `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`,
+			// 			},
+			// 			{ transform: 'none' },
+			// 		],
+			// 		{
+			// 			duration: 250,
+			// 			easing: 'ease-out',
+			// 		}
+			// 		)
+			// 	}
+			// 	}
+
+			setInterval(() => {
+				let getIndex = i => i > 0 ? i % images.length : images.length - 1;
+				i = getIndex(i + 1);
+
+				const prevEl = document.querySelector('.gallery-prev');
+				const curEl = document.querySelector('.gallery-current');
+				const nextEl = document.querySelector('.gallery-next');
+
+				prevEl.querySelector('img').src = images[getIndex(i - 1)].img;
+				curEl.querySelector('img').src = images[i].img;
+				nextEl.querySelector('img').src = images[getIndex(i + 1)].img;
+			}, 300);
+		</script>
 	</div>
 
 	<style>
