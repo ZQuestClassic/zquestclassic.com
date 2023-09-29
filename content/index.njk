@@ -283,15 +283,22 @@ sotw:
 
 		<script>
 			function updateImage(index) {
-				// document.querySelector('.current-image').src = '/img/' + images[index].img;
 				document.querySelector('.current-image').style.backgroundImage = `url(/img/${images[index].img})`;
 				document.querySelector('.credits').innerHTML = `by <a target=_blank href="${images[index].url}">${images[index].author}</a>`;
+
+				const next = (index + 1) % images.length;
+				const nextUrl = `/img/${images[index].img}`;
+				if (!document.head.querySelector(`link[href="${nextUrl}"]`)) {
+					const el = document.createElement('link');
+					el.href = nextUrl;
+					el.rel = 'prefetch';
+					el.as = 'image';
+					document.head.append(el);
+				}
 			}
 
 			const images = {{ sotw | json | safe }};
 			const start = Math.floor(Math.random() * images.length);
-
-			// <link rel="prefetch" href="http://davidwalsh.name/wp-content/themes/walshbook3/images/sprite.png" />
 
 			updateImage(start);
 
