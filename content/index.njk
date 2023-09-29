@@ -100,6 +100,7 @@ sotw:
 		.gallery-images {
 			display: flex;
 			justify-content: space-around;
+			cursor: pointer;
 		}
 		.gallery-images .current-image {
 			height: 70vh;
@@ -243,6 +244,13 @@ sotw:
 					/* width: 200px; */
 				}
 
+				.splide__arrow {
+					opacity: 0;
+				}
+				.gallery-images:hover .splide__arrow {
+					opacity: 1;
+				}
+
 			</style>
 			{# <div class="gallery-frame gallery-prev">
 				<img src="{{ prev_pic.img }}">
@@ -321,19 +329,27 @@ sotw:
 				},
 				autoplay: true,
 				start,
-				// // type   : 'loop',
-				// perPage: 3,
-				// perMove: 1,
-				// focus  : 'center',
-				// // autoWidth: true,
-				// // autoplay: true,
-				// lazyLoad: true,
-				// pagination: false,
-			}).mount();
+			});
+
+			splide.mount();
+			document.querySelector('.gallery-images').append(splide.Components.Arrows.arrows.prev);
+			document.querySelector('.gallery-images').append(splide.Components.Arrows.arrows.next);
 
 			splide.on('move', (newIndex, prevIndex) => {
 				updateImage(newIndex);
 			});
+
+			document.querySelector('.gallery-images').addEventListener('click', (e) => {
+				e.stopPropagation();
+				const center = document.querySelector('.gallery-images').clientWidth / 2;
+				if (center < e.offsetX) {
+					splide.go('+1');
+				} else {
+					splide.go('-1');
+				}
+				console.log(e);
+			});
+
 			// splide.on('moved', (newIndex, prevIndex) => {
 			// 	const el = document.querySelector('.splide__track').children.item(newIndex);
 			// 	el.classList.remove('moving');
