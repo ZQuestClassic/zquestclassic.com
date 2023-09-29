@@ -1,13 +1,20 @@
 @font-face {
-    font-family: zc8font;
-    src: url(/VCR_OSD_MONO_1.001.ttf);
+    font-family: zcfont;
+    src: url(/fonts/CrimsonText/CrimsonText-Regular.ttf);
 	font-display: swap;
+	font-weight: 400;
+}
+@font-face {
+    font-family: zcfont;
+    src: url(/fonts/CrimsonText/CrimsonText-Bold.ttf);
+	font-display: swap;
+	font-weight: 700;
 }
 
 /* Defaults */
 :root {
-	--font-family: zc8font, -apple-system, system-ui, sans-serif;
-	--font-family-monospace: zc8font, Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+	--font-family: zcfont, -apple-system, system-ui, sans-serif;
+	--font-family-monospace: zcfont, Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 }
 
 /* Theme colors */
