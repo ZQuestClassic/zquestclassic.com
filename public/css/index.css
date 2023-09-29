@@ -10,11 +10,17 @@
 	font-display: swap;
 	font-weight: 700;
 }
+@font-face {
+    font-family: zcfont-fallback;
+    size-adjust: 97.13000000000007%;
+    ascent-override: 107%;
+    src: local("Times New Roman");
+}
 
 /* Defaults */
 :root {
-	--font-family: zcfont, -apple-system, system-ui, sans-serif;
-	--font-family-monospace: zcfont, Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+	--font-family: zcfont, zcfont-fallback, -apple-system, system-ui, sans-serif;
+	--font-family-monospace: zcfont, zcfont-fallback, Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 }
 
 /* Theme colors */
