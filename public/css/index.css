@@ -1,12 +1,12 @@
 @font-face {
     font-family: zcfont;
-    src: url(/fonts/CrimsonText/CrimsonText-Regular.ttf);
+    src: url(/fonts/CrimsonText/CrimsonText-Regular-subset.woff2) format("woff2"), url(/fonts/CrimsonText/CrimsonText-Regular-subset.woff) format("woff");
 	font-display: swap;
 	font-weight: 400;
 }
 @font-face {
     font-family: zcfont;
-    src: url(/fonts/CrimsonText/CrimsonText-Bold.ttf);
+    src: url(/fonts/CrimsonText/CrimsonText-Bold-subset.woff2) format("woff2"), url(/fonts/CrimsonText/CrimsonText-Bold-subset.woff) format("woff");
 	font-display: swap;
 	font-weight: 700;
 }
