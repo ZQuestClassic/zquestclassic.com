@@ -269,7 +269,7 @@ sotw:
 			<div class="splide__track">
 				<ul class="splide__list">
 					{% for pic in sotw -%}
-						<img class="splide__slide" src="/img/thumbnails/{{ pic.img }}">
+						<img fetchpriority="low" class="splide__slide" src="/img/thumbnails/{{ pic.img }}">
 					{% endfor %}
 				</ul>
 			</div>
