@@ -1,50 +1,56 @@
 ---
 sotw:
-  - img: /img/sotw-787-matthew.png
+  - img: sotw-787-matthew.png
     author: Matthew
-    url: /
-  - img: /img/sotw-785-architect-abdiel.png
+    url: https://www.purezc.net/forums/index.php?showtopic=78273
+  - img: sotw-785-architect-abdiel.png
     author: Architect Abdiel
-    url: /
-  - img: /img/sotw-785-joel.png
+    url: https://www.purezc.net/forums/index.php?showtopic=78248
+  - img: sotw-785-joel.png
     author: Joel
-    url: /
-  - img: /img/sotw-786-architect-abdiel.png
+    url: https://www.purezc.net/forums/index.php?showtopic=78248
+  - img: sotw-786-architect-abdiel.png
     author: Architect Abdiel
-    url: /
-  - img: /img/sotw-789-joel.png
+    url: https://www.purezc.net/forums/index.php?showtopic=78260
+  - img: sotw-789-joel.png
     author: Joel
-    url: /
-  - img: /img/sotw-789-moosh.gif
+    url: https://www.purezc.net/forums/index.php?showtopic=78310
+  - img: sotw-789-moosh.gif
     author: Moosh
-    url: /
-  - img: /img/sotw-789-russ.png
+    url: https://www.purezc.net/forums/index.php?showtopic=78310
+  - img: sotw-789-russ.png
     author: Russ
-    url: /
-  - img: /img/sotw-791-joel.png
+    url: https://www.purezc.net/forums/index.php?showtopic=78310
+  - img: sotw-791-joel.png
     author: Joel
-    url: /
-  - img: /img/sotw-791-shane.png
+    url: https://www.purezc.net/forums/index.php?showtopic=78332
+  - img: sotw-791-shane.png
     author: Shane
-    url: /
-  - img: /img/sotw-792-anthus.gif
+    url: https://www.purezc.net/forums/index.php?showtopic=78332
+  - img: sotw-792-anthus.gif
     author: Anthus
-    url: /
-  - img: /img/sotw-792-architect-abdiel.png
+    url: https://www.purezc.net/forums/index.php?showtopic=78338
+  - img: sotw-792-architect-abdiel.png
     author: Architect Abdiel
-    url: /
-  - img: /img/sotw-793-architect-abdiel.png
+    url: https://www.purezc.net/forums/index.php?showtopic=78338
+  - img: sotw-793-architect-abdiel.png
     author: Architect Abdiel
-    url: /
-  - img: /img/sotw-793-joel.png
+    url: https://www.purezc.net/forums/index.php?showtopic=78373
+  - img: sotw-793-joel.png
     author: Joel
-    url: /
-  - img: /img/sotw-794-anthus.gif
+    url: https://www.purezc.net/forums/index.php?showtopic=78373
+  - img: sotw-794-anthus.gif
     author: Anthus
-    url: /
-  - img: /img/sotw-795-anthus.gif
+    url: https://www.purezc.net/forums/index.php?showtopic=78385
+  - img: sotw-795-anthus.gif
     author: Anthus
-    url: /
+    url: https://www.purezc.net/forums/index.php?showtopic=78392
+  - img: sotw-796-anthus.gif
+    author: Anthus
+    url: https://www.purezc.net/forums/index.php?showtopic=78404
+  - img: sotw-796-architect-abdiel.png
+    author: Architect Abdiel
+    url: https://www.purezc.net/forums/index.php?showtopic=78404
 ---
 
 {% extends "layouts/base.njk" %}
@@ -95,8 +101,20 @@ sotw:
 			display: flex;
 			justify-content: space-around;
 		}
-		.gallery-images img {
-			height: 60vh;
+		.gallery-images .current-image {
+			height: 70vh;
+			/* max-height: 80vh;
+			max-width: 100vw;
+			width: 100%; */
+
+			/* max-width: calc(max(40vw, 500px)); */
+			width: 100vw;
+			background-repeat: no-repeat;
+			background-size: contain;
+			/* position: absolute; */
+			transition: all 0.5s;
+			background-position: center;
+			border: none;
 		}
 		.gallery-current {
 			/* display: grid; */
@@ -205,10 +223,12 @@ sotw:
 		<div class="gallery-images">
 			<style>
 				.splide__slide {
-					opacity: 0.6;
+					/* opacity: 0.8; */
 				}
 				.splide__slide.is-active {
 					opacity: 1;
+					border: 3px solid gold !important;
+					box-sizing: border-box;
 				}
 
 				.splide {
@@ -234,8 +254,8 @@ sotw:
 
 			
 			<div class="gallery-current">
-				<img class="current-image" src="{{ sotw[0].img }}">
-				<div class="credits">by <a target="_blank" href="{{ sotw[0].url }}">{{ sotw[0].author }}</a></div>
+				<div class="current-image"></div>
+				<div class="credits"></div>
 			</div>
 
 			{# <div class="gallery-frame gallery-current">
@@ -249,9 +269,7 @@ sotw:
 			<div class="splide__track">
 				<ul class="splide__list">
 					{% for pic in sotw -%}
-						{# <li class="splide__slide"> #}
-							<img class="splide__slide" src="{{ pic.img }}">
-						{# </li> #}
+						<img class="splide__slide" src="/img/thumbnails/{{ pic.img }}">
 					{% endfor %}
 				</ul>
 			</div>
@@ -264,13 +282,25 @@ sotw:
 		</div> #}
 
 		<script>
+			function updateImage(index) {
+				// document.querySelector('.current-image').src = '/img/' + images[index].img;
+				document.querySelector('.current-image').style.backgroundImage = `url(/img/${images[index].img})`;
+				document.querySelector('.credits').innerHTML = `by <a target=_blank href="${images[index].url}">${images[index].author}</a>`;
+			}
+
 			const images = {{ sotw | json | safe }};
+			const start = Math.floor(Math.random() * images.length);
+
+			// <link rel="prefetch" href="http://davidwalsh.name/wp-content/themes/walshbook3/images/sprite.png" />
+
+			updateImage(start);
 
 			var splide = new Splide( '.splide', {
 				focus: 'center',
-				// height: '100%',
+				height: '10vh',
 				// fixedWidth  : 100,
-				fixedWidth: 200,
+				// fixedWidth: 200,
+				autoWidth: true,
 				// fixedHeight : 100,
 				gap         : 10,
 				rewind      : true,
@@ -282,6 +312,8 @@ sotw:
 					// 	fixedHeight: 44,
 					// },
 				},
+				autoplay: true,
+				start,
 				// // type   : 'loop',
 				// perPage: 3,
 				// perMove: 1,
@@ -293,8 +325,7 @@ sotw:
 			}).mount();
 
 			splide.on('move', (newIndex, prevIndex) => {
-				document.querySelector('.current-image').src = images[newIndex].img;
-				document.querySelector('.credits').innerHTML = `by <a href="${images[newIndex].url}">${images[newIndex].author}</a>`;
+				updateImage(newIndex);
 			});
 			// splide.on('moved', (newIndex, prevIndex) => {
 			// 	const el = document.querySelector('.splide__track').children.item(newIndex);
@@ -383,8 +414,13 @@ sotw:
 	</div>
 
 	<style>
-		.title {
-			font-size: 5em;
+		.title img {
+			width: 60vw;
+			max-width: 500px;
+			margin: 15px;
+		}
+		.subtitle {
+			font-size: 1.5em;
 		}
 		.section-title {
 			font-size: 2em;
@@ -412,7 +448,8 @@ sotw:
 {% endblock %}
 
 {% block content %}
-	<div class="title center">ZQuest Classic</div>
+	<div class="title center"><img src="/img/ZC_Logo.png"></div>
+	<div class="subtitle center">The Classic Adventure Game Engine</div>
 
 	<div class="section-title">
 		Play one of hundreds of games ...
