@@ -57,106 +57,13 @@ sotw:
 
 {% block header %}
 	<style>
-		.hero {
-			position: relative;
-			z-index: 1;
-			background-color: black;
-			overflow: hidden;
-			display: grid;
+		main {
+			padding: unset;
 		}
-		.hero .background-image-wrapper {
-			display: grid;
-			place-items: center;
-			width: 100vw;
-		}
-		.hero .background-image {
-			max-height: 90vh;
-			max-width: calc(max(90vw, 500px));
-			/* width: 100%; */
-			/* margin-top: 7vh; */
-			/* aspect-ratio: 3384/2240; */
-			/* position: absolute; */
-			/* opacity: 0.6; */
-			background-position: center;
-			background-repeat: no-repeat;
-			background-blend-mode: darken;
-			background-size: cover;
-			background-color: var(--transparent-cover);
-			will-change: transform;
-		}
+
 		.credits {
 			padding: 10px;
 			text-align: center;
-		}
-
-		.gallery {
-			position: relative;
-			z-index: 1;
-			background-color: black;
-			overflow: hidden;
-			/* width: 100%; */
-			width: 100vw;
-		}
-		.gallery-images {
-			display: flex;
-			justify-content: space-around;
-			cursor: pointer;
-		}
-		.gallery-images .current-image {
-			height: 70vh;
-			/* max-height: 80vh;
-			max-width: 100vw;
-			width: 100%; */
-
-			/* max-width: calc(max(40vw, 500px)); */
-			width: 100vw;
-			background-repeat: no-repeat;
-			background-size: contain;
-			/* position: absolute; */
-			transition: all 0.5s;
-			background-position: center;
-			border: none;
-
-			image-rendering: pixelated;
-		}
-		.gallery-current {
-			/* display: grid; */
-			/* place-items: center; */
-		}
-		.gallery-current img {
-			/* max-width: calc(max(40vw, 500px)); */
-			/* width: 100%; */
-		}
-
-		.gallery-frame {
-			/* width: 100px; */
-		}
-		.gallery-frame--current {
-			/* width: 100px; */
-		}
-		.gallery-frame img {
-			height: 100px;
-		}
-		.gallery-frame--current img {
-			height: 100%;
-		}
-
-		.gallery-prev, .gallery-next {
-			opacity: 0.4;
-			/* width: 50%; */
-		}
-		.gallery-thumbnails {
-			display: flex;
-			gap: 10px;
-			margin-top: 10px;
-		}
-		.gallery-thumbnails img {
-			/* width: auto; */
-			height: 100px;
-		}
-
-		main {
-			padding: unset;
 		}
 
 		.video-wrapper {
@@ -168,20 +75,6 @@ sotw:
 			max-width: calc(max(50vw, 500px));
 			aspect-ratio: 3384/2240;
 			width: 100%;
-		}
-
-		.hero-overlay {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100vw;
-			height: 100vh;
-			display: grid;
-			place-content: center;
-		}
-		.download-option {
-			padding: 10px;
-			font-size: 2em;
 		}
 
 		.features {
@@ -220,61 +113,51 @@ sotw:
 	</style>
 
 	<div class="gallery">
-		{% set prev_pic = sotw[0] %}
-		{% set first_pic = sotw[1] %}
-		{% set next_pic = sotw[2] %}
+		<style>
+			.gallery {
+				position: relative;
+				z-index: 1;
+				background-color: black;
+				overflow: hidden;
+				width: 100vw;
+			}
+			.gallery-images {
+				display: flex;
+				justify-content: space-around;
+				cursor: pointer;
+			}
+			.gallery-images .current-image {
+				height: 70vh;
+				width: 100vw;
+				background-repeat: no-repeat;
+				background-size: contain;
+				transition: all 0.5s;
+				background-position: center;
+				border: none;
+				image-rendering: pixelated;
+			}
+			.splide__slide {
+				align-self: center;
+			}
+			.splide__slide.is-active {
+				border: 3px solid gold !important;
+				box-sizing: border-box;
+			}
+			.splide__arrow {
+				opacity: 0;
+			}
+			.gallery-images:hover .splide__arrow {
+				opacity: 1;
+			}
+		</style>
+
 		<div class="gallery-images">
-			<style>
-				.splide__slide {
-					/* opacity: 0.8; */
-				}
-				.splide__slide.is-active {
-					opacity: 1;
-					border: 3px solid gold !important;
-					box-sizing: border-box;
-				}
-
-				.splide {
-					/* width: 50%; */
-					/* height: 10vh; */
-				}
-				
-				.splide__slide {
-					align-self: center;
-					/* aspect-ratio: 512/448; */
-					/* height: 100%; */
-					/* width: 200px; */
-				}
-
-				.splide__arrow {
-					opacity: 0;
-				}
-				.gallery-images:hover .splide__arrow {
-					opacity: 1;
-				}
-
-			</style>
-			{# <div class="gallery-frame gallery-prev">
-				<img src="{{ prev_pic.img }}">
-			</div> #}
-
-			{# {% for pic in sotw -%}
-				<img class="gallery-frame {{ 'gallery-frame--current' if pic == first_pic else '' }}" loading="lazy" src="{{ pic.img }}">
-			{% endfor %} #}
-
-			
 			<div class="gallery-current">
 				<div class="current-image"></div>
 				<div class="credits"></div>
 			</div>
-
-			{# <div class="gallery-frame gallery-current">
-			</div>
-
-			<div class="gallery-frame gallery-next">
-				<img src="{{ next_pic.img }}">
-			</div> #}
 		</div>
+
 		<div class="splide">
 			<div class="splide__track">
 				<ul class="splide__list">
@@ -284,12 +167,6 @@ sotw:
 				</ul>
 			</div>
 		</div>
-
-		{# <div class="gallery-thumbnails">
-			{% for pic in sotw -%}
-				<img loading="lazy" class="gallery-preview" src="{{ pic.img }}">
-			{% endfor %}
-		</div> #}
 
 		<script>
 			function updateImage(index) {
@@ -351,90 +228,6 @@ sotw:
 				}
 				console.log(e);
 			});
-
-			// splide.on('moved', (newIndex, prevIndex) => {
-			// 	const el = document.querySelector('.splide__track').children.item(newIndex);
-			// 	el.classList.remove('moving');
-			// });
-
-			// interface FlexItemInfo {
-			// 	element: Element
-
-			// 	x: number
-			// 	y: number
-			// 	width: number
-			// 	height: number
-			// 	}
-
-			// 	const container = document.querySelector('.container')
-			// 	for (const item of container.children) {
-			// 	item.addEventListener('click', () => {
-			// 		removeFlexItem(container, item)
-			// 	})
-			// 	}
-
-			// 	function removeFlexItem(container: Element, item: Element): void {
-			// 	const oldFlexItemsInfo = getFlexItemsInfo(container)
-			// 	container.removeChild(item)
-			// 	const newFlexItemsInfo = getFlexItemsInfo(container)
-
-			// 	aminateFlexItems(oldFlexItemsInfo, newFlexItemsInfo)
-			// 	}
-
-			// 	function getFlexItemsInfo(container: Element): FlexItemInfo[] {
-			// 	return Array.from(container.children).map((item) => {
-			// 		const rect = item.getBoundingClientRect()
-			// 		return {
-			// 		element: item,
-			// 		x: rect.left,
-			// 		y: rect.top,
-			// 		width: rect.right - rect.left,
-			// 		height: rect.bottom - rect.top,
-			// 		}
-			// 	})
-			// 	}
-
-			// 	function aminateFlexItems(
-			// 	oldFlexItemsInfo: FlexItemInfo[],
-			// 	newFlexItemsInfo: FlexItemInfo[]
-			// 	): void {
-			// 	for (const newFlexItemInfo of newFlexItemsInfo) {
-			// 		const oldFlexItemInfo = oldFlexItemsInfo.find(
-			// 		(itemInfo) => itemInfo.element === newFlexItemInfo.element
-			// 		)
-
-			// 		const translateX = oldFlexItemInfo.x - newFlexItemInfo.x
-			// 		const translateY = oldFlexItemInfo.y - newFlexItemInfo.y
-			// 		const scaleX = oldFlexItemInfo.width / newFlexItemInfo.width
-			// 		const scaleY = oldFlexItemInfo.height / newFlexItemInfo.height
-
-			// 		newFlexItemInfo.element.animate(
-			// 		[
-			// 			{
-			// 			transform: `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`,
-			// 			},
-			// 			{ transform: 'none' },
-			// 		],
-			// 		{
-			// 			duration: 250,
-			// 			easing: 'ease-out',
-			// 		}
-			// 		)
-			// 	}
-			// 	}
-
-			// setInterval(() => {
-			// 	let getIndex = i => i > 0 ? i % images.length : images.length - 1;
-			// 	i = getIndex(i + 1);
-
-			// 	const prevEl = document.querySelector('.gallery-prev');
-			// 	const curEl = document.querySelector('.gallery-current');
-			// 	const nextEl = document.querySelector('.gallery-next');
-
-			// 	prevEl.querySelector('img').src = images[getIndex(i - 1)].img;
-			// 	curEl.querySelector('img').src = images[i].img;
-			// 	nextEl.querySelector('img').src = images[getIndex(i + 1)].img;
-			// }, 300);
 		</script>
 	</div>
 
@@ -488,7 +281,6 @@ sotw:
 			The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. A practice not without controversy, laying out pages with meaningless filler text can be very useful when the focus is meant to be on design, not content.
 		</p>
 	</div>
-
 
 	<div class="section-title">
 		... or make your own!
