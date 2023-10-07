@@ -32,7 +32,7 @@ async function handleRelease(id) {
 
 	let assets = [];
 	for (const asset of release.assets) {
-		if (asset.name === 'web.zip')
+		if (asset.name.endsWith('web.zip'))
 			continue;
 
 		let channel;

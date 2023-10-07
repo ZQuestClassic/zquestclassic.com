@@ -11,10 +11,6 @@ assets:
     name: nightly-2023-10-07-mac.dmg
     channel: mac
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-10-07/nightly-2023-10-07-web.zip
-    name: nightly-2023-10-07-web.zip
-    channel: undefined
-
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-10-07/nightly-2023-10-07-windows-x64.zip
     name: nightly-2023-10-07-windows-x64.zip
     channel: windows-x64
