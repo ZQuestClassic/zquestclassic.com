@@ -17,8 +17,10 @@
 	}
 	.release-meta {
 		display: flex;
-		flex-direction: column;
-		gap: 5px;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+	.release-meta {
 	}
 
 	.title {
@@ -45,7 +47,6 @@
 		<div>
 			<time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
 		</div>
-		<div>Downloads: <span class="download-count"></span></div>
 		<a href="https://www.github.com/ZQuestClassic/ZQuestClassic/releases/tag/{{ tag_name }}" target="_blank">View on GitHub</a>
 	</div>
 </div>
@@ -117,6 +118,8 @@
 		</a>
 	{% endfor %}
 </div>
+
+<div>Downloads: <span class="download-count"></span></div>
 
 <script>
 	const assets = Website.sortAssets({{ assets | json | safe }});
