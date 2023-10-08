@@ -160,7 +160,7 @@ An experimental web version is available here: [play](/play/) or [create](/creat
 
 Gamepads supported.
 
-Supported browsers allow for installing the web version as a Progressive Web App (PWA), allowing you to open it quickly as a standalone
+Supported browsers allow for installing the web version as a Web App, allowing you to open it quickly as a standalone
 app from your desktop or home screen.
 
 <h2>All Releases</h2>
