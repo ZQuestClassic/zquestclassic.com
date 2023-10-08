@@ -43,22 +43,34 @@ tags:
 
 - migrate to new database manifest and use CDN [`5c823a081`](https://github.com/ZQuestClassic/ZQuestClassic/commit/5c823a081bb9e917219da938b89172bc858f71a7)
    &nbsp;
-   >* Quests and associated music are now hosted at data.zquestclassic.com,   via DigitalOcean's CDN. This should make downloading faster.
-   >* Add preloads for the manifest and the wasm  
+   >* Quests and associated music are now hosted at data.zquestclassic.com,
+   >  via DigitalOcean's CDN. This should make downloading faster.
+   >* Add preloads for the manifest and the wasm
    >
-   >
+   >&nbsp;
    >New format for quest manifest:  
    >
-   >* Supports multiple releases of a quest (creating a new release each   time the contents have changed). Currently always shows the latest,   but when a save slot is first created it locks to that version.   Later, will add a way to upgrade/alert user that there is a new   version for an existing save
-   >* Add an approval bit, so we can be granular about what quests are   published and playable in the web version  
+   >* Supports multiple releases of a quest (creating a new release each
+   >  time the contents have changed). Currently always shows the latest,
+   >  but when a save slot is first created it locks to that version.
+   >  Later, will add a way to upgrade/alert user that there is a new
+   >  version for an existing save
+   >* Add an approval bit, so we can be granular about what quests are
+   >  published and playable in the web version
    >
-   >
+   >&nbsp;
    >Drive-by bug fixes:  
    >
    >* bug preventing saving files (see 2803f8 and 98f366)
-   >* bug preventing editor from persisting qst file due to missing   filesystem sync
-   >* bug preventing copy/download browser local files from showing when   user opts out of mounting a directory
-   >* (for all platforms) bug that changes `.sav` files to use a relative   path (to the configured quest directory) for the associated qst   file, instead of an absolute path. Save files were portable before   because of some non-trivial magic when resolving a qst path, but   this makes it more explicitly portable 
+   >* bug preventing editor from persisting qst file due to missing
+   >  filesystem sync
+   >* bug preventing copy/download browser local files from showing when
+   >  user opts out of mounting a directory
+   >* (for all platforms) bug that changes `.sav` files to use a relative
+   >  path (to the configured quest directory) for the associated qst
+   >  file, instead of an absolute path. Save files were portable before
+   >  because of some non-trivial magic when resolving a qst path, but
+   >  this makes it more explicitly portable
    >
 - reduce amount of preloaded data [`24e1eee5c`](https://github.com/ZQuestClassic/ZQuestClassic/commit/24e1eee5ce6638ae7be4cb05b7f0a65459b57566)
    &nbsp;
