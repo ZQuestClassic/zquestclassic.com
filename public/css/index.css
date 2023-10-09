@@ -75,7 +75,7 @@ html {
 body {
 }
 
-main {
+.content {
 	margin: 0 auto;
 }
 
@@ -116,11 +116,11 @@ a[href]:active {
 	color: var(--text-color-link-active);
 }
 
-main {
+.content {
 	padding: 1rem;
 	max-width: max(60vw, 800px);
 }
-main.wide {
+.content.wide {
 	max-width: unset;
 }
 
