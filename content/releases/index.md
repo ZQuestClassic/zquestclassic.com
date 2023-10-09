@@ -156,7 +156,7 @@ if (!channel) {
 
 <h2>Web Version (Experimental)</h2>
 
-An experimental web version is available here: [play](/play/) or [create](/create/).
+An experimental web version is available here: [play](https://web.zquestclassic.com/play/) or [create](https://web.zquestclassic.com/create/).
 
 Gamepads supported.
 
