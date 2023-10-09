@@ -1,6 +1,6 @@
 ---
 title: 2.55 Alpha 119
-description: 
+description: The one with subscreen scripts and an autocombo drawing mode.
 date: 2023-10-08T21:59:15Z
 assets: 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55-alpha-119/2.55-alpha-119-linux.tar.gz
@@ -24,6 +24,7 @@ tag_name: 2.55-alpha-119
 tags:
   - releases
 ---
+
 
 # Features
 
