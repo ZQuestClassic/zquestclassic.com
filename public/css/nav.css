@@ -1,0 +1,52 @@
+.nav-wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.toc {
+    top: 0;
+    position: sticky;
+    font-size: 0.9em;
+    align-self: baseline;
+    padding: 5px 20px;
+    overflow: auto;
+    height: 100vh;
+}
+@media only screen and (max-width: 600px) {
+    .toc {
+        display: none;
+    }
+}
+
+.toc ul, .toc li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.toc ul ul {
+    padding-left: 2em;
+}
+.toc li a {
+    display: inline-block;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.toc li a:visited {
+    color: var(--text-color);
+}
+.toc li.visible > a {
+    color: hsl(65, 80%, 42%);
+    transform: translate(5px);
+}
+.toc-marker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+.toc-marker path {
+    transition: all 0.3s ease;
+}
