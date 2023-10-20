@@ -26,7 +26,7 @@ Soon after the 2.55 release, we will release 3.0. This first release won't be mu
 
 * New icons, a logo, and even a title song made just for ZQuest Classic
 * We'll be dropping the classic quests from the distribution, and including some more quests made by the community
-* A separate nightly release channel to start a public beta for the Z3-scrolling engine rewrite. It's a bit too risky to merge this to the main branch just yet, but it's time to start getting feedback from the community on this big change to the engine
+* A separate nightly release channel to start a public beta for the Z3-scrolling engine rewrite. It's a bit too risky to merge this to the main branch just yet, but it's time to start getting feedback from the community on this big change
 
 ## What cool stuff to expect
 
@@ -42,7 +42,9 @@ The aspect of ZC with the least amount of automated testing is the editor. To im
 
 ### More languages for scripting
 
-ZScript has taken ZC far, but we can't reasonbly match the ergonomics and capabilities of real programming languages. So let's support those as well! It's early days, but in experimentation is support for compiling real languages - like Rust, Go, C#, C++, ... (anything that [can compile to WebAssembly](https://github.com/appcypher/awesome-wasm-langs#contents)). In addition using languages some may already be familiar with, this opens up the entire world of software libraries for inclusion in your quest. More on this... much later.
+ZScript has taken ZC far, but we can't reasonbly match the ergonomics and capabilities of real programming languages. So let's support those as well! It's early days, but in experimentation is support for compiling real languages - like Rust, Go, C#, C++, ... (anything that [can compile to WebAssembly](https://github.com/appcypher/awesome-wasm-langs#contents)). In addition to using languages some may already be familiar with, this opens up the entire world of software libraries for inclusion in your quest.
+
+More on this... much later.
 
 ### More GUI rewrites
 
