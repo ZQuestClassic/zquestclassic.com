@@ -64,13 +64,7 @@
 		</svg>
 	</nav>
 
-	<div>
-		<div class="title">{{ title }}</div>
-
-		{%- if description %}
-			<h2>{{ description }}</h2>
-		{%- endif %}
-	
+	{# <div> #}
 		<style>
 			.assets {
 				display: flex;
@@ -107,54 +101,62 @@
 			}
 		</style>
 	
-		<div class="assets">
-			{% for asset in assets %}
-				<a class="download-asset" alt="{{ asset.channel }}" data-channel="{{ asset.channel }}" href="{{ asset.name }}">
-					{% if 'windows' in asset.channel %}
-						<img src="/img/windows.svg">
-					{% else %}
-						<img src="/img/{{ asset.channel }}.svg">
-					{% endif %}
-					<div class="label">
-						{% if asset.channel == 'windows-x64' %}
-							<div>Windows</div>
-							<div>64-bit</div>
-						{% elif asset.channel == 'windows-win32' %}
-							<div>Windows</div>
-							<div>32-bit</div>
-						{% else %}
-							{{ asset.channel | capitalize }}
-						{% endif %}
-					</div>
-				</a>
-			{% endfor %}
-		</div>
-	
-		<div>Downloads: <span class="download-count"></span></div>
-	
-		<script>
-			const assets = Website.sortAssets({{ assets | json | safe }});
-			const channel = Website.getChannel();
-			let order = 0;
-			for (const asset of assets) {
-				const el = document.querySelector(`[data-channel="${asset.channel}"]`);
-				el.style.order = order++;
-				if (asset.channel === channel) el.classList.add('selected');
-			}
-	
-			(async () => {
-				const json = await Website.getReleaseInfo('{{ tag_name }}');
-				let downloads = 0;
-				for (const asset of json.assets) downloads += asset.download_count;
-				document.querySelector('.download-count').textContent = downloads;
-			})();
-		</script>
+		
 	
 	
 		<div class="content">
+			<div class="title">{{ title }}</div>
+
+			{%- if description %}
+				<h2 data-exclude-nav>{{ description }}</h2>
+			{%- endif %}
+			
+			<div class="assets">
+				{% for asset in assets %}
+					<a class="download-asset" alt="{{ asset.channel }}" data-channel="{{ asset.channel }}" href="{{ asset.name }}">
+						{% if 'windows' in asset.channel %}
+							<img src="/img/windows.svg">
+						{% else %}
+							<img src="/img/{{ asset.channel }}.svg">
+						{% endif %}
+						<div class="label">
+							{% if asset.channel == 'windows-x64' %}
+								<div>Windows</div>
+								<div>64-bit</div>
+							{% elif asset.channel == 'windows-win32' %}
+								<div>Windows</div>
+								<div>32-bit</div>
+							{% else %}
+								{{ asset.channel | capitalize }}
+							{% endif %}
+						</div>
+					</a>
+				{% endfor %}
+			</div>
+		
+			<div>Downloads: <span class="download-count"></span></div>
+		
+			<script>
+				const assets = Website.sortAssets({{ assets | json | safe }});
+				const channel = Website.getChannel();
+				let order = 0;
+				for (const asset of assets) {
+					const el = document.querySelector(`[data-channel="${asset.channel}"]`);
+					el.style.order = order++;
+					if (asset.channel === channel) el.classList.add('selected');
+				}
+		
+				(async () => {
+					const json = await Website.getReleaseInfo('{{ tag_name }}');
+					let downloads = 0;
+					for (const asset of json.assets) downloads += asset.download_count;
+					document.querySelector('.download-count').textContent = downloads;
+				})();
+			</script>
+
 			{{ content | safe }}
 		</div>
-	</div>
+	{# </div> #}
 </div>
 
 {% endblock %}

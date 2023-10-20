@@ -117,8 +117,8 @@ a[href]:active {
 }
 
 .content {
-	padding: 1rem;
-	max-width: max(60vw, 700px);
+	padding: 10px;
+    width: 80%;
 }
 .content.wide {
 	max-width: unset;

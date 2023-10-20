@@ -33,11 +33,14 @@ function makeId(text) {
 
 function handleNode(node, parentEl, prefix = []) {
 	const el = document.createElement('li');
-	const newPrefix = [...prefix, makeId(node.text || '')];
-	if (node.text) {
+	let label = node.text || '';
+	if (label === 'Visual Studio Code Extension') label = 'VS Code Extension';
+	if (label === 'ZScript Standard Library (std.zh)') label = 'std.zh';
+	const newPrefix = [...prefix, makeId(label)];
+	if (label) {
 		const id = newPrefix.filter(Boolean).join('-');
 		const aEl = document.createElement('a');
-		aEl.textContent = node.text;
+		aEl.textContent = label;
 		aEl.href = `#${id}`;
 		node.el.id = id;
 		el.append(aEl);
@@ -52,9 +55,6 @@ function handleNode(node, parentEl, prefix = []) {
 	}
 }
 
-
-
-
 window.onload = function () {
 	if (location.pathname === '/releases/') {
 		return;
@@ -65,7 +65,8 @@ window.onload = function () {
 	if (location.pathname === '/docs/2.55/') {
 		hids = 'h2,h3,h4';
 	}
-	const flat = [...contentEl.querySelectorAll(hids)].map(el => {
+	const h1Els = [...contentEl.querySelectorAll(hids)].filter(el => !el.hasAttribute('data-exclude-nav'));
+	const flat = h1Els.map(el => {
 		return { el, text: el.textContent, rank: Number(el.tagName.substring(1)) };
 	});
 	if (flat.length <= 1) return;
