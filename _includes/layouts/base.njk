@@ -25,8 +25,6 @@
 		4. Learn more: https://github.com/11ty/eleventy-plugin-bundle
 		#}
 
-		{#- Add an arbitrary string to the bundle #}
-		{%- css %}* { box-sizing: border-box; }{% endcss %}
 		{#- Add the contents of a file to the bundle #}
 		{%- css %}{% include "public/css/index.css" %}{% endcss %}
 		{%- css %}{% include "public/css/nav.css" %}{% endcss %}
@@ -74,7 +72,7 @@
 			{% endblock %}
 		</header>
 
-		<main class="{% if page.url == "/" %}wide{% endif %}">
+		<main class="{% if page.url == "/releases/" or page.url == "/docs/" %}narrow{% endif %}">
 			{% block content %}
 				<div>
 					<div class="nav-wrapper">

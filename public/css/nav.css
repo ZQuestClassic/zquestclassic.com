@@ -1,7 +1,8 @@
 .nav-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     position: relative;
+    width: 100vw;
 }
 
 .toc {
@@ -9,9 +10,13 @@
     position: sticky;
     font-size: 0.9em;
     align-self: baseline;
-    padding: 5px 20px 5px 5px;
+    margin: 5px 20px 5px 5px;
     overflow: auto;
     height: 100vh;
+    width: 20vw;
+}
+main.narrow .toc {
+    width: unset;
 }
 @media only screen and (max-width: 600px) {
     .toc {
