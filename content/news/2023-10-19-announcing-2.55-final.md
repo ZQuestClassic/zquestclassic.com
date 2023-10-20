@@ -48,9 +48,7 @@ More on this... much later.
 
 ### More GUI rewrites
 
-Some large components of the editor GUI still use the old GUI code. Some big ones we plan to recreate in the better GUI:
-
-* Enemy editor
+Some large components of the editor GUI still use the old GUI code. Some big ones we plan to recreate in the better GUI include the enemy editor and the screen warps dialog.
 
 ### Slopes v2
 
