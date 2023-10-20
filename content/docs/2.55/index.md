@@ -3,13 +3,15 @@ layout: layouts/base.njk
 ---
 
 # ZQuest Classic: 2.55 Development Summary
-ZQuest Classic has grown by a ***huge*** amount between 2.50.2/2.53 and 2.55 versions. There are many new features, for gameplay, editing, ui, ease-of-use, scripting, and really every possible part of the engine you could imagine. Here, I'm going to go through each feature in some amount of depth to show what's new.
 
+ZQuest Classic has grown by a ***huge*** amount between 2.50.2/2.53 and 2.55 versions. There are many new features, for gameplay, editing, UI, ease-of-use, scripting, and really every possible part of the engine you could imagine. We also now fully report Mac and Linux again, and newly support playing in a [browser](https://web.zquestclassic.com).
+
+This page will detail all the new features added in 2.55. Unmentioned is all the bugs that have been fixed. You can check out the [2.55 alpha release notes](/releases/) for more detailed information.
 
 ## Editor
 
 ### GUI Refactor
-Previously, ZQ had 'Small Mode' and 'Large Mode'. This divide could no longer be feasibly supported, mainly because small mode's base resolution was simply too small to fit the GUI for many of the new features, requiring us to make entirely separate GUIs for small mode, which was simply too much work to keep up. However, numerous users took issue with this from an accessibility standpoint, as the large mode GUI had a lot of spots where text was too small to read for some, among other issues. As such, BOTH of these modes have recieved a giant overhaul, to create a brand new and more customizable GUI.
+Previously, the editor had 'Small Mode' and 'Large Mode'. This divide could no longer be feasibly supported, mainly because small mode's base resolution was simply too small to fit the GUI for many of the new features, requiring us to make entirely separate GUIs for small mode, which was simply too much work to keep up. However, numerous users took issue with this from an accessibility standpoint, as the large mode GUI had a lot of spots where text was too small to read for some, among other issues. As such, BOTH of these modes have recieved a giant overhaul, to create a brand new and more customizable GUI.
 
 <img src="compact.png" alt="Screenshot of the editor, set to compact mode" width="50%" height="50%"/><img src="expand.png" alt="Screenshot of the editor, set to expanded mode" width="50%" height="50%"/>
 
@@ -25,7 +27,9 @@ Pictured above on the left is compact mode, and on the right is expanded mode. T
 * In `Etc->Options`, you can change what fonts are used by various portions of the program. The default font is larger than it used to be, to improve readability. NOTE: Some older dialog windows will have overlapping text as a result of this, such sections need to be upgraded eventually to be able to handle variable font size, but just haven't been gotten to yet.
 
 ### Quest Package Export
-Via `File->Export->Package`, you can now create a 'package', containing your own custom quest `.exe` and a folder containing everything it needs to run. Running this `.exe` can either run 'standalone' mode for your quest, or the new 'only' mode. 'Only' mode allows you to select save files as normal, except *only your quest* can be played, automatically skipping quest file selection.
+Via `File->Export->Package`, you can now create a 'package', a folder containing a copy of your quest, everything needed to run it, and a executable to quickly launch your quest. This package can be customized in a number of ways, including by providing your own executable icon. See the [Quest Packaging docs](https://github.com/ZQuestClassic/ZQuestClassic/blob/main/resources/docs/packaging_quests.md) for more.
+
+This is currently a Windows-only feature.
 
 ### Test Mode
 Via `Quest->Test`, you can launch your quest in the player in a 'test' mode. This will spawn you on the screen currently being edited (the editor doesn't know what dmap to use, though it attempts to automatically figure it out for you. If it's wrong you may need to select the dmap manually). In this test launch, there is no save select screen- any action that would send you to the save screen just immediately re-loads the same test file. While in test mode, cheats are automatically enabled to maximum. Additionally, test mode can use a separate Init Data, to spawn with specific items. This mode is designed to make testing specific sections of your quest much easier.
@@ -74,6 +78,11 @@ The entire subscreen editor and backend functionality of subscreens has been rew
 
 
 ## Scripting
+
+### Visual Studio Code Extension
+
+We published [an extension](https://marketplace.visualstudio.com/items?itemName=cjamcl.zquest-lsp) for the popular text editor VS Code. With this, you will get warning / error underlines for your ZScript scripts right in the text editor, along with some nice colored syntax highlighting.
+
 ### Script Types
 * `Global` scripts have some new slots:
   * `onContinue` was renamed to `onSaveLoad` to more accurately reflect when it runs

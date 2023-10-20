@@ -50,8 +50,18 @@ More on this... much later.
 
 ### More GUI rewrites
 
-Some large components of the editor GUI still use the old GUI code. Some big ones we plan to recreate in the better GUI include the enemy editor and the screen warps dialog.
+Some large components of the editor GUI still use the old GUI code. Some big ones we plan to recreate in the better GUI include the enemy editor and the screen warps dialog
 
-### Slopes v2
+### Enemy improvements
 
-Slopes came out a while ago, but Deedee plans to make them way better.
+Along with redesigning the enemy editor, we'll be looking at all the enemies and how additional customization can be provided for each. Please send Deedee best wishes in this endeavor.
+
+### Slope polish
+
+Slopes are a pretty major addition, but there are flaws; the biggest being clipping. Deedee plans to take a look at them to give them a much-needed polish touchup.
+
+### JIT-compiled ZScript / ZASM
+
+Normally, ZASM (the result of compiling ZScript) is interpreted by the engine one instruction at a time in a virtual machine. This introduces a lot of overhead for things computers should be really fast at (like math). JIT (Just-In-Time) compilation is when an interpreted bytecode is compiled to machine instructions that your CPU can execute directly. There is already an experimental JIT compiler for ZASM in 2.55, but it is off by default. It offers [huge speed ups of 5-20x](https://github.com/ZQuestClassic/ZQuestClassic/blob/main/docs/jit.md).
+
+It hasn't been enabled by default yet because it currently requires compiling all scripts up front, or pausing the game when an uncompiled script is needed, which can introduce significant delays. With a bit more work, the JIT compiler will be made to compile in the background and swap out the ZASM interpreter when done compiling a script. Once the delays are removed, this will be enabled by default, and all scripts will become much faster.
