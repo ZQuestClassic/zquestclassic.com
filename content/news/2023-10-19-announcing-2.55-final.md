@@ -30,6 +30,8 @@ Soon after the 2.55 release, we will release 3.0. This first release won't be mu
 
 ## What cool stuff to expect
 
+Here are some big projects that we're hoping to work on over the next year.
+
 ### Z3 scrolling
 
 Over a year in development, Z3-scrolling adds Regions to the DMap editor, allowing quest designers to stitch together multiple screens for the player to traverse as a single area in which the camera follows them around - just like A Link To The Past! Expect more information when the beta is released alongside 3.0. For now, enjoy [this Z3 video Moosh made](https://www.youtube.com/watch?v=KaoIiORMurk&ab_channel=Moosh).
@@ -37,3 +39,17 @@ Over a year in development, Z3-scrolling adds Regions to the DMap editor, allowi
 ### Editor automation
 
 The aspect of ZC with the least amount of automated testing is the editor. To improve stablity here, in the works is a way to interface with the editor from an external process, such as a Python script. While this is being made with writing automated tests in mind, a possiblity may be providing power users with the capablity to create their own editor plugins. If you're interested in this possiblity, please share what sort of things you'd like to be possible with this feature.
+
+### More languages for scripting
+
+ZScript has taken ZC far, but we can't reasonbly match the ergonomics and capabilities of real programming languages. So let's support those as well! It's early days, but in experimentation is support for compiling real languages - like Rust, Go, C#, C++, ... (anything that [can compile to WebAssembly](https://stackoverflow.com/a/47483989/2788187)). In addition to being a language some may find more simple to write, this opens up the entire world of software libraries for inclusion in your quest. More on this... much later.
+
+### More GUI rewrites
+
+Some large components of the editor GUI still use the old GUI code. Some big ones we plan to recreate in the better GUI:
+
+* Enemy editor
+
+### Slopes v2
+
+Slopes came out a while ago, but Deedee plans to make them way better.
