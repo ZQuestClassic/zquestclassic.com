@@ -42,7 +42,7 @@ The aspect of ZC with the least amount of automated testing is the editor. To im
 
 ### More languages for scripting
 
-ZScript has taken ZC far, but we can't reasonbly match the ergonomics and capabilities of real programming languages. So let's support those as well! It's early days, but in experimentation is support for compiling real languages - like Rust, Go, C#, C++, ... (anything that [can compile to WebAssembly](https://stackoverflow.com/a/47483989/2788187)). In addition to being a language some may find more simple to write, this opens up the entire world of software libraries for inclusion in your quest. More on this... much later.
+ZScript has taken ZC far, but we can't reasonbly match the ergonomics and capabilities of real programming languages. So let's support those as well! It's early days, but in experimentation is support for compiling real languages - like Rust, Go, C#, C++, ... (anything that [can compile to WebAssembly](https://github.com/appcypher/awesome-wasm-langs#contents)). In addition using languages some may already be familiar with, this opens up the entire world of software libraries for inclusion in your quest. More on this... much later.
 
 ### More GUI rewrites
 
