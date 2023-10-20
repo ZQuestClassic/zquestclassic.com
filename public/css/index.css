@@ -118,7 +118,7 @@ a[href]:active {
 
 .content {
 	padding: 10px;
-    width: 80vw;
+    width: 60vw;
 }
 main.narrow .content {
 	max-width: max(60vw, 700px);

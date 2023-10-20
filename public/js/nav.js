@@ -56,13 +56,16 @@ function handleNode(node, parentEl, prefix = []) {
 }
 
 window.onload = function () {
+	if (document.querySelector('main').classList.contains('narrow')) {
+		return;
+	}
 	if (location.pathname === '/releases/') {
 		return;
 	}
 
 	const contentEl = document.body.querySelector('.content');
 	let hids = 'h1,h2,h3,h4';
-	if (location.pathname === '/docs/2.55/') {
+	if (location.pathname === '/docs/2.55/' || location.pathname.startsWith('/news/')) {
 		hids = 'h2,h3,h4';
 	}
 	const h1Els = [...contentEl.querySelectorAll(hids)].filter(el => !el.hasAttribute('data-exclude-nav'));

@@ -57,7 +57,9 @@
 					<span>The Classic Adventure Game Engine</span>
 				</div>
 
-				<div style="flex-grow: 1; font-size: 1em">🚧⚔️ Under Construction ⚔️🚧</div>
+				{% if page.url == "/" %}
+					<div style="flex-grow: 1; font-size: 1em">🚧⚔️ Under Construction ⚔️🚧</div>
+				{% endif %}
 
 				<nav class="nav">
 					<a class="nav-item" href="/releases/"{% if '/releases' == page.url %} aria-current="page"{% endif %}>Get ZC!</a>
@@ -72,7 +74,7 @@
 			{% endblock %}
 		</header>
 
-		<main class="{% if page.url == "/releases/" or page.url == "/docs/" %}narrow{% endif %}">
+		<main class="{% if page.url == "/releases/" or page.url == "/docs/" or page.url == "/news/" %}narrow{% endif %} {% if page.url.startsWith("/news/") %}news{% endif %}">
 			{% block content %}
 				<div>
 					<div class="nav-wrapper">
