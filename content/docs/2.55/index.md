@@ -7,7 +7,8 @@ ZQuest Classic has grown by a ***huge*** amount between 2.50.2/2.53 and 2.55 ver
 
 
 ## Editor
-### GUI changes
+
+### GUI Refactor
 Previously, ZQ had 'Small Mode' and 'Large Mode'. This divide could no longer be feasibly supported, mainly because small mode's base resolution was simply too small to fit the GUI for many of the new features, requiring us to make entirely separate GUIs for small mode, which was simply too much work to keep up. However, numerous users took issue with this from an accessibility standpoint, as the large mode GUI had a lot of spots where text was too small to read for some, among other issues. As such, BOTH of these modes have recieved a giant overhaul, to create a brand new and more customizable GUI.
 
 <img src="compact.png" alt="Screenshot of the editor, set to compact mode" width="50%" height="50%"/><img src="expand.png" alt="Screenshot of the editor, set to expanded mode" width="50%" height="50%"/>
@@ -22,6 +23,12 @@ Pictured above on the left is compact mode, and on the right is expanded mode. T
 * The `SWP` button, *only available in Compact mode*, changes the bottom pane to work more similarly to the old small-mode pane, only displaying one set of: `4 warp return squares`, `item + stairs + green square + flags`, or `screen's enemies` at a time, with up/down arrows to cycle between these 3 panels. (This allows the text here to be larger and more readable, if you find it too small to read otherwise).
 * By right-clicking on the minimap, you can *zoom in* on it, making it much larger. While it is zoomed, any click that is not on the minimap will un-zoom, as will pressing `Esc`, or right-clicking again.<br/><img src="compact_zoomed_minimap.png" alt="Screenshot of the editor, with the minmap zoomed in, in compact mode." width="50%" height="50%"/>
 * In `Etc->Options`, you can change what fonts are used by various portions of the program. The default font is larger than it used to be, to improve readability. NOTE: Some older dialog windows will have overlapping text as a result of this, such sections need to be upgraded eventually to be able to handle variable font size, but just haven't been gotten to yet.
+
+### Quest Package Export
+Via `File->Export->Package`, you can now create a 'package', containing your own custom quest `.exe` and a folder containing everything it needs to run. Running this `.exe` can either run 'standalone' mode for your quest, or the new 'only' mode. 'Only' mode allows you to select save files as normal, except *only your quest* can be played, automatically skipping quest file selection.
+
+### Test Mode
+Via `Quest->Test`, you can launch your quest in the player in a 'test' mode. This will spawn you on the screen currently being edited (the editor doesn't know what dmap to use, though it attempts to automatically figure it out for you. If it's wrong you may need to select the dmap manually). In this test launch, there is no save select screen- any action that would send you to the save screen just immediately re-loads the same test file. While in test mode, cheats are automatically enabled to maximum. Additionally, test mode can use a separate Init Data, to spawn with specific items. This mode is designed to make testing specific sections of your quest much easier.
 
 ### Drawing Modes
 Previously, you had to cycle through drawing modes one-by-one using the draw mode button in the upper-right. But now, you can simply right-click on the draw mode button to pop up a selector menu.<br/><img src="drawmode_rclick.png" alt="Screenshot of the drawing mode dropdown" width="50%" height="50%"/>
@@ -54,15 +61,67 @@ The tile editor has been revamped with some new features and options. You can no
   * ...and see color name of hovered color
 * Edit palettes directly from the tile editor
 
-## Player
+### New Subscreen Editor
+The entire subscreen editor and backend functionality of subscreens has been rewritten. I won't go over it in too extreme a depth here, but will give a quick overview of what's new.
+* Separated types - Active and Passive subscreens used to be shown in a single list, and you could convert subscreens between these two types. This is no longer the case- each type has a separate list now.
+* Overlay subscreens- a brand new third type of subscreen. Overlay subscreens are 256x224 pixels large, covering the entire visible screen area. These draw *over* the passive (and active) subscreens, useful for drawing some elements over the actual play area (like for example a key counter in the lower-left of the screen or etc)
+* Better mouse editing - click and drag widgets around the subscreen, finally! (Or swap to how the mouse used to work with a setting, if you'd like)
+* Pages - Active subscreens can have multiple separate pages now, allowing much more to be on your subscreens
+* Selector freedom - any widget, not just items, can be set to be selectable by the selector.
+* Scripts - The new `subscreendata` script type runs while the active subscreen it is assigned to is open. Additionally, any widget that is visitable by the selector can be given a [`generic` script](#generic-scripts) to run in `Frozen` mode when a specified button (from A,B,L,R,Ex1-Ex4) is pressed while it is selected.
+* 4 Item Buttons - Quest Rules allow new `X` and `Y` item buttons (which use `Ex1` and `Ex2` respectively) in-engine!
 
-## Quest Packaging
-Via `File->Export->Package`, you can now create a 'package', containing your own custom quest `.exe` and a folder containing everything it needs to run. Running this `.exe` can either run 'standalone' mode for your quest, or the new 'only' mode. 'Only' mode allows you to select save files as normal, except *only your quest* can be played, automatically skipping quest file selection.
 
-## Test Mode
-Via `Quest->Test`, you can launch your quest in the player in a 'test' mode. This will spawn you on the screen currently being edited (the editor doesn't know what dmap to use, though it attempts to automatically figure it out for you. If it's wrong you may need to select the dmap manually). In this test launch, there is no save select screen- any action that would send you to the save screen just immediately re-loads the same test file. While in test mode, cheats are automatically enabled to maximum. Additionally, test mode can use a separate Init Data, to spawn with specific items. This mode is designed to make testing specific sections of your quest much easier.
 
-## New Quest Features
+## Scripting
+### Script Types
+* `Global` scripts have some new slots:
+  * `onContinue` was renamed to `onSaveLoad` to more accurately reflect when it runs
+  * `onLaunch` runs after both `Init` and `onSaveLoad`, and can run for multiple frames. The opening wipe will not play until the script exits, making it perfect for things like scripted title screens!
+  * `onContGame` runs when `F6->Continue` is used
+  * `onF6Menu` allows a custom-scripted replacement for the F6 menu
+  * `onSave` runs when the game is saved by any method
+* `Hero` scripts have specific slots similar to global scripts.
+  * `Init` runs when the player object is reset (such as when the game is launched, or after respawning after death). Runs for only 1 frame.
+  * `Active` works pretty much the same as the `Global Active`
+  * `onDeath` runs when the player dies, allowing custom death continue/save/etc menus
+  * `onWin` runs when the player wins the quest using the `Win Game` flag, before the engine credits sequence
+* `ffc` scripts haven't changed much, though now support `Waitdraw()` (as do most script types)
+* `dmapdata` scripts are assigned to each dmap, and can be assigned to 4 different slots
+  * `Active` slot runs similarly to the `Global Active`, but only on the set dmap
+  * `Active Subscreen` slot runs ***INSTEAD*** of the engine subscreen when `Start` is pressed
+  * `Passive Subscreen` slot runs similarly to the `Global Active`, but also has a couple special cases such as running while a `Potion` item is refilling your health
+  * `Map` slot runs ***INSTEAD*** of the engine map when `Map` is pressed
+* `screendata` scripts are set on each screen, and can `Run on Screen Init` similarly to ffc scripts
+* `npc` scripts are set in the enemy editor for each enemy (running on the enemy itself)
+* `eweapon` scripts are set in the enemy editor for each enemy (running on each weapon the enemy fires)
+* `lweapon` scripts are set in the item editor for each item (running on each weapon the item fires)
+* `itemsprite` scripts are set in the item editor for each item (running on the item itself when the item is onscreen)
+* `itemdata` scripts were renamed from `item` scripts (to differentiate them from `itemsprite` scripts)
+* `combodata` scripts are set in the combo editor for each combo
+* [`generic` scripts](#generic-scripts) are extra-special and can do many fancy things
+* `subscreendata` scripts are set in the subscreen editor for each Active Subscreen and run while it is open
+### Generic Scripts
+Generic scripts are designed to allow several things that other script types can't handle. There are overall 3 different ways that they can be used.
+#### Frozen Mode
+Generic scripts can run in `Frozen` mode when launched in several ways-
+* via script command `genericdata->RunFrozen()`
+* via combo `Triggers` tab
+* via String Control Code
+* via button press on a configured active subscreen widget
+
+When a `Frozen` mode script runs, everything in the entire engine pauses completely except for the one script until it exits. This allows pop-up menus that freeze everything for you.
+#### Timed Active
+Each generic script can be set to run similarly to the `Global Active`, either by having `Run from Start` checked in `Init Data` for the script slot, or `genericdata->Running` being set to `true` via script for the slot.
+
+By using `Waitframe()` and/or the special command `WaitTo()`, generic scripts run this way can wait to many specific timings. This is a *replacement* for the standard `Waitdraw()` in this script type.
+#### Event Active
+Each generic script can be set to run similarly to the `Global Active`, either by having `Run from Start` checked in `Init Data` for the script slot, or `genericdata->Running` being set to `true` via script for the slot.
+
+By using the special command `WaitEvent()`, the script will wait for a specific game event to occur (from a list that you can either set in `Init Data` or via `genericdata->EventListen[]`). Using the array `Game->EventData[]`, these scripts can read details about the event, and even change them. For example, a script that listens for the `Hero Hit` event will run when the player gets hit by something- it can read what was going to hit them, and how much damage it was going to do... and it can also *change* how much damage will be dealt, or even *cancel the hit entirely*. This allows for some quite powerful scripts that would otherwise not be possible.
+
+
+## Quest Features
 There are plenty of new features that can be used in your quests. Some used to be popularly scripted, but are now in engine; others are brand-new ideas that were added. Altogether the focus when adding new features has been to give questmakers all the options we possibly can. This does have the effect of some systems being more difficult to learn, though in most cases we try to aim for "easy to use, difficult to master".
 
 Features below are not listed in any particular order, though I will attempt to group similar features together.
@@ -242,61 +301,3 @@ Multiple quest rules affect new push block features, of which there are several.
   * You can set a "Prompt Combo" which will display at a given x,y offset from the player (ex. above the player's head) when they are able to interact with it. For locked chests/blocks, you can also set a secondary combo to display *instead* when you are unable to unlock them.
 * Locked chests/blocks can be given various lock settings, instead of just "1 key unlocks it"
 * Locked chests/blocks can be given a message string to display when the player tries and fails to unlock it (ex. "You do not have a Small Key!")
-
-## New Subscreen Editor
-The entire subscreen editor and backend functionality of subscreens has been rewritten. I won't go over it in too extreme a depth here, but will give a quick overview of what's new.
-* Separated types - Active and Passive subscreens used to be shown in a single list, and you could convert subscreens between these two types. This is no longer the case- each type has a separate list now.
-* Overlay subscreens- a brand new third type of subscreen. Overlay subscreens are 256x224 pixels large, covering the entire visible screen area. These draw *over* the passive (and active) subscreens, useful for drawing some elements over the actual play area (like for example a key counter in the lower-left of the screen or etc)
-* Better mouse editing - click and drag widgets around the subscreen, finally! (Or swap to how the mouse used to work with a setting, if you'd like)
-* Pages - Active subscreens can have multiple separate pages now, allowing much more to be on your subscreens
-* Selector freedom - any widget, not just items, can be set to be selectable by the selector.
-* Scripts - The new `subscreendata` script type runs while the active subscreen it is assigned to is open. Additionally, any widget that is visitable by the selector can be given a [`generic` script](#generic-scripts) to run in `Frozen` mode when a specified button (from A,B,L,R,Ex1-Ex4) is pressed while it is selected.
-* 4 Item Buttons - Quest Rules allow new `X` and `Y` item buttons (which use `Ex1` and `Ex2` respectively) in-engine!
-
-## Scripting
-### Script Types
-* `Global` scripts have some new slots:
-  * `onContinue` was renamed to `onSaveLoad` to more accurately reflect when it runs
-  * `onLaunch` runs after both `Init` and `onSaveLoad`, and can run for multiple frames. The opening wipe will not play until the script exits, making it perfect for things like scripted title screens!
-  * `onContGame` runs when `F6->Continue` is used
-  * `onF6Menu` allows a custom-scripted replacement for the F6 menu
-  * `onSave` runs when the game is saved by any method
-* `Hero` scripts have specific slots similar to global scripts.
-  * `Init` runs when the player object is reset (such as when the game is launched, or after respawning after death). Runs for only 1 frame.
-  * `Active` works pretty much the same as the `Global Active`
-  * `onDeath` runs when the player dies, allowing custom death continue/save/etc menus
-  * `onWin` runs when the player wins the quest using the `Win Game` flag, before the engine credits sequence
-* `ffc` scripts haven't changed much, though now support `Waitdraw()` (as do most script types)
-* `dmapdata` scripts are assigned to each dmap, and can be assigned to 4 different slots
-  * `Active` slot runs similarly to the `Global Active`, but only on the set dmap
-  * `Active Subscreen` slot runs ***INSTEAD*** of the engine subscreen when `Start` is pressed
-  * `Passive Subscreen` slot runs similarly to the `Global Active`, but also has a couple special cases such as running while a `Potion` item is refilling your health
-  * `Map` slot runs ***INSTEAD*** of the engine map when `Map` is pressed
-* `screendata` scripts are set on each screen, and can `Run on Screen Init` similarly to ffc scripts
-* `npc` scripts are set in the enemy editor for each enemy (running on the enemy itself)
-* `eweapon` scripts are set in the enemy editor for each enemy (running on each weapon the enemy fires)
-* `lweapon` scripts are set in the item editor for each item (running on each weapon the item fires)
-* `itemsprite` scripts are set in the item editor for each item (running on the item itself when the item is onscreen)
-* `itemdata` scripts were renamed from `item` scripts (to differentiate them from `itemsprite` scripts)
-* `combodata` scripts are set in the combo editor for each combo
-* [`generic` scripts](#generic-scripts) are extra-special and can do many fancy things
-* `subscreendata` scripts are set in the subscreen editor for each Active Subscreen and run while it is open
-### Generic Scripts
-Generic scripts are designed to allow several things that other script types can't handle. There are overall 3 different ways that they can be used.
-#### Frozen Mode
-Generic scripts can run in `Frozen` mode when launched in several ways-
-* via script command `genericdata->RunFrozen()`
-* via combo `Triggers` tab
-* via String Control Code
-* via button press on a configured active subscreen widget
-
-When a `Frozen` mode script runs, everything in the entire engine pauses completely except for the one script until it exits. This allows pop-up menus that freeze everything for you.
-#### Timed Active
-Each generic script can be set to run similarly to the `Global Active`, either by having `Run from Start` checked in `Init Data` for the script slot, or `genericdata->Running` being set to `true` via script for the slot.
-
-By using `Waitframe()` and/or the special command `WaitTo()`, generic scripts run this way can wait to many specific timings. This is a *replacement* for the standard `Waitdraw()` in this script type.
-#### Event Active
-Each generic script can be set to run similarly to the `Global Active`, either by having `Run from Start` checked in `Init Data` for the script slot, or `genericdata->Running` being set to `true` via script for the slot.
-
-By using the special command `WaitEvent()`, the script will wait for a specific game event to occur (from a list that you can either set in `Init Data` or via `genericdata->EventListen[]`). Using the array `Game->EventData[]`, these scripts can read details about the event, and even change them. For example, a script that listens for the `Hero Hit` event will run when the player gets hit by something- it can read what was going to hit them, and how much damage it was going to do... and it can also *change* how much damage will be dealt, or even *cancel the hit entirely*. This allows for some quite powerful scripts that would otherwise not be possible.
-
