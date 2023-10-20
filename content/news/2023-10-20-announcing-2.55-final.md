@@ -4,7 +4,7 @@ description:
 date: 2023-10-20
 ---
 
-We will be wrapping up development on 2.55, and aim to release it on November 7th. While a few quality-of-life features may land in 2.55 between now and its final release, there will be a freeze on adding extra capabilities to the engine - so, no new combos, items or enemies. In that sense, 2.55 is feature complete. Tileset maintainers should be confident that if their tileset supports all feature available today, they have a "2.55 tileset". As necessary, we will patch 2.55 to fix new releases even after the "final" release, but there will be no new features of any kind after the final release.
+We will be wrapping up development on 2.55, and aim to release it on November 7th. While a few quality-of-life features may land in 2.55 between now and its final release, there will be a freeze on adding extra capabilities to the engine - so, no new combos, items or enemies. In that sense, 2.55 is feature complete. Tileset maintainers should be confident that if their tileset supports all feature available today, they have a "2.55 tileset". As necessary, we will patch 2.55 to fix serious bugs even after the "final" release, but there will be no new features of any kind after the final release.
 
 See the [2.55 summary doc](/docs/2.55/) for an almost-comprehensive summary of all the new stuff added in 2.55.
 
