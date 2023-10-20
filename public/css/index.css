@@ -330,3 +330,7 @@ h2 + .header-anchor {
 	display: flex;
 	flex-direction: column;	
 }
+
+.hidden {
+	display: none;
+}

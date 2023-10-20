@@ -154,6 +154,7 @@ window.onload = function () {
 
 		sync();
 
+		tocMarker.classList.remove('hidden');
 	}
 
 	function sync() {
