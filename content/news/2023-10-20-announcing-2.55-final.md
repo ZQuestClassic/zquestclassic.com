@@ -67,4 +67,4 @@ It hasn't been enabled by default yet because it currently requires compiling al
 
 ## So long 2.55!
 
-<img src="/img/link-wave.gif" alt="Link waving from Wind Waker" width="50%" height="50%"/>
+<img src="/img/link-wave.gif" alt="Link waving from Wind Waker" width="100%" height="100%"/>
