@@ -79,6 +79,9 @@ window.onload = function () {
 	handleNode(tree, rootNavEl);
 	document.querySelector('.toc').append(rootNavEl);
 
+	const el = location.hash && document.querySelector(location.hash);
+	if (el) el.scrollIntoView();
+
 	var toc = document.querySelector('.toc');
 	var tocMarker = document.querySelector('.toc-marker');
 	var tocPath = document.querySelector('.toc-marker path');
