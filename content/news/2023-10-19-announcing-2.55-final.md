@@ -11,7 +11,7 @@ See the [2.55 summary doc](/docs/2.55/) for an almost-comprehensive summary of a
 
 So what's next for ZQuest Classic? 3.0!
 
-## A new versioning policy
+## New versioning policy
 
 2.55 was first released as alpha in late 2018, and all releases since have been labeled alphas (or, more recently, nightlies). In the past year, a lot has been done to prevent regressions in the engine. While feature development has recently seen a huge uptick, the number of bugs introduced has not similarly grown. This can be attributed to the addition of many automated tests - especially replay tests. Thanks to these tests, recent alphas have been the most stable of the 2.55 series, while including more new features than ever. As long as we continue to invest in automated tests - and we will - we can keep frequent stable releases of ZC coming. Given that, we'll be adopting a new versioning policy.
 
@@ -40,7 +40,7 @@ Over a year in development, Z3-scrolling adds Regions to the DMap editor, allowi
 
 ### Editor automation
 
-The aspect of ZC with the least amount of automated testing is the editor. To improve stablity here, in the works is a way to interface with the editor from an external process, such as a Python script. While this is being made with writing automated tests in mind, a possiblity may be providing power users with the capablity to create their own editor plugins. If you're interested in this possiblity, please share what sort of things you'd like to be possible with this feature.
+The part of ZC with the least amount of automated testing is the editor. To improve stablity here, in the works is a way to interface with the editor from an external process, such as a Python script. While this is being made with writing automated tests in mind, a possiblity may be providing power users with the capablity to create their own editor plugins. If you're interested in this possiblity, please share what sort of things you'd like to be possible with this feature.
 
 ### More languages for scripting
 
@@ -54,7 +54,7 @@ Some large components of the editor GUI still use the old GUI code. Some big one
 
 ### Enemy improvements
 
-Along with redesigning the enemy editor, we'll be looking at all the enemies and how additional customization can be provided for each. Please send Deedee best wishes in this endeavor.
+Along with redesigning the enemy editor, we'll be looking at all the enemies and what additional customization could be provided for each. Please send Deedee best wishes in this endeavor.
 
 ### Slope polish
 
