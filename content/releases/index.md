@@ -116,6 +116,14 @@ eleventyNavigation:
 
 </div>
 
+<h2>Supported Operating Systems</h2>
+
+<div>
+	<div>Windows 7+</div>
+	<div>MacOS 12+</div>
+	<div>Linux (mileage may vary - best to download the <a href="https://flathub.org/apps/com.zquestclassic.ZQuest">flatpak</a>)</div>
+</div>
+
 <script>
 const platform = Website.getPlatform();
 const channel = Website.getChannel();
