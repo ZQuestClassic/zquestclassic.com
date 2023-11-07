@@ -148,3 +148,30 @@ if (mode === 'all') {
 } else if (mode === 'recent') {
 	update(5);
 }
+
+// Update release channel json files, used by zupdater.
+{
+	const ghResponse = await octokit.rest.repos.listReleases({
+		owner: 'ZQuestClassic',
+		repo: 'ZQuestClassic',
+	});
+	const releases = ghResponse.data;
+	
+	function writeReleaseChannelJson(channel, pattern) {
+		const release = releases.find(r => r.tag_name.match(pattern));
+		if (!release) return;
+
+		fs.writeFileSync(`public/releases/${channel}.json`, JSON.stringify({
+			channel,
+			tagName: release.tag_name,
+			assets: release.assets.map(a => ({
+				name: a.name,
+				url: a.browser_download_url,
+				size: a.size,
+			})),
+		}, null, 2));
+	}
+	
+	writeReleaseChannelJson('2.55', /^(2\.55|nightly-)/);
+	// writeReleaseChannelJson('3.0', /^3\.0/);
+}
