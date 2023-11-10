@@ -174,5 +174,5 @@ if (mode === 'all') {
 	
 	writeReleaseChannelJson('latest', /.*/);
 	writeReleaseChannelJson('2.55', /^(2\.55|nightly-)/);
-	// writeReleaseChannelJson('3.0', /^3\.0/);
+	writeReleaseChannelJson('3', /^3\.0/);
 }
