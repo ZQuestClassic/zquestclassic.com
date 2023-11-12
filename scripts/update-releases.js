@@ -77,6 +77,7 @@ async function handleRelease(id) {
 			}
 			if (line.includes('-------')) return false;
 			if (line.startsWith('The one ')) return false;
+			if (line.startsWith('To download this release')) return false;
 
 			if (line.startsWith('# Downloads available')) {
 				deleteMode = true;

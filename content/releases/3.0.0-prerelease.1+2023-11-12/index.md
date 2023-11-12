@@ -25,7 +25,6 @@ tags:
   - releases
 ---
 
-To download this release, [visit the ZQuest Classic website](https://zquestclassic.com/releases/3.0.0-prerelease.1+2023-11-12/) or see the bottom of this page.
 
 
 
