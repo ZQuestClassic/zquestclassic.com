@@ -177,3 +177,27 @@ if (mode === 'all') {
 	writeReleaseChannelJson('2.55', /^(2\.55|nightly-)/);
 	writeReleaseChannelJson('3', /^3\.0/);
 }
+{
+	const ghResponse = await octokit.rest.repos.listReleases({
+		owner: 'connorjclark',
+		repo: 'ZeldaClassic',
+	});
+	const releases = ghResponse.data;
+	
+	function writeReleaseChannelJson(channel, pattern) {
+		const release = releases.find(r => r.tag_name.match(pattern));
+		if (!release) return;
+
+		fs.writeFileSync(`public/releases/${channel}.json`, JSON.stringify({
+			channel,
+			tagName: release.tag_name,
+			assets: release.assets.map(a => ({
+				name: a.name,
+				url: a.browser_download_url,
+				size: a.size,
+			})),
+		}, null, 2));
+	}
+	
+	writeReleaseChannelJson('z3', /^connorjclark-nightly-/);
+}

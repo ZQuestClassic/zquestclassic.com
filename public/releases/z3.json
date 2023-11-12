@@ -1,0 +1,26 @@
+{
+  "channel": "z3",
+  "tagName": "connorjclark-nightly-2023-11-12",
+  "assets": [
+    {
+      "name": "connorjclark-nightly-2023-11-12-linux.tar.gz",
+      "url": "https://github.com/connorjclark/ZeldaClassic/releases/download/connorjclark-nightly-2023-11-12/connorjclark-nightly-2023-11-12-linux.tar.gz",
+      "size": 28891562
+    },
+    {
+      "name": "connorjclark-nightly-2023-11-12-mac.dmg",
+      "url": "https://github.com/connorjclark/ZeldaClassic/releases/download/connorjclark-nightly-2023-11-12/connorjclark-nightly-2023-11-12-mac.dmg",
+      "size": 25034740
+    },
+    {
+      "name": "connorjclark-nightly-2023-11-12-windows-x64.zip",
+      "url": "https://github.com/connorjclark/ZeldaClassic/releases/download/connorjclark-nightly-2023-11-12/connorjclark-nightly-2023-11-12-windows-x64.zip",
+      "size": 25660829
+    },
+    {
+      "name": "connorjclark-nightly-2023-11-12-windows-x86.zip",
+      "url": "https://github.com/connorjclark/ZeldaClassic/releases/download/connorjclark-nightly-2023-11-12/connorjclark-nightly-2023-11-12-windows-x86.zip",
+      "size": 23809318
+    }
+  ]
+}
