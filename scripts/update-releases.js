@@ -173,9 +173,9 @@ if (mode === 'all') {
 		}, null, 2));
 	}
 	
-	writeReleaseChannelJson('latest', /.*/);
 	writeReleaseChannelJson('2.55', /^(2\.55|nightly-)/);
 	writeReleaseChannelJson('3', /^3\.0/);
+	writeReleaseChannelJson('latest', /^3\.0/);
 }
 {
 	const ghResponse = await octokit.rest.repos.listReleases({
