@@ -1,31 +1,26 @@
 {
   "channel": "2.55",
-  "tagName": "2.55-alpha-120",
+  "tagName": "nightly-2023-11-13",
   "assets": [
     {
-      "name": "2.55-alpha-120-linux.tar.gz",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55-alpha-120/2.55-alpha-120-linux.tar.gz",
-      "size": 28890561
+      "name": "nightly-2023-11-13-linux.tar.gz",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-11-13/nightly-2023-11-13-linux.tar.gz",
+      "size": 28877998
     },
     {
-      "name": "2.55-alpha-120-mac.dmg",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55-alpha-120/2.55-alpha-120-mac.dmg",
-      "size": 25039485
+      "name": "nightly-2023-11-13-mac.dmg",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-11-13/nightly-2023-11-13-mac.dmg",
+      "size": 25033884
     },
     {
-      "name": "2.55-alpha-120-web.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55-alpha-120/2.55-alpha-120-web.zip",
-      "size": 81614794
+      "name": "nightly-2023-11-13-windows-x64.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-11-13/nightly-2023-11-13-windows-x64.zip",
+      "size": 25667166
     },
     {
-      "name": "2.55-alpha-120-windows-x64.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55-alpha-120/2.55-alpha-120-windows-x64.zip",
-      "size": 25671984
-    },
-    {
-      "name": "2.55-alpha-120-windows-x86.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55-alpha-120/2.55-alpha-120-windows-x86.zip",
-      "size": 23817219
+      "name": "nightly-2023-11-13-windows-x86.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-11-13/nightly-2023-11-13-windows-x86.zip",
+      "size": 23810482
     }
   ]
 }
