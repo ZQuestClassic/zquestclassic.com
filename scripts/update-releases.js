@@ -199,5 +199,5 @@ if (mode === 'all') {
 		}, null, 2));
 	}
 	
-	writeReleaseChannelJson('z3', /^connorjclark-nightly-/);
+	writeReleaseChannelJson('z3', /z3/);
 }
