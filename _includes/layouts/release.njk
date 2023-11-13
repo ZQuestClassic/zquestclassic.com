@@ -113,7 +113,7 @@
 			
 			<div class="assets">
 				{% for asset in assets %}
-					<a class="download-asset" alt="{{ asset.channel }}" data-channel="{{ asset.channel }}" href="{{ asset.name }}">
+					<a class="download-asset" alt="{{ asset.channel }}" data-channel="{{ asset.channel }}" href="{{ asset.url }}">
 						{% if 'windows' in asset.channel %}
 							<img src="/img/windows.svg">
 						{% else %}
