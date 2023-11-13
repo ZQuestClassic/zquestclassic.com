@@ -60,6 +60,11 @@ module.exports = function(eleventyConfig) {
 		return releases.findLast(r => r.data.prerelease);
 	});
 
+	eleventyConfig.addFilter('latest255Release', (releases) => {
+		const tag = require('./public/releases/2.55.json').tagName;
+		return releases.findLast(r => r.data.tag_name === tag);
+	});
+
 	// Get the first `n` elements of a collection.
 	eleventyConfig.addFilter("head", (array, n) => {
 		if(!Array.isArray(array) || array.length === 0) {

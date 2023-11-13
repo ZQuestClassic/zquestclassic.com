@@ -8,6 +8,8 @@ eleventyNavigation:
 {% set release_list = collections.releases %}
 {% set latest_stable_release = release_list | latestStableRelease %}
 {% set latest_nightly_release = release_list | latestNightlyRelease %}
+<!-- TODO: remove when 3.0 is out -->
+{% set latest_255_release = release_list | latest255Release %}
 
 <style>
 	main {
@@ -101,7 +103,7 @@ eleventyNavigation:
 	<span class="cta">Download Stable</span><span class="name">{{ latest_stable_release.data.title }}</span>
 </a>
 <span class="meta">
-	<a class="release-notes" href="{{ latest_stable_release.url }}">Release Notes</a>
+	<a class="release-notes" href="{{ latest_255_release.url }}">Release Notes</a>
 </span>
 </div>
 
@@ -127,7 +129,7 @@ eleventyNavigation:
 <script>
 const platform = Website.getPlatform();
 const channel = Website.getChannel();
-const stableAssets = Website.sortAssets({{ latest_stable_release.data.assets | json | safe }});
+const stableAssets = Website.sortAssets({{ latest_255_release.data.assets | json | safe }});
 const nightlyAssets = Website.sortAssets({{ latest_nightly_release.data.assets | json | safe }});
 
 function renderRelease(nightly) {
