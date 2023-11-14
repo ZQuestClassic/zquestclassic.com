@@ -69,7 +69,7 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addFilter('latestNightlyRelease', (releases) => {
-		return releases.findLast(r => r.data.prerelease);
+		return releases.findLast(r => r.data.prerelease && r.data.channel === '3');
 	});
 
 	eleventyConfig.addFilter('latest255Release', (releases) => {
