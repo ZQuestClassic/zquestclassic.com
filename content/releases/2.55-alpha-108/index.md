@@ -5,18 +5,19 @@ date: 2022-07-25T05:46:59Z
 assets: 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55-alpha-108/2.55-alpha-108-mac.dmg
     name: 2.55-alpha-108-mac.dmg
-    channel: mac
+    platform: mac
 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55-alpha-108/2.55-alpha-108-windows-x64.zip
     name: 2.55-alpha-108-windows-x64.zip
-    channel: windows-x64
+    platform: windows-x64
 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55-alpha-108/2.55-alpha-108-windows-x86.zip
     name: 2.55-alpha-108-windows-x86.zip
-    channel: windows-win32
+    platform: windows-win32
 prerelease: false
 id: 72722310
-tag_name: 2.55-alpha-108
+tag_name: '2.55-alpha-108'
+channel: '2.55'
 tags:
   - releases
 ---

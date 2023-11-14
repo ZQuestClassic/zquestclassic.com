@@ -5,18 +5,19 @@ date: 2022-12-14T00:04:06Z
 assets: 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2022-12-14/nightly-2022-12-14-mac.dmg
     name: nightly-2022-12-14-mac.dmg
-    channel: mac
+    platform: mac
 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2022-12-14/nightly-2022-12-14-windows-x64.zip
     name: nightly-2022-12-14-windows-x64.zip
-    channel: windows-x64
+    platform: windows-x64
 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2022-12-14/nightly-2022-12-14-windows-x86.zip
     name: nightly-2022-12-14-windows-x86.zip
-    channel: windows-win32
+    platform: windows-win32
 prerelease: true
 id: 85958338
-tag_name: nightly-2022-12-14
+tag_name: 'nightly-2022-12-14'
+channel: '2.55'
 tags:
   - releases
 ---

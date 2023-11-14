@@ -35,32 +35,44 @@ async function handleRelease(id) {
 		if (asset.name.endsWith('web.zip'))
 			continue;
 
-		let channel;
+		let platform;
 		if (asset.name.includes('windows-x64'))
-			channel = 'windows-x64';
+			platform = 'windows-x64';
 		if (asset.name.includes('windows-x86'))
-			channel = 'windows-win32';
+			platform = 'windows-win32';
 		if (asset.name.includes('mac'))
-			channel = 'mac';
+			platform = 'mac';
 		if (asset.name.includes('linux'))
-			channel = 'linux';
+			platform = 'linux';
 		// Old
 		if (asset.name.includes('ubuntu'))
-			channel = 'linux';
+			platform = 'linux';
 		if (asset.name.includes('Win'))
-			channel = 'windows-win32';
+			platform = 'windows-win32';
 		if (release.assets.length === 1)
-			channel = 'windows-win32';
+			platform = 'windows-win32';
 
 		assets.push({
 			url: asset.browser_download_url,
 			name: asset.name,
-			channel,
+			platform,
 		});
 	}
 	assets = assets.map(asset => {
-		return `\n  - url: ${asset.url}\n    name: ${asset.name}\n    channel: ${asset.channel}`;
+		return `\n  - url: ${asset.url}\n    name: ${asset.name}\n    platform: ${asset.platform}`;
 	}).join('\n');
+
+	let channel;
+	if (release.tag_name.includes('z3')) {
+		channel = 'z3';
+	} else if (release.tag_name.startsWith('3')) {
+		channel = '3';
+	} else if (release.tag_name.startsWith('nightly-') || release.tag_name.startsWith('2.55')) {
+		channel = '2.55';
+	} else {
+		console.error(release.tag_name);
+		throw new Error();
+	}
 
 	let keepCount = 0;
 	let deleteMode = false;
@@ -94,7 +106,8 @@ date: ${release.created_at}
 assets: ${assets}
 prerelease: ${release.prerelease}
 id: ${release.id}
-tag_name: ${release.tag_name}
+tag_name: '${release.tag_name}'
+channel: '${channel}'
 tags:
   - releases
 ---

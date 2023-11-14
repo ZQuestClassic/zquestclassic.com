@@ -5,10 +5,11 @@ date: 2022-06-28T08:03:52Z
 assets: 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2022-06-28/buildpack.zip
     name: buildpack.zip
-    channel: windows-win32
+    platform: windows-win32
 prerelease: true
 id: 70716967
-tag_name: nightly-2022-06-28
+tag_name: 'nightly-2022-06-28'
+channel: '2.55'
 tags:
   - releases
 ---

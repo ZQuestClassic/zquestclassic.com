@@ -32,8 +32,8 @@
 	<div class="release-navigation">
 		<span><a href="/releases">All Releases</a></span>
 	
-		{%- set previousRelease = collections.releases | getPreviousCollectionItem %}
-		{%- set nextRelease = collections.releases | getNextCollectionItem %}
+		{%- set previousRelease = tag_name | previousRelease(collections.releases, channel) %}
+		{%- set nextRelease = tag_name | nextRelease(collections.releases, channel) %}
 		{%- if nextRelease or previousRelease %}
 		<span>| </span>
 		{%- if previousRelease %}<span><a href="{{ previousRelease.url }}">{{ previousRelease.data.title }}</a> -> </span>{%
@@ -113,21 +113,21 @@
 			
 			<div class="assets">
 				{% for asset in assets %}
-					<a class="download-asset" alt="{{ asset.channel }}" data-channel="{{ asset.channel }}" href="{{ asset.url }}">
-						{% if 'windows' in asset.channel %}
+					<a class="download-asset" alt="{{ asset.platform }}" data-channel="{{ asset.platform }}" href="{{ asset.url }}">
+						{% if 'windows' in asset.platform %}
 							<img src="/img/windows.svg">
 						{% else %}
-							<img src="/img/{{ asset.channel }}.svg">
+							<img src="/img/{{ asset.platform }}.svg">
 						{% endif %}
 						<div class="label">
-							{% if asset.channel == 'windows-x64' %}
+							{% if asset.platform == 'windows-x64' %}
 								<div>Windows</div>
 								<div>64-bit</div>
-							{% elif asset.channel == 'windows-win32' %}
+							{% elif asset.platform == 'windows-win32' %}
 								<div>Windows</div>
 								<div>32-bit</div>
 							{% else %}
-								{{ asset.channel | capitalize }}
+								{{ asset.platform | capitalize }}
 							{% endif %}
 						</div>
 					</a>
@@ -141,9 +141,9 @@
 				const channel = Website.getChannel();
 				let order = 0;
 				for (const asset of assets) {
-					const el = document.querySelector(`[data-channel="${asset.channel}"]`);
+					const el = document.querySelector(`[data-channel="${asset.platform}"]`);
 					el.style.order = order++;
-					if (asset.channel === channel) el.classList.add('selected');
+					if (asset.platform === channel) el.classList.add('selected');
 				}
 		
 				(async () => {

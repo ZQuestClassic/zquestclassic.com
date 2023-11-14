@@ -5,22 +5,23 @@ date: 2023-11-12T01:19:43Z
 assets: 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.1%2B2023-11-12/3.0.0-prerelease.1%2B2023-11-12-linux.tar.gz
     name: 3.0.0-prerelease.1+2023-11-12-linux.tar.gz
-    channel: linux
+    platform: linux
 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.1%2B2023-11-12/3.0.0-prerelease.1%2B2023-11-12-mac.dmg
     name: 3.0.0-prerelease.1+2023-11-12-mac.dmg
-    channel: mac
+    platform: mac
 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.1%2B2023-11-12/3.0.0-prerelease.1%2B2023-11-12-windows-x64.zip
     name: 3.0.0-prerelease.1+2023-11-12-windows-x64.zip
-    channel: windows-x64
+    platform: windows-x64
 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.1%2B2023-11-12/3.0.0-prerelease.1%2B2023-11-12-windows-x86.zip
     name: 3.0.0-prerelease.1+2023-11-12-windows-x86.zip
-    channel: windows-win32
+    platform: windows-win32
 prerelease: true
 id: 129038991
-tag_name: 3.0.0-prerelease.1+2023-11-12
+tag_name: '3.0.0-prerelease.1+2023-11-12'
+channel: '3'
 tags:
   - releases
 ---

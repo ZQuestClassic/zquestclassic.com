@@ -5,22 +5,23 @@ date: 2023-01-10T21:41:04Z
 assets: 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-01-10/nightly-2023-01-10-mac.dmg
     name: nightly-2023-01-10-mac.dmg
-    channel: mac
+    platform: mac
 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-01-10/nightly-2023-01-10-ubuntu.tar.gz
     name: nightly-2023-01-10-ubuntu.tar.gz
-    channel: linux
+    platform: linux
 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-01-10/nightly-2023-01-10-windows-x64.zip
     name: nightly-2023-01-10-windows-x64.zip
-    channel: windows-x64
+    platform: windows-x64
 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-01-10/nightly-2023-01-10-windows-x86.zip
     name: nightly-2023-01-10-windows-x86.zip
-    channel: windows-win32
+    platform: windows-win32
 prerelease: true
 id: 88510075
-tag_name: nightly-2023-01-10
+tag_name: 'nightly-2023-01-10'
+channel: '2.55'
 tags:
   - releases
 ---

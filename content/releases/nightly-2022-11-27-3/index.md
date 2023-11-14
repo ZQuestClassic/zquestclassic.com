@@ -5,14 +5,15 @@ date: 2022-11-27T04:00:41Z
 assets: 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2022-11-27-3/nightly-2022-11-27-3-windows-x64.zip
     name: nightly-2022-11-27-3-windows-x64.zip
-    channel: windows-x64
+    platform: windows-x64
 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2022-11-27-3/nightly-2022-11-27-3-windows-x86.zip
     name: nightly-2022-11-27-3-windows-x86.zip
-    channel: windows-win32
+    platform: windows-win32
 prerelease: true
 id: 84252003
-tag_name: nightly-2022-11-27-3
+tag_name: 'nightly-2022-11-27-3'
+channel: '2.55'
 tags:
   - releases
 ---

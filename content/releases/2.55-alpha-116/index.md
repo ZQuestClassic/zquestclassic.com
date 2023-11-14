@@ -5,22 +5,23 @@ date: 2023-08-02T04:53:32Z
 assets: 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55-alpha-116/2.55-alpha-116-linux.tar.gz
     name: 2.55-alpha-116-linux.tar.gz
-    channel: linux
+    platform: linux
 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55-alpha-116/2.55-alpha-116-mac.dmg
     name: 2.55-alpha-116-mac.dmg
-    channel: mac
+    platform: mac
 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55-alpha-116/2.55-alpha-116-windows-x64.zip
     name: 2.55-alpha-116-windows-x64.zip
-    channel: windows-x64
+    platform: windows-x64
 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55-alpha-116/2.55-alpha-116-windows-x86.zip
     name: 2.55-alpha-116-windows-x86.zip
-    channel: windows-win32
+    platform: windows-win32
 prerelease: false
 id: 114758097
-tag_name: 2.55-alpha-116
+tag_name: '2.55-alpha-116'
+channel: '2.55'
 tags:
   - releases
 ---

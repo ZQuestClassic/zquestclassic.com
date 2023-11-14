@@ -52,6 +52,18 @@ module.exports = function(eleventyConfig) {
 		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
 	});
 
+	eleventyConfig.addFilter('previousRelease', (tag, releases, channel) => {
+		const allFromChannel = releases.filter(r => r.data.channel === channel);
+		const index = allFromChannel.findIndex(r => r.data.tag_name === tag);
+		return allFromChannel[index - 1];
+	});
+
+	eleventyConfig.addFilter('nextRelease', (tag, releases, channel) => {
+		const allFromChannel = releases.filter(r => r.data.channel === channel);
+		const index = allFromChannel.findIndex(r => r.data.tag_name === tag);
+		return allFromChannel[index + 1];
+	});
+
 	eleventyConfig.addFilter('latestStableRelease', (releases) => {
 		return releases.findLast(r => !r.data.prerelease);
 	});

@@ -5,22 +5,23 @@ date: 2022-12-16T04:58:10Z
 assets: 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2022-12-16/nightly-2022-12-16-mac.dmg
     name: nightly-2022-12-16-mac.dmg
-    channel: mac
+    platform: mac
 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2022-12-16/nightly-2022-12-16-ubuntu.tgz
     name: nightly-2022-12-16-ubuntu.tgz
-    channel: linux
+    platform: linux
 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2022-12-16/nightly-2022-12-16-windows-x64.zip
     name: nightly-2022-12-16-windows-x64.zip
-    channel: windows-x64
+    platform: windows-x64
 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2022-12-16/nightly-2022-12-16-windows-x86.zip
     name: nightly-2022-12-16-windows-x86.zip
-    channel: windows-win32
+    platform: windows-win32
 prerelease: true
 id: 86264138
-tag_name: nightly-2022-12-16
+tag_name: 'nightly-2022-12-16'
+channel: '2.55'
 tags:
   - releases
 ---

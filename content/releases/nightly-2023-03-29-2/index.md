@@ -5,14 +5,15 @@ date: 2023-03-29T03:54:39Z
 assets: 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-03-29-2/nightly-2023-03-29-2-linux.tar.gz
     name: nightly-2023-03-29-2-linux.tar.gz
-    channel: linux
+    platform: linux
 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-03-29-2/nightly-2023-03-29-2-mac.dmg
     name: nightly-2023-03-29-2-mac.dmg
-    channel: mac
+    platform: mac
 prerelease: true
 id: 97267604
-tag_name: nightly-2023-03-29-2
+tag_name: 'nightly-2023-03-29-2'
+channel: '2.55'
 tags:
   - releases
 ---
