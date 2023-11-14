@@ -135,7 +135,7 @@ const nightlyAssets = Website.sortAssets({{ latest_nightly_release.data.assets |
 function renderRelease(nightly) {
 	const el = document.querySelector(nightly ? '.nightly': '.stable');
 	const assets = nightly ? nightlyAssets : stableAssets;
-	const assetForThisPlatform = assets.find(asset => asset.channel === channel);
+	const assetForThisPlatform = assets.find(asset => asset.platform === channel);
 
 	const downloadEl = el.querySelector('.download');
 	if (assetForThisPlatform) {
