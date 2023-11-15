@@ -1,26 +1,26 @@
 {
   "channel": "3",
-  "tagName": "3.0.0-prerelease.1+2023-11-12",
+  "tagName": "3.0.0-prerelease.2+2023-11-15",
   "assets": [
     {
-      "name": "3.0.0-prerelease.1+2023-11-12-linux.tar.gz",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.1%2B2023-11-12/3.0.0-prerelease.1%2B2023-11-12-linux.tar.gz",
-      "size": 32468543
+      "name": "3.0.0-prerelease.2+2023-11-15-linux.tar.gz",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.2%2B2023-11-15/3.0.0-prerelease.2%2B2023-11-15-linux.tar.gz",
+      "size": 32472260
     },
     {
-      "name": "3.0.0-prerelease.1+2023-11-12-mac.dmg",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.1%2B2023-11-12/3.0.0-prerelease.1%2B2023-11-12-mac.dmg",
-      "size": 28005061
+      "name": "3.0.0-prerelease.2+2023-11-15-mac.dmg",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.2%2B2023-11-15/3.0.0-prerelease.2%2B2023-11-15-mac.dmg",
+      "size": 28001632
     },
     {
-      "name": "3.0.0-prerelease.1+2023-11-12-windows-x64.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.1%2B2023-11-12/3.0.0-prerelease.1%2B2023-11-12-windows-x64.zip",
-      "size": 28947615
+      "name": "3.0.0-prerelease.2+2023-11-15-windows-x64.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.2%2B2023-11-15/3.0.0-prerelease.2%2B2023-11-15-windows-x64.zip",
+      "size": 28957454
     },
     {
-      "name": "3.0.0-prerelease.1+2023-11-12-windows-x86.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.1%2B2023-11-12/3.0.0-prerelease.1%2B2023-11-12-windows-x86.zip",
-      "size": 27091954
+      "name": "3.0.0-prerelease.2+2023-11-15-windows-x86.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.2%2B2023-11-15/3.0.0-prerelease.2%2B2023-11-15-windows-x86.zip",
+      "size": 27099168
     }
   ]
 }
