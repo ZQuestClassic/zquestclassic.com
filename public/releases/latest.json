@@ -1,26 +1,26 @@
 {
   "channel": "latest",
-  "tagName": "3.0.0-prerelease.2+2023-11-15",
+  "tagName": "3.0.0-prerelease.3+2023-11-17",
   "assets": [
     {
-      "name": "3.0.0-prerelease.2+2023-11-15-linux.tar.gz",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.2%2B2023-11-15/3.0.0-prerelease.2%2B2023-11-15-linux.tar.gz",
-      "size": 32472260
+      "name": "3.0.0-prerelease.3+2023-11-17-linux.tar.gz",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.3%2B2023-11-17/3.0.0-prerelease.3%2B2023-11-17-linux.tar.gz",
+      "size": 32477213
     },
     {
-      "name": "3.0.0-prerelease.2+2023-11-15-mac.dmg",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.2%2B2023-11-15/3.0.0-prerelease.2%2B2023-11-15-mac.dmg",
-      "size": 28001632
+      "name": "3.0.0-prerelease.3+2023-11-17-mac.dmg",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.3%2B2023-11-17/3.0.0-prerelease.3%2B2023-11-17-mac.dmg",
+      "size": 28005371
     },
     {
-      "name": "3.0.0-prerelease.2+2023-11-15-windows-x64.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.2%2B2023-11-15/3.0.0-prerelease.2%2B2023-11-15-windows-x64.zip",
-      "size": 28957454
+      "name": "3.0.0-prerelease.3+2023-11-17-windows-x64.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.3%2B2023-11-17/3.0.0-prerelease.3%2B2023-11-17-windows-x64.zip",
+      "size": 28962011
     },
     {
-      "name": "3.0.0-prerelease.2+2023-11-15-windows-x86.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.2%2B2023-11-15/3.0.0-prerelease.2%2B2023-11-15-windows-x86.zip",
-      "size": 27099168
+      "name": "3.0.0-prerelease.3+2023-11-17-windows-x86.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.3%2B2023-11-17/3.0.0-prerelease.3%2B2023-11-17-windows-x86.zip",
+      "size": 27106197
     }
   ]
 }
