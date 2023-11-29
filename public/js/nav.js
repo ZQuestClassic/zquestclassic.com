@@ -62,6 +62,9 @@ window.onload = function () {
 	if (location.pathname === '/releases/') {
 		return;
 	}
+	if (location.pathname === '/docs/how-to-play/') {
+		return;
+	}
 
 	const contentEl = document.body.querySelector('.content');
 	let hids = 'h1,h2,h3,h4';
