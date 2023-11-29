@@ -8,7 +8,7 @@ layout: layouts/base.njk
     }
 </style>
 
-# How to Play a Quest
+# How to Play a ZQuest Classic Quest
 
 The recommended way to play quests is via the latest stable version of ZQuest Classic for your operating system.
 
