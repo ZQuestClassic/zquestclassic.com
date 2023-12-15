@@ -1,26 +1,26 @@
 {
   "channel": "3",
-  "tagName": "3.0.0-prerelease.13+2023-12-15",
+  "tagName": "3.0.0-prerelease.14+2023-12-15",
   "assets": [
     {
-      "name": "3.0.0-prerelease.13+2023-12-15-linux.tar.gz",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.13%2B2023-12-15/3.0.0-prerelease.13%2B2023-12-15-linux.tar.gz",
-      "size": 32718143
+      "name": "3.0.0-prerelease.14+2023-12-15-linux.tar.gz",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.14%2B2023-12-15/3.0.0-prerelease.14%2B2023-12-15-linux.tar.gz",
+      "size": 32718155
     },
     {
-      "name": "3.0.0-prerelease.13+2023-12-15-mac.dmg",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.13%2B2023-12-15/3.0.0-prerelease.13%2B2023-12-15-mac.dmg",
-      "size": 28275992
+      "name": "3.0.0-prerelease.14+2023-12-15-mac.dmg",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.14%2B2023-12-15/3.0.0-prerelease.14%2B2023-12-15-mac.dmg",
+      "size": 28275135
     },
     {
-      "name": "3.0.0-prerelease.13+2023-12-15-windows-x64.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.13%2B2023-12-15/3.0.0-prerelease.13%2B2023-12-15-windows-x64.zip",
-      "size": 29345922
+      "name": "3.0.0-prerelease.14+2023-12-15-windows-x64.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.14%2B2023-12-15/3.0.0-prerelease.14%2B2023-12-15-windows-x64.zip",
+      "size": 29345891
     },
     {
-      "name": "3.0.0-prerelease.13+2023-12-15-windows-x86.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.13%2B2023-12-15/3.0.0-prerelease.13%2B2023-12-15-windows-x86.zip",
-      "size": 27419983
+      "name": "3.0.0-prerelease.14+2023-12-15-windows-x86.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.14%2B2023-12-15/3.0.0-prerelease.14%2B2023-12-15-windows-x86.zip",
+      "size": 27419944
     }
   ]
 }
