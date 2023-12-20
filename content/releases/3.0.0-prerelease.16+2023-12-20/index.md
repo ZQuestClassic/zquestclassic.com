@@ -7,6 +7,14 @@ assets:
     name: 3.0.0-prerelease.16+2023-12-20-linux.tar.gz
     platform: linux
 
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.16%2B2023-12-20/3.0.0-prerelease.16%2B2023-12-20-mac.dmg
+    name: 3.0.0-prerelease.16+2023-12-20-mac.dmg
+    platform: mac
+
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.16%2B2023-12-20/3.0.0-prerelease.16%2B2023-12-20-windows-x64.zip
+    name: 3.0.0-prerelease.16+2023-12-20-windows-x64.zip
+    platform: windows-x64
+
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.16%2B2023-12-20/3.0.0-prerelease.16%2B2023-12-20-windows-x86.zip
     name: 3.0.0-prerelease.16+2023-12-20-windows-x86.zip
     platform: windows-win32
@@ -61,3 +69,4 @@ tags:
 # Misc.
 
 - add jit_runtime_debug.py for debugging jit bugs [`781ffbc00`](https://github.com/ZQuestClassic/ZQuestClassic/commit/781ffbc0089e8448ef14ac3ba65c65c4308e232d)
+
