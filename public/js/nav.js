@@ -25,15 +25,18 @@ function getTree(array) {
 }
 
 function makeId(text) {
-	return text
+	const id = text
 		.toLowerCase()
 		.replace(/\.|%[0-9a-z]{2}/gi, '')
 		.replace(/\s+/g, '-');
+	if (!id) return '';
+	if (id[0] >= '0' && id[0] <= '9') return 'v' + id;
+	return id;
 }
 
 function handleNode(node, parentEl, prefix = []) {
 	const el = document.createElement('li');
-	let label = node.text || '';
+	let label = node.text?.trim() || '';
 	if (label === 'Visual Studio Code Extension') label = 'VS Code Extension';
 	if (label === 'ZScript Standard Library (std.zh)') label = 'std.zh';
 	const newPrefix = [...prefix, makeId(label)];
@@ -70,6 +73,9 @@ window.onload = function () {
 	let hids = 'h1,h2,h3,h4';
 	if (location.pathname === '/docs/2.55/' || location.pathname.startsWith('/news/')) {
 		hids = 'h2,h3,h4';
+	}
+	if (location.pathname === '/changelog/') {
+		hids = 'h1.version';
 	}
 	const h1Els = [...contentEl.querySelectorAll(hids)].filter(el => !el.hasAttribute('data-exclude-nav'));
 	const flat = h1Els.map(el => {

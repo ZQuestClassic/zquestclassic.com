@@ -1,0 +1,37 @@
+{% extends "layouts/base.njk" %}
+
+{% set release_list = collections.releases | changelogPageReleases %}
+
+{% block content %}
+
+{# Fancy nav styles adapted from https://lab.hakim.se/progress-nav/ #}
+
+<div class="nav-wrapper">
+	<nav class="toc">
+		<svg class="toc-marker hidden" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+			<path stroke="#b3c115" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+		</svg>
+	</nav>
+
+	<style>
+		h1.version {
+			display: inline-block;
+			margin-bottom: 0;
+		}
+	</style>
+
+	{# <div> #}
+		<div class="content">
+			{% for release in release_list | reverse -%}
+				<h1 class="version">
+					<a href="{{ release.url }}" class="release-list-link">{% if release.data.title %}{{ release.data.title }}{% else %}<code>{{ release.url }}</code>{% endif %}</a>
+				</h1>
+				<time class="release-list-date" datetime="{{ release.date | htmlDateString }}">{{ release.date | readableDate("LLLL dd yyyy") }}</time>
+
+				{{ release.content | safe }}
+			{% endfor %}
+		</div>
+	{# </div> #}
+</div>
+
+{% endblock %}

@@ -11,25 +11,44 @@ async function getRelease(id) {
 	return ghResponse.data;
 }
 
-async function handleRelease(id) {
-	const release = await getRelease(id);
-	if (release.assets.length === 0) {
-		return;
-	}
-	if (release.assets.some(a => a.name === 'zquest.exe')) {
-		return;
-	}
-
-	console.log(id, release.tag_name);
-
-	const title = (release.name || '').trim() || release.tag_name;
-	const lines = release.body.trim().split('\n');
+function parseChangelog(body, getMainChangelog = true) {
+	const lines = body.trim().split('\n');
 
 	let description = '';
 	if (lines[0].startsWith('The one with')) {
 		description = lines[0];
 	}
 
+	let keepCount = 0;
+	let deleteMode = false;
+	const content = lines
+		.filter(line => {
+			if (deleteMode) {
+				if (line.startsWith('#')) deleteMode = false;
+				else return false;
+			}
+
+			if (line.includes('The following are the changes')) {
+				keepCount += 1;
+				return false;
+			}
+			if (line.includes('-------')) return false;
+			if (line.startsWith('The one ')) return false;
+			if (line.startsWith('To download this release')) return false;
+
+			if (line.startsWith('# Downloads available')) {
+				deleteMode = true;
+				return false;
+			}
+
+			return getMainChangelog ? keepCount <= 1 : keepCount == 2;
+		})
+		.join('\n');
+	
+	return {description, content};
+}
+
+function parseAssets(release) {
 	let assets = [];
 	for (const asset of release.assets) {
 		if (asset.name.endsWith('web.zip'))
@@ -61,6 +80,22 @@ async function handleRelease(id) {
 	assets = assets.map(asset => {
 		return `\n  - url: ${asset.url}\n    name: ${asset.name}\n    platform: ${asset.platform}`;
 	}).join('\n');
+	return assets;
+}
+
+async function handleRelease(id) {
+	const release = await getRelease(id);
+	if (release.assets.length === 0) {
+		return;
+	}
+	if (release.assets.some(a => a.name === 'zquest.exe')) {
+		return;
+	}
+
+	console.log(id, release.tag_name);
+
+	const title = (release.name || '').trim() || release.tag_name;
+	const assets = parseAssets(release);
 
 	let channel;
 	if (release.tag_name.includes('z3')) {
@@ -74,31 +109,8 @@ async function handleRelease(id) {
 		throw new Error();
 	}
 
-	let keepCount = 0;
-	let deleteMode = false;
-	const body = lines
-		.filter(line => {
-			if (deleteMode) {
-				if (line.startsWith('#')) deleteMode = false;
-				else return false;
-			}
+	const {description, content} = parseChangelog(release.body);
 
-			if (line.includes('The following are the changes')) {
-				keepCount += 1;
-				return false;
-			}
-			if (line.includes('-------')) return false;
-			if (line.startsWith('The one ')) return false;
-			if (line.startsWith('To download this release')) return false;
-
-			if (line.startsWith('# Downloads available')) {
-				deleteMode = true;
-				return false;
-			}
-
-			return keepCount <= 1;
-		})
-		.join('\n');
 	const output = `---
 title: ${title}
 description: ${description}
@@ -112,7 +124,7 @@ tags:
   - releases
 ---
 
-${body}
+${content}
 `;
 
 	const folder = `content/releases/${release.tag_name}`;
@@ -213,4 +225,46 @@ if (mode === 'all') {
 	}
 	
 	writeReleaseChannelJson('z3', /z3/);
+}
+
+{
+	const latest255 = JSON.parse(fs.readFileSync('public/releases/2.55.json', 'utf-8'));
+	const ghResponse = await octokit.rest.repos.getReleaseByTag({
+		owner: 'ZQuestClassic',
+		repo: 'ZQuestClassic',
+		tag: latest255.tagName,
+	});
+	const release = ghResponse.data;
+	const title = (release.name || '').trim() || release.tag_name;
+	let {content} = parseChangelog(release.body, false);
+	content = content.replace(`<details>\n<summary>Expand changelog</summary>`, '');
+	content = content.substring(0, content.lastIndexOf('</details>'));
+
+	const assets = parseAssets(release);
+
+	const output = `---
+title: ${title}
+since_last_stable: true
+date: ${release.created_at}
+assets: ${assets}
+prerelease: ${release.prerelease}
+id: ${release.id}
+tag_name: '${release.tag_name}'
+channel: '${latest255.channel}'
+tags:
+  - releases
+---
+
+${content}
+`;
+
+	const folder = `content/releases/nightly`;
+	fs.mkdirSync(folder, {recursive: true});
+	fs.writeFileSync(`${folder}/index.md`, output);
+
+
+	let redirects = fs.readFileSync('_redirects', 'utf-8').split('\n');
+	const index = redirects.findIndex(l => l.startsWith('# nightly page'));
+	redirects[index + 1] = `/releases/nightly/ https://web.zquestclassic.com/releases/${release.tag_name}/ 302`;
+	fs.writeFileSync('_redirects', redirects.join('\n'));
 }

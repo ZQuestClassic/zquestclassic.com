@@ -53,13 +53,13 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addFilter('previousRelease', (tag, releases, channel) => {
-		const allFromChannel = releases.filter(r => r.data.channel === channel);
+		const allFromChannel = releases.filter(r => r.data.channel === channel && !r.data.since_last_stable);
 		const index = allFromChannel.findIndex(r => r.data.tag_name === tag);
 		return allFromChannel[index - 1];
 	});
 
 	eleventyConfig.addFilter('nextRelease', (tag, releases, channel) => {
-		const allFromChannel = releases.filter(r => r.data.channel === channel);
+		const allFromChannel = releases.filter(r => r.data.channel === channel && !r.data.since_last_stable);
 		const index = allFromChannel.findIndex(r => r.data.tag_name === tag);
 		return allFromChannel[index + 1];
 	});
@@ -69,12 +69,24 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addFilter('latestNightlyRelease', (releases) => {
-		return releases.findLast(r => r.data.prerelease && r.data.channel === '3');
+		return releases.findLast(r => r.data.prerelease && r.data.channel === '3' && !r.data.since_last_stable);
 	});
 
 	eleventyConfig.addFilter('latest255Release', (releases) => {
 		const tag = require('./public/releases/2.55.json').tagName;
-		return releases.findLast(r => r.data.tag_name === tag);
+		return releases.findLast(r => r.data.tag_name === tag && !r.data.since_last_stable);
+	});
+
+	eleventyConfig.addFilter('changelogPageReleases', (releases) => {
+		const nightly = releases.find(r => r.data.since_last_stable);
+		return releases.filter(r => {
+			if (r.data.prerelease) return false;
+			if (r.data.tag_name.includes('2.55-alpha-')) {
+				const v = Number(r.data.tag_name.replace('2.55-alpha-', ''));
+				return v >= 108;
+			}
+			return true;
+		}).concat(nightly);
 	});
 
 	// Get the first `n` elements of a collection.

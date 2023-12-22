@@ -194,6 +194,10 @@ app from your desktop or home screen.
 	}
 </style>
 
+<div>
+	<a href=/changelog/>Single-page changelog</a>
+</div>
+
 
 <ol class="release-list">
 {% for release in release_list | reverse -%}

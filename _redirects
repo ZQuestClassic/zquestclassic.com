@@ -2,3 +2,6 @@
 
 /play/ https://web.zquestclassic.com/play/ 301
 /create/ https://web.zquestclassic.com/create/ 301
+
+# nightly page
+/releases/nightly/ https://web.zquestclassic.com/releases/nightly-2023-12-20/ 302
