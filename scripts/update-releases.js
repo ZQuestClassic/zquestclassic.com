@@ -265,6 +265,6 @@ ${content}
 
 	let redirects = fs.readFileSync('_redirects', 'utf-8').split('\n');
 	const index = redirects.findIndex(l => l.startsWith('# nightly page'));
-	redirects[index + 1] = `/releases/nightly/ https://web.zquestclassic.com/releases/${release.tag_name}/ 302`;
+	redirects[index + 1] = `/releases/nightly/ https://zquestclassic.com/releases/${release.tag_name}/ 302`;
 	fs.writeFileSync('_redirects', redirects.join('\n'));
 }
