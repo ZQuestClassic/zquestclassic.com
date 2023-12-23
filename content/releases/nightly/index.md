@@ -1,26 +1,26 @@
 ---
-title: Nightly 2023-12-23
+title: Nightly 2023-12-23 (2)
 since_last_stable: true
-date: 2023-12-23T05:18:42Z
+date: 2023-12-23T09:17:59Z
 assets: 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-12-23/nightly-2023-12-23-linux.tar.gz
-    name: nightly-2023-12-23-linux.tar.gz
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-12-23-2/nightly-2023-12-23-2-linux.tar.gz
+    name: nightly-2023-12-23-2-linux.tar.gz
     platform: linux
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-12-23/nightly-2023-12-23-mac.dmg
-    name: nightly-2023-12-23-mac.dmg
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-12-23-2/nightly-2023-12-23-2-mac.dmg
+    name: nightly-2023-12-23-2-mac.dmg
     platform: mac
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-12-23/nightly-2023-12-23-windows-x64.zip
-    name: nightly-2023-12-23-windows-x64.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-12-23-2/nightly-2023-12-23-2-windows-x64.zip
+    name: nightly-2023-12-23-2-windows-x64.zip
     platform: windows-x64
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-12-23/nightly-2023-12-23-windows-x86.zip
-    name: nightly-2023-12-23-windows-x86.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-12-23-2/nightly-2023-12-23-2-windows-x86.zip
+    name: nightly-2023-12-23-2-windows-x86.zip
     platform: windows-win32
 prerelease: true
-id: 134966481
-tag_name: 'nightly-2023-12-23'
+id: 134971915
+tag_name: 'nightly-2023-12-23-2'
 channel: '2.55'
 tags:
   - releases
@@ -156,6 +156,8 @@ tags:
    >This didn't seem to break anything, but it showed up as a difference when comparing registers from JIT w/ non-JIT. 
    >
 - Hero->WarpEx not using dmap xoff when setting continue screen [`e21ba53d0`](https://github.com/ZQuestClassic/ZQuestClassic/commit/e21ba53d04b291e2e63b5172766d34bdff1e4ab5)
+- global var initializers not erroring when non-constant [`e1b10e2a0`](https://github.com/ZQuestClassic/ZQuestClassic/commit/e1b10e2a090f0737b4ddf2145ec6dc413048bb51)
+- escape character \" not working properly in string literals [`a08d4a149`](https://github.com/ZQuestClassic/ZQuestClassic/commit/a08d4a149598fdec7a3bd734c092a9f5a32163d5)
 
 ### Web
 
@@ -257,6 +259,10 @@ tags:
 - show current frame count when recording and system menu is active [`0f4e8a00c`](https://github.com/ZQuestClassic/ZQuestClassic/commit/0f4e8a00cbc989e0c6ec9e92a9c06756b10aa596)
 - improve error message when qst title does not match save file [`069e15113`](https://github.com/ZQuestClassic/ZQuestClassic/commit/069e15113fb08e457f56482e0d3f841f9cb5f946)
 - support "latest" for version field in zplay [`5870d858b`](https://github.com/ZQuestClassic/ZQuestClassic/commit/5870d858b8f0a7ad71e09e74f4b7b8286bc7e989)
+
+### ZScript
+
+- internal label errors now prevent compile [`1b0d63bfa`](https://github.com/ZQuestClassic/ZQuestClassic/commit/1b0d63bfaba434f12f157611a4aa33c65e011073)
 
 
 
