@@ -1,26 +1,26 @@
 ---
-title: Nightly 2023-12-20
+title: Nightly 2023-12-23
 since_last_stable: true
-date: 2023-12-20T05:09:45Z
+date: 2023-12-23T05:18:42Z
 assets: 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-12-20/nightly-2023-12-20-linux.tar.gz
-    name: nightly-2023-12-20-linux.tar.gz
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-12-23/nightly-2023-12-23-linux.tar.gz
+    name: nightly-2023-12-23-linux.tar.gz
     platform: linux
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-12-20/nightly-2023-12-20-mac.dmg
-    name: nightly-2023-12-20-mac.dmg
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-12-23/nightly-2023-12-23-mac.dmg
+    name: nightly-2023-12-23-mac.dmg
     platform: mac
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-12-20/nightly-2023-12-20-windows-x64.zip
-    name: nightly-2023-12-20-windows-x64.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-12-23/nightly-2023-12-23-windows-x64.zip
+    name: nightly-2023-12-23-windows-x64.zip
     platform: windows-x64
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-12-20/nightly-2023-12-20-windows-x86.zip
-    name: nightly-2023-12-20-windows-x86.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2023-12-23/nightly-2023-12-23-windows-x86.zip
+    name: nightly-2023-12-23-windows-x86.zip
     platform: windows-win32
 prerelease: true
-id: 134570999
-tag_name: 'nightly-2023-12-20'
+id: 134966481
+tag_name: 'nightly-2023-12-23'
 channel: '2.55'
 tags:
   - releases
@@ -69,6 +69,10 @@ tags:
 - being able to carry objects while swimming, when lift glove isn't swim-capable [`d06f44a33`](https://github.com/ZQuestClassic/ZQuestClassic/commit/d06f44a3347bd3143003ad5248783c1712ea5157)
 - 'Push (Generic)' combos not properly locking into place on block triggers [`80845040c`](https://github.com/ZQuestClassic/ZQuestClassic/commit/80845040c6457c3e2c574e7b02be336a699ec4a7)
 - deleting subscreens resulting in invalid/crashy data [`a29918a05`](https://github.com/ZQuestClassic/ZQuestClassic/commit/a29918a05398404aa3ae7ff00ffb8c701328d1b3)
+- arrow key navigation in menus not resepecting hidden items [`883c2305c`](https://github.com/ZQuestClassic/ZQuestClassic/commit/883c2305cf533c33b6c6cb4a4e14a69db224eec4)
+- prevent 1.90 qst load compat from setting first dmap cont/compass to bad value [`f1e3c5bcd`](https://github.com/ZQuestClassic/ZQuestClassic/commit/f1e3c5bcdd5ad5296222d0804034f9d1a0f7388d)
+- ZScript access to subscreen elements was missing a 'transparent' color option [`96c306004`](https://github.com/ZQuestClassic/ZQuestClassic/commit/96c306004b4173f717923231146741db6b0f1a3d)
+- zasm metadata not clearing properly when assigning slots [`33bb31162`](https://github.com/ZQuestClassic/ZQuestClassic/commit/33bb3116211fb34a5b82291594b8f4a5decac35d)
 
 ### Player
 
@@ -101,6 +105,12 @@ tags:
 - use more performant throttleFPS instead of rest in system menu [`0de39b360`](https://github.com/ZQuestClassic/ZQuestClassic/commit/0de39b360e58e30e603b5555d58641d4c8ca9690)
 - remove accidental double compilation for global scripts [`f30fd983f`](https://github.com/ZQuestClassic/ZQuestClassic/commit/f30fd983fa6abc90613e0d751c4b76e0a70ff3e5)
 - draw to correct bitmap when showing button clear prompt [`6e204d4fc`](https://github.com/ZQuestClassic/ZQuestClassic/commit/6e204d4fc20fe854d6ef3abedb0675ade3da4898)
+- minor replay determinism bug for subscr_item_clk (selector animation) [`825844706`](https://github.com/ZQuestClassic/ZQuestClassic/commit/825844706aace99d0c6348093383fbb5eb2502ab)
+- only assign save path just before actually writing to disk [`603e96444`](https://github.com/ZQuestClassic/ZQuestClassic/commit/603e96444f66001a9162461ebfc2fb85814422af)
+- call saves_do_first_time_stuff when changing slot qstpath [`db4cf98c2`](https://github.com/ZQuestClassic/ZQuestClassic/commit/db4cf98c2a906647e8dd77689d7dfb962b83919f)
+- handle edge case when changing unplayed save file qst [`79564453f`](https://github.com/ZQuestClassic/ZQuestClassic/commit/79564453f0e72a1ec32193bc366c11641e7b8b16)
+- prevent calling dmap script twice in scrolling dmap warp [`e8edc34e9`](https://github.com/ZQuestClassic/ZQuestClassic/commit/e8edc34e90b4ea9acce0c6c9f9409949ff88f8e8)
+- set previously unset save_t write_to_disk in all places [`adca2b376`](https://github.com/ZQuestClassic/ZQuestClassic/commit/adca2b3761310cd75c1eb1a6a3c78af2c604a98d)
 
 ### Editor
 
@@ -120,6 +130,17 @@ tags:
 - 'File->Exit' not exiting [`5db531ab7`](https://github.com/ZQuestClassic/ZQuestClassic/commit/5db531ab7066f1fb03afbca13b553df7ca01f580)
 - 'Scroll to Combo' on screen rclick being offset [`5497092dc`](https://github.com/ZQuestClassic/ZQuestClassic/commit/5497092dc23cedf28e89470cd4620f023c9967a2)
 - greyed out pasting in string list [`f2440669d`](https://github.com/ZQuestClassic/ZQuestClassic/commit/f2440669d88570d5fa98308b68600b2fa4924284)
+- create test init data relative to qst init, not base init [`fadfe7d74`](https://github.com/ZQuestClassic/ZQuestClassic/commit/fadfe7d74fbf9216cd8613bee693c6bd5f9d1179)
+   &nbsp;
+   >This was originally done this way to avoid changing test init data when the quest's actual init data changed, but that maybe is not as useful as the other approach.  
+   >
+   >Also very simply fixes the problem of screen data (and other init values) not being properly set. 
+   >
+- autocombo/combo pool/combo alias pages RClick menus being offset [`d3e276c4d`](https://github.com/ZQuestClassic/ZQuestClassic/commit/d3e276c4de792eaa4b935782ec76cfe86db4232f)
+- 'Open Tile Page' on combos not using the ORIGINAL tile of the combo [`7009db89b`](https://github.com/ZQuestClassic/ZQuestClassic/commit/7009db89b8984d0be0a3c1fc896aed1709349c2f)
+- disable tooltips when hotkey cheatsheet is open [`bcae99ea1`](https://github.com/ZQuestClassic/ZQuestClassic/commit/bcae99ea1d69f599b09b9b664ab73320908a3dec)
+- clean up several issues with the warp dialogs [`378766362`](https://github.com/ZQuestClassic/ZQuestClassic/commit/3787663628b1fe36682df755ac3765ca0822f247)
+- options->fonts being broken/inconsistent, not saving changes [`cc2cb75cd`](https://github.com/ZQuestClassic/ZQuestClassic/commit/cc2cb75cd04100a2d896e996dc3f54e4f0c9eabd)
 
 ### ZScript
 
@@ -174,6 +195,8 @@ tags:
 
 - remove unused volume code in read_saves [`244b8cad0`](https://github.com/ZQuestClassic/ZQuestClassic/commit/244b8cad0dd3cf18c90395195e2cd57c549aad11)
 - move x64 backend jit code to separate file [`f3d40e0b7`](https://github.com/ZQuestClassic/ZQuestClassic/commit/f3d40e0b7ba899f79be44cdd99350b812c965fdb)
+- move global inits from init_game to new init_game_vars [`c4f5c11ae`](https://github.com/ZQuestClassic/ZQuestClassic/commit/c4f5c11aed38f8aeface2729c70391f083ee5299)
+- make lamp_paid not static for replay determinism [`534d82e91`](https://github.com/ZQuestClassic/ZQuestClassic/commit/534d82e918e1b58184959a97f0bbd3891c1e40fb)
 
 ### Editor
 
@@ -199,6 +222,16 @@ tags:
 - fail replay test if jit cannot compile a script [`9ca544889`](https://github.com/ZQuestClassic/ZQuestClassic/commit/9ca544889a07c0c484d3c523085ddc4afa975a17)
 - fix local webserver when offline [`804520e40`](https://github.com/ZQuestClassic/ZQuestClassic/commit/804520e4075138097733680671c0d49d8922787f)
 - include js script in web replay test stdout/stderr [`3c162e5b2`](https://github.com/ZQuestClassic/ZQuestClassic/commit/3c162e5b2a92bb59e9977681b9837687618ae0a2)
+- add umbral_cloud.zplay [`0a0826577`](https://github.com/ZQuestClassic/ZQuestClassic/commit/0a0826577a155cedbeab0b10ef2eff22a9cf61fd)
+- add pageerror listener in run_replay.js [`ee98991df`](https://github.com/ZQuestClassic/ZQuestClassic/commit/ee98991dfea7fe05adf26a5d005ec84ff0a20f6f)
+- fail on abort in web replay tests [`3b0da67b4`](https://github.com/ZQuestClassic/ZQuestClassic/commit/3b0da67b43f8e195fc99a3adc21a3651559b7af3)
+- stop on fatal errors in run_web_version.js [`d69ad2aaa`](https://github.com/ZQuestClassic/ZQuestClassic/commit/d69ad2aaa9fc38fb7163722ead134293a2824bc2)
+- set write_to_disk in saves_test [`297b5433e`](https://github.com/ZQuestClassic/ZQuestClassic/commit/297b5433ee0179c49f8a33ca243db634dbf5093d)
+- add "frames" and "length" meta fields to zplay [`35da8a5eb`](https://github.com/ZQuestClassic/ZQuestClassic/commit/35da8a5ebb3f121c88dbae98b3431e64f259337c)
+- use "latest" version for all playground.qst replays [`42b94c785`](https://github.com/ZQuestClassic/ZQuestClassic/commit/42b94c78549d55fb42bbe8114bbd55679ae00b7f)
+   &nbsp;
+   >These replays should be trivial to update as needed, and using no replay compat code makes them far more useful for verifying specific features. 
+   >
 
 # CI
 
@@ -208,6 +241,7 @@ tags:
    >
    >https://github.com/microsoft/vcpkg/pull/30546#issuecomment-1819985146 
    >
+- set correct test results folder for web replays for upload [`9413f492c`](https://github.com/ZQuestClassic/ZQuestClassic/commit/9413f492c1a2dbf7d8b9190e87481b0cbd1b3da1)
 
 # Misc.
 
@@ -216,11 +250,13 @@ tags:
 - add 'peekkey()' / 'upeekkey()' local allegro edits [`7022b0ee4`](https://github.com/ZQuestClassic/ZQuestClassic/commit/7022b0ee472fb7ed4eea63eca83221b088cff8f0)
 - clean up menus, particularly the zc main menu [`5ae6e3d64`](https://github.com/ZQuestClassic/ZQuestClassic/commit/5ae6e3d64e53f5ecaa33d4d6ada1d0452b7d0c8c)
 - Remove whistle delay for new replays [`ac0017e2a`](https://github.com/ZQuestClassic/ZQuestClassic/commit/ac0017e2a8aab18950dcd2e13a913384dfaf9a31)
+- update default fonts to be same between base_config and 'Default:' button [`e8b85365d`](https://github.com/ZQuestClassic/ZQuestClassic/commit/e8b85365d3c9909f821248eeced719588ca2439c)
 
 ### Player
 
 - show current frame count when recording and system menu is active [`0f4e8a00c`](https://github.com/ZQuestClassic/ZQuestClassic/commit/0f4e8a00cbc989e0c6ec9e92a9c06756b10aa596)
 - improve error message when qst title does not match save file [`069e15113`](https://github.com/ZQuestClassic/ZQuestClassic/commit/069e15113fb08e457f56482e0d3f841f9cb5f946)
+- support "latest" for version field in zplay [`5870d858b`](https://github.com/ZQuestClassic/ZQuestClassic/commit/5870d858b8f0a7ad71e09e74f4b7b8286bc7e989)
 
 
 
