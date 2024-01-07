@@ -1,26 +1,26 @@
 ---
-title: Nightly 2024-01-01
+title: Nightly 2024-01-07
 since_last_stable: true
-date: 2024-01-01T11:43:52Z
+date: 2024-01-07T08:05:21Z
 assets: 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-01/nightly-2024-01-01-linux.tar.gz
-    name: nightly-2024-01-01-linux.tar.gz
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-07/nightly-2024-01-07-linux.tar.gz
+    name: nightly-2024-01-07-linux.tar.gz
     platform: linux
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-01/nightly-2024-01-01-mac.dmg
-    name: nightly-2024-01-01-mac.dmg
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-07/nightly-2024-01-07-mac.dmg
+    name: nightly-2024-01-07-mac.dmg
     platform: mac
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-01/nightly-2024-01-01-windows-x64.zip
-    name: nightly-2024-01-01-windows-x64.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-07/nightly-2024-01-07-windows-x64.zip
+    name: nightly-2024-01-07-windows-x64.zip
     platform: windows-x64
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-01/nightly-2024-01-01-windows-x86.zip
-    name: nightly-2024-01-01-windows-x86.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-07/nightly-2024-01-07-windows-x86.zip
+    name: nightly-2024-01-07-windows-x86.zip
     platform: windows-win32
 prerelease: true
-id: 135466200
-tag_name: 'nightly-2024-01-01'
+id: 136090797
+tag_name: 'nightly-2024-01-07'
 channel: '2.55'
 tags:
   - releases
@@ -85,6 +85,9 @@ tags:
 - Enemy Flames not reflecting off of shields, even with reflect flag set [`2264bb083`](https://github.com/ZQuestClassic/ZQuestClassic/commit/2264bb0834bf3b71b4d6d997500e0f1c10ee5045)
 - issues with numbers between 0 and -1 [`1b44e3b2c`](https://github.com/ZQuestClassic/ZQuestClassic/commit/1b44e3b2c81c46afe0b2331fea30de8fbd5d9272)
 - swords not updating properly, sometimes [`915670436`](https://github.com/ZQuestClassic/ZQuestClassic/commit/915670436dd1134673b0554b117b75f57a61973a)
+- old quest subscreen minimap titles overlapping [`dc548320e`](https://github.com/ZQuestClassic/ZQuestClassic/commit/dc548320e7ac5143ba5726178aa4aba75c93f1d0)
+- placing flags on layers not marking the layer screen as "valid" [`8c74b7296`](https://github.com/ZQuestClassic/ZQuestClassic/commit/8c74b72968670949fab9f0f6c5afbbe3bb4f89ce)
+- ensure file is closed when qst fails to load [`c702f24fc`](https://github.com/ZQuestClassic/ZQuestClassic/commit/c702f24fca10feb52420cc962f79d51e9c6e567f)
 
 ### Player
 
@@ -135,6 +138,9 @@ tags:
    >Now, these global variables are reset also just before loading the title screen. 
    >
 - prevent failing to save after continue [`870510c96`](https://github.com/ZQuestClassic/ZQuestClassic/commit/870510c9691d653edd8a99649f3a737a1a25dcb8)
+- lift glove 'disable item use' not stopping sword SFX from playing [`3e6fe6e05`](https://github.com/ZQuestClassic/ZQuestClassic/commit/3e6fe6e05254e5090a1802811c9abef3fae03dce)
+- remember last save slot position when returning to save select screen [`a3bc81309`](https://github.com/ZQuestClassic/ZQuestClassic/commit/a3bc813096c18cb5ab5602ab9afb9c03db8d4011)
+- [win32] invisible hero because of MSVC bug [`511934cea`](https://github.com/ZQuestClassic/ZQuestClassic/commit/511934ceaf8c2692984c87443c037076be73cc69)
 
 ### Editor
 
@@ -168,6 +174,7 @@ tags:
 - undefined memory write when applying modern quest ruleset [`2ed538d97`](https://github.com/ZQuestClassic/ZQuestClassic/commit/2ed538d975d33a94fd91cdbf9d66ae28fa16ac73)
 - lockblock/chest combo wizards not saving 'Use ExState' flag [`2a3eb96fd`](https://github.com/ZQuestClassic/ZQuestClassic/commit/2a3eb96fd4d6d7793ac3e26b320fb3d89e87528e)
 - some more issues with warp dialogs [`e9ab158ae`](https://github.com/ZQuestClassic/ZQuestClassic/commit/e9ab158aebe39c5fed17bd7350324cc6f3da47ed)
+- warp dialogs not properly previewing negative xoffset dmap map-marked squares [`b593e46bf`](https://github.com/ZQuestClassic/ZQuestClassic/commit/b593e46bf7ced06a94a0e1f8f08a1c2c1ae454e3)
 
 ### ZScript Standard Library (std.zh)
 
@@ -189,6 +196,10 @@ tags:
 - Hero->WarpEx not using dmap xoff when setting continue screen [`e21ba53d0`](https://github.com/ZQuestClassic/ZQuestClassic/commit/e21ba53d04b291e2e63b5172766d34bdff1e4ab5)
 - global var initializers not erroring when non-constant [`e1b10e2a0`](https://github.com/ZQuestClassic/ZQuestClassic/commit/e1b10e2a090f0737b4ddf2145ec6dc413048bb51)
 - escape character \" not working properly in string literals [`a08d4a149`](https://github.com/ZQuestClassic/ZQuestClassic/commit/a08d4a149598fdec7a3bd734c092a9f5a32163d5)
+- invalid character errors wrongly occurring for values 128-255 [`2cfe2e472`](https://github.com/ZQuestClassic/ZQuestClassic/commit/2cfe2e472bf3a292bca81cd8cd1e62e60232b7ab)
+- subscreen widgets not allowing SUB_COLOR_TRANSPARENT to be used [`77346b0c8`](https://github.com/ZQuestClassic/ZQuestClassic/commit/77346b0c86b5b493cf46284d7fa4d6576af9fc4e)
+- class function params with same-name as class member not shadowing properly [`5659c8ebd`](https://github.com/ZQuestClassic/ZQuestClassic/commit/5659c8ebd8668b9df137d80f2896e6a5e97218ce)
+- class/object destructors stack being offset wrongly [`79079c766`](https://github.com/ZQuestClassic/ZQuestClassic/commit/79079c7667a5360eeb72f8f75997f2d76d81855c)
 
 ### Web
 
@@ -206,6 +217,7 @@ tags:
 - document DrawTile '-777' rotation behavior [`8bfb995e0`](https://github.com/ZQuestClassic/ZQuestClassic/commit/8bfb995e0f7630cc2d56f66cecb581d38d4f2635)
 - fix typo [`9dc086113`](https://github.com/ZQuestClassic/ZQuestClassic/commit/9dc086113ed1b005d004bd95be4c43be52ca2369)
 - update zstrings.txt to mention the "Insert SCC" button [`bd084e245`](https://github.com/ZQuestClassic/ZQuestClassic/commit/bd084e24557dbb34fbb0fb473930fcac6608a8c7)
+- fix some issues with the webdocs [`569adf358`](https://github.com/ZQuestClassic/ZQuestClassic/commit/569adf358171e91ec0dbcd956541c00649a7e43b)
 
 # Build
 
@@ -284,12 +296,18 @@ tags:
 - clean up menus, particularly the zc main menu [`5ae6e3d64`](https://github.com/ZQuestClassic/ZQuestClassic/commit/5ae6e3d64e53f5ecaa33d4d6ada1d0452b7d0c8c)
 - Remove whistle delay for new replays [`ac0017e2a`](https://github.com/ZQuestClassic/ZQuestClassic/commit/ac0017e2a8aab18950dcd2e13a913384dfaf9a31)
 - update default fonts to be same between base_config and 'Default:' button [`e8b85365d`](https://github.com/ZQuestClassic/ZQuestClassic/commit/e8b85365d3c9909f821248eeced719588ca2439c)
+- help text to indicate use of A1/A2 values on ffc/item editors [`599d6f70c`](https://github.com/ZQuestClassic/ZQuestClassic/commit/599d6f70c3a55ee06a175b574d7d9005776c123a)
+- remove noisy allocation logs [`32bf8f42f`](https://github.com/ZQuestClassic/ZQuestClassic/commit/32bf8f42f0ff41d0ae308a3eeb6eb33ae8c8f7b1)
 
 ### Player
 
 - show current frame count when recording and system menu is active [`0f4e8a00c`](https://github.com/ZQuestClassic/ZQuestClassic/commit/0f4e8a00cbc989e0c6ec9e92a9c06756b10aa596)
 - improve error message when qst title does not match save file [`069e15113`](https://github.com/ZQuestClassic/ZQuestClassic/commit/069e15113fb08e457f56482e0d3f841f9cb5f946)
 - support "latest" for version field in zplay [`5870d858b`](https://github.com/ZQuestClassic/ZQuestClassic/commit/5870d858b8f0a7ad71e09e74f4b7b8286bc7e989)
+
+### Editor
+
+- Add hotkey for rebinding hotkeys [`af954f385`](https://github.com/ZQuestClassic/ZQuestClassic/commit/af954f3851c9fb8d5a81386bc4a05956e32406f5)
 
 ### ZScript
 
