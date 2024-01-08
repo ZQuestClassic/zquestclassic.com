@@ -1,31 +1,31 @@
 {
   "channel": "latest",
-  "tagName": "3.0.0-prerelease.23+2024-01-07",
+  "tagName": "3.0.0-prerelease.24+2024-01-08",
   "assets": [
     {
-      "name": "3.0.0-prerelease.23+2024-01-07-linux.tar.gz",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.23%2B2024-01-07/3.0.0-prerelease.23%2B2024-01-07-linux.tar.gz",
-      "size": 32920362
+      "name": "3.0.0-prerelease.24+2024-01-08-linux.tar.gz",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.24%2B2024-01-08/3.0.0-prerelease.24%2B2024-01-08-linux.tar.gz",
+      "size": 32921979
     },
     {
-      "name": "3.0.0-prerelease.23+2024-01-07-mac.dmg",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.23%2B2024-01-07/3.0.0-prerelease.23%2B2024-01-07-mac.dmg",
-      "size": 28464165
+      "name": "3.0.0-prerelease.24+2024-01-08-mac.dmg",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.24%2B2024-01-08/3.0.0-prerelease.24%2B2024-01-08-mac.dmg",
+      "size": 28464778
     },
     {
-      "name": "3.0.0-prerelease.23+2024-01-07-web.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.23%2B2024-01-07/3.0.0-prerelease.23%2B2024-01-07-web.zip",
-      "size": 85643583
+      "name": "3.0.0-prerelease.24+2024-01-08-web.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.24%2B2024-01-08/3.0.0-prerelease.24%2B2024-01-08-web.zip",
+      "size": 85642821
     },
     {
-      "name": "3.0.0-prerelease.23+2024-01-07-windows-x64.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.23%2B2024-01-07/3.0.0-prerelease.23%2B2024-01-07-windows-x64.zip",
-      "size": 29575042
+      "name": "3.0.0-prerelease.24+2024-01-08-windows-x64.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.24%2B2024-01-08/3.0.0-prerelease.24%2B2024-01-08-windows-x64.zip",
+      "size": 29576127
     },
     {
-      "name": "3.0.0-prerelease.23+2024-01-07-windows-x86.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.23%2B2024-01-07/3.0.0-prerelease.23%2B2024-01-07-windows-x86.zip",
-      "size": 27588220
+      "name": "3.0.0-prerelease.24+2024-01-08-windows-x86.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.24%2B2024-01-08/3.0.0-prerelease.24%2B2024-01-08-windows-x86.zip",
+      "size": 27589308
     }
   ]
 }
