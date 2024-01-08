@@ -1,26 +1,26 @@
 ---
-title: Nightly 2024-01-07
+title: Nightly 2024-01-08
 since_last_stable: true
-date: 2024-01-07T08:05:21Z
+date: 2024-01-08T02:37:33Z
 assets: 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-07/nightly-2024-01-07-linux.tar.gz
-    name: nightly-2024-01-07-linux.tar.gz
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-08/nightly-2024-01-08-linux.tar.gz
+    name: nightly-2024-01-08-linux.tar.gz
     platform: linux
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-07/nightly-2024-01-07-mac.dmg
-    name: nightly-2024-01-07-mac.dmg
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-08/nightly-2024-01-08-mac.dmg
+    name: nightly-2024-01-08-mac.dmg
     platform: mac
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-07/nightly-2024-01-07-windows-x64.zip
-    name: nightly-2024-01-07-windows-x64.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-08/nightly-2024-01-08-windows-x64.zip
+    name: nightly-2024-01-08-windows-x64.zip
     platform: windows-x64
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-07/nightly-2024-01-07-windows-x86.zip
-    name: nightly-2024-01-07-windows-x86.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-08/nightly-2024-01-08-windows-x86.zip
+    name: nightly-2024-01-08-windows-x86.zip
     platform: windows-win32
 prerelease: true
-id: 136090797
-tag_name: 'nightly-2024-01-07'
+id: 136126613
+tag_name: 'nightly-2024-01-08'
 channel: '2.55'
 tags:
   - releases
@@ -141,6 +141,7 @@ tags:
 - lift glove 'disable item use' not stopping sword SFX from playing [`3e6fe6e05`](https://github.com/ZQuestClassic/ZQuestClassic/commit/3e6fe6e05254e5090a1802811c9abef3fae03dce)
 - remember last save slot position when returning to save select screen [`a3bc81309`](https://github.com/ZQuestClassic/ZQuestClassic/commit/a3bc813096c18cb5ab5602ab9afb9c03db8d4011)
 - [win32] invisible hero because of MSVC bug [`511934cea`](https://github.com/ZQuestClassic/ZQuestClassic/commit/511934ceaf8c2692984c87443c037076be73cc69)
+- remember cheat on continue game [`99675afa2`](https://github.com/ZQuestClassic/ZQuestClassic/commit/99675afa26921869cd2e019129d0064a3ca908b7)
 
 ### Editor
 
@@ -287,6 +288,8 @@ tags:
    >https://github.com/microsoft/vcpkg/pull/30546#issuecomment-1819985146 
    >
 - set correct test results folder for web replays for upload [`9413f492c`](https://github.com/ZQuestClassic/ZQuestClassic/commit/9413f492c1a2dbf7d8b9190e87481b0cbd1b3da1)
+- use improved lfs cache [`69740f37c`](https://github.com/ZQuestClassic/ZQuestClassic/commit/69740f37c00819aaac91e836cd8b0a19cf847e94)
+- use RelWithDebInfo for win32 tests [`2eb360aa3`](https://github.com/ZQuestClassic/ZQuestClassic/commit/2eb360aa3639919ae4f03fd38864ff55cdb57810)
 
 # Misc.
 
