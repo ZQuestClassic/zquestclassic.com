@@ -1,26 +1,26 @@
 {
   "channel": "2.55",
-  "tagName": "nightly-2024-01-08",
+  "tagName": "nightly-2024-01-13",
   "assets": [
     {
-      "name": "nightly-2024-01-08-linux.tar.gz",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-08/nightly-2024-01-08-linux.tar.gz",
-      "size": 29120469
+      "name": "nightly-2024-01-13-linux.tar.gz",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-13/nightly-2024-01-13-linux.tar.gz",
+      "size": 29122984
     },
     {
-      "name": "nightly-2024-01-08-mac.dmg",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-08/nightly-2024-01-08-mac.dmg",
-      "size": 25291182
+      "name": "nightly-2024-01-13-mac.dmg",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-13/nightly-2024-01-13-mac.dmg",
+      "size": 25298695
     },
     {
-      "name": "nightly-2024-01-08-windows-x64.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-08/nightly-2024-01-08-windows-x64.zip",
-      "size": 26023189
+      "name": "nightly-2024-01-13-windows-x64.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-13/nightly-2024-01-13-windows-x64.zip",
+      "size": 26028867
     },
     {
-      "name": "nightly-2024-01-08-windows-x86.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-08/nightly-2024-01-08-windows-x86.zip",
-      "size": 24078608
+      "name": "nightly-2024-01-13-windows-x86.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-13/nightly-2024-01-13-windows-x86.zip",
+      "size": 24085129
     }
   ]
 }
