@@ -1,26 +1,26 @@
 ---
-title: Nightly 2024-01-13
+title: Nightly 2024-01-14
 since_last_stable: true
-date: 2024-01-13T12:03:42Z
+date: 2024-01-14T06:48:07Z
 assets: 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-13/nightly-2024-01-13-linux.tar.gz
-    name: nightly-2024-01-13-linux.tar.gz
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-14/nightly-2024-01-14-linux.tar.gz
+    name: nightly-2024-01-14-linux.tar.gz
     platform: linux
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-13/nightly-2024-01-13-mac.dmg
-    name: nightly-2024-01-13-mac.dmg
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-14/nightly-2024-01-14-mac.dmg
+    name: nightly-2024-01-14-mac.dmg
     platform: mac
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-13/nightly-2024-01-13-windows-x64.zip
-    name: nightly-2024-01-13-windows-x64.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-14/nightly-2024-01-14-windows-x64.zip
+    name: nightly-2024-01-14-windows-x64.zip
     platform: windows-x64
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-13/nightly-2024-01-13-windows-x86.zip
-    name: nightly-2024-01-13-windows-x86.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-14/nightly-2024-01-14-windows-x86.zip
+    name: nightly-2024-01-14-windows-x86.zip
     platform: windows-win32
 prerelease: true
-id: 136941672
-tag_name: 'nightly-2024-01-13'
+id: 136971419
+tag_name: 'nightly-2024-01-14'
 channel: '2.55'
 tags:
   - releases
@@ -142,6 +142,11 @@ tags:
 - remember last save slot position when returning to save select screen [`a3bc81309`](https://github.com/ZQuestClassic/ZQuestClassic/commit/a3bc813096c18cb5ab5602ab9afb9c03db8d4011)
 - [win32] invisible hero because of MSVC bug [`511934cea`](https://github.com/ZQuestClassic/ZQuestClassic/commit/511934ceaf8c2692984c87443c037076be73cc69)
 - remember cheat on continue game [`99675afa2`](https://github.com/ZQuestClassic/ZQuestClassic/commit/99675afa26921869cd2e019129d0064a3ca908b7)
+- 'Custom Weapon' itemclasses rounding down step speed [`8f4b63428`](https://github.com/ZQuestClassic/ZQuestClassic/commit/8f4b634284108df3d9b41c2500cebecdb6754578)
+- restore option to scale display to full window size [`b618eb983`](https://github.com/ZQuestClassic/ZQuestClassic/commit/b618eb983f02426f30ddecf8d2425087ada86807)
+   &nbsp;
+   >This broke when the display was fixed to only show at the correct aspect ratio. Default is still as before, but now the "Force Integer Values for Scale" option works again. 
+   >
 
 ### Editor
 
@@ -179,6 +184,7 @@ tags:
 - solidity preview inaccuracies [`723c58ebc`](https://github.com/ZQuestClassic/ZQuestClassic/commit/723c58ebc8800a29be208877e56b040130b60111)
 - 'Tools->Combo Flags' bugging out when clicked [`53f324ae6`](https://github.com/ZQuestClassic/ZQuestClassic/commit/53f324ae6789b5121e215acce781fd54f5d78759)
 - crash related to 'Scroll to page' for aliases/pools/autocombos [`7f8d8236c`](https://github.com/ZQuestClassic/ZQuestClassic/commit/7f8d8236c4f87a4cc5b862497d68d3474f6a103f)
+- midi edit dialog not showing in new rendering system [`7ff03e46b`](https://github.com/ZQuestClassic/ZQuestClassic/commit/7ff03e46bcb5202388da97092520edbc87624469)
 
 ### ZScript Standard Library (std.zh)
 
@@ -205,6 +211,7 @@ tags:
 - class function params with same-name as class member not shadowing properly [`5659c8ebd`](https://github.com/ZQuestClassic/ZQuestClassic/commit/5659c8ebd8668b9df137d80f2896e6a5e97218ce)
 - class/object destructors stack being offset wrongly [`79079c766`](https://github.com/ZQuestClassic/ZQuestClassic/commit/79079c7667a5360eeb72f8f75997f2d76d81855c)
 - fix Audio->SetMusicLoop() truncating decimal values [`c6e7c0205`](https://github.com/ZQuestClassic/ZQuestClassic/commit/c6e7c0205517561101c9c641443bcd4f7c37cfdd)
+- compiler crash related to invalid array indeces [`f3e3f7ecb`](https://github.com/ZQuestClassic/ZQuestClassic/commit/f3e3f7ecbf8d0e1e998296a185fa2eca248dd454)
 
 ### Web
 
@@ -247,6 +254,12 @@ tags:
 - move x64 backend jit code to separate file [`f3d40e0b7`](https://github.com/ZQuestClassic/ZQuestClassic/commit/f3d40e0b7ba899f79be44cdd99350b812c965fdb)
 - move global inits from init_game to new init_game_vars [`c4f5c11ae`](https://github.com/ZQuestClassic/ZQuestClassic/commit/c4f5c11aed38f8aeface2729c70391f083ee5299)
 - make lamp_paid not static for replay determinism [`534d82e91`](https://github.com/ZQuestClassic/ZQuestClassic/commit/534d82e918e1b58184959a97f0bbd3891c1e40fb)
+- remove ZASM debugger from menu [`377981e09`](https://github.com/ZQuestClassic/ZQuestClassic/commit/377981e09d2d3b008369fb0bd3ef974fa36e9d64)
+   &nbsp;
+   >You may still activate this with `[CONSOLE] print_ZASM = 1` in `zc.cfg`, but the option is no longer in the player menu. This will be removed entirely soon - it's so slow it can lock up a computer, and not useful enough to keep around.  
+   >
+   >We may introduce a proper debugger in the future for ZScript to serve the purpose the ZASM debugger tried to. 
+   >
 
 ### Editor
 
@@ -282,6 +295,7 @@ tags:
    &nbsp;
    >These replays should be trivial to update as needed, and using no replay compat code makes them far more useful for verifying specific features. 
    >
+- add link_to_the_heavens.zplay [`b1309cc47`](https://github.com/ZQuestClassic/ZQuestClassic/commit/b1309cc474cad2c492eb3c640f71fd3763f900cc)
 
 # CI
 
