@@ -14,6 +14,10 @@ assets:
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-17/nightly-2024-01-17-windows-x64.zip
     name: nightly-2024-01-17-windows-x64.zip
     platform: windows-x64
+
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-17/nightly-2024-01-17-windows-x86.zip
+    name: nightly-2024-01-17-windows-x86.zip
+    platform: windows-win32
 prerelease: true
 id: 137347325
 tag_name: 'nightly-2024-01-17'
