@@ -11,6 +11,10 @@ assets:
     name: 3.0.0-prerelease.27+2024-01-17-mac.dmg
     platform: mac
 
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.27%2B2024-01-17/3.0.0-prerelease.27%2B2024-01-17-windows-x64.zip
+    name: 3.0.0-prerelease.27+2024-01-17-windows-x64.zip
+    platform: windows-x64
+
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.27%2B2024-01-17/3.0.0-prerelease.27%2B2024-01-17-windows-x86.zip
     name: 3.0.0-prerelease.27+2024-01-17-windows-x86.zip
     platform: windows-win32
@@ -65,3 +69,4 @@ tags:
    &nbsp;
    >This reverts commit 1a1bd37ac769db838a390e88b6fef03288576b01. 
    >
+
