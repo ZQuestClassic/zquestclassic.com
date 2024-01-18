@@ -1,26 +1,26 @@
 ---
-title: Nightly 2024-01-17
+title: Nightly 2024-01-18
 since_last_stable: true
-date: 2024-01-17T06:57:47Z
+date: 2024-01-18T07:44:48Z
 assets: 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-17/nightly-2024-01-17-linux.tar.gz
-    name: nightly-2024-01-17-linux.tar.gz
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-18/nightly-2024-01-18-linux.tar.gz
+    name: nightly-2024-01-18-linux.tar.gz
     platform: linux
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-17/nightly-2024-01-17-mac.dmg
-    name: nightly-2024-01-17-mac.dmg
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-18/nightly-2024-01-18-mac.dmg
+    name: nightly-2024-01-18-mac.dmg
     platform: mac
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-17/nightly-2024-01-17-windows-x64.zip
-    name: nightly-2024-01-17-windows-x64.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-18/nightly-2024-01-18-windows-x64.zip
+    name: nightly-2024-01-18-windows-x64.zip
     platform: windows-x64
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-17/nightly-2024-01-17-windows-x86.zip
-    name: nightly-2024-01-17-windows-x86.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-18/nightly-2024-01-18-windows-x86.zip
+    name: nightly-2024-01-18-windows-x86.zip
     platform: windows-win32
 prerelease: true
-id: 137347325
-tag_name: 'nightly-2024-01-17'
+id: 137518946
+tag_name: 'nightly-2024-01-18'
 channel: '2.55'
 tags:
   - releases
@@ -40,6 +40,7 @@ tags:
 ### Player
 
 - Custom mirrors can 'block' instead of reflect per-direction [`9ce509792`](https://github.com/ZQuestClassic/ZQuestClassic/commit/9ce50979253ca629da0bc5c32e3196fdc5d541b1)
+- option to show game time in the corner, for all those speedrunners out there [`05449497b`](https://github.com/ZQuestClassic/ZQuestClassic/commit/05449497b92904732a2ee074bba4d9c9f9bd897c)
 
 ### Editor
 
@@ -89,6 +90,12 @@ tags:
 - old quest subscreen minimap titles overlapping [`dc548320e`](https://github.com/ZQuestClassic/ZQuestClassic/commit/dc548320e7ac5143ba5726178aa4aba75c93f1d0)
 - placing flags on layers not marking the layer screen as "valid" [`8c74b7296`](https://github.com/ZQuestClassic/ZQuestClassic/commit/8c74b72968670949fab9f0f6c5afbbe3bb4f89ce)
 - ensure file is closed when qst fails to load [`c702f24fc`](https://github.com/ZQuestClassic/ZQuestClassic/commit/c702f24fca10feb52420cc962f79d51e9c6e567f)
+- retain monitor resolution for fullscreen mode [`981c6c1f9`](https://github.com/ZQuestClassic/ZQuestClassic/commit/981c6c1f93551d07d71c0210a33052344205efc4)
+   &nbsp;
+   >Previously, the maximum monitor resolution would be used when using fullscreen mode. That was bad because it messes up the window layout of anything else on that monitor. Now we create fullscreen displays without changing the resolution.  
+   >
+   >Also, no longer destroy and recreate the display to change fullscreen/windowed mode. Switching between is much smoother now, and the code got a bit simpler and safer. 
+   >
 
 ### Player
 
@@ -255,6 +262,7 @@ tags:
 - load text files more efficiently [`663e4dacf`](https://github.com/ZQuestClassic/ZQuestClassic/commit/663e4dacf1e94fed56d4970930fff61ed274600f)
 - don't tint behind dropdown lists (allow skipping dlgs tint) [`cb8f87135`](https://github.com/ZQuestClassic/ZQuestClassic/commit/cb8f8713578e893518222aba61bdbcac4bffa2bb)
 - Menus (new sleeker look, much cleaner backend) [`df3b5ab5b`](https://github.com/ZQuestClassic/ZQuestClassic/commit/df3b5ab5b58145ea61314221a387ffe0351c0b65)
+- remove scary and now pointless warnings when toggling fullscreen [`cf9942aca`](https://github.com/ZQuestClassic/ZQuestClassic/commit/cf9942aca7d3bde7ee7f2baf8e911e53d31011b2)
 
 ### Player
 
