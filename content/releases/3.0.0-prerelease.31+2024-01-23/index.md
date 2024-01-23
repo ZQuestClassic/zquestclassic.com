@@ -73,3 +73,4 @@ tags:
 # Misc.
 
 - add qst.author sentry tag, so we can know who to reach out to for crashes in unpublished quests [`48fbd2609`](https://github.com/ZQuestClassic/ZQuestClassic/commit/48fbd26093b88308ec9fd7871f754fa4ef8d689b)
+
