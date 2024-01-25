@@ -1,26 +1,26 @@
 ---
-title: Nightly 2024-01-23
+title: Nightly 2024-01-25
 since_last_stable: true
-date: 2024-01-23T06:41:39Z
+date: 2024-01-24T23:04:42Z
 assets: 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-23/nightly-2024-01-23-linux.tar.gz
-    name: nightly-2024-01-23-linux.tar.gz
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-25/nightly-2024-01-25-linux.tar.gz
+    name: nightly-2024-01-25-linux.tar.gz
     platform: linux
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-23/nightly-2024-01-23-mac.dmg
-    name: nightly-2024-01-23-mac.dmg
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-25/nightly-2024-01-25-mac.dmg
+    name: nightly-2024-01-25-mac.dmg
     platform: mac
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-23/nightly-2024-01-23-windows-x64.zip
-    name: nightly-2024-01-23-windows-x64.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-25/nightly-2024-01-25-windows-x64.zip
+    name: nightly-2024-01-25-windows-x64.zip
     platform: windows-x64
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-23/nightly-2024-01-23-windows-x86.zip
-    name: nightly-2024-01-23-windows-x86.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-25/nightly-2024-01-25-windows-x86.zip
+    name: nightly-2024-01-25-windows-x86.zip
     platform: windows-win32
 prerelease: true
-id: 138105547
-tag_name: 'nightly-2024-01-23'
+id: 138447964
+tag_name: 'nightly-2024-01-25'
 channel: '2.55'
 tags:
   - releases
@@ -172,6 +172,10 @@ tags:
    >This should allow us to simplify the rendering (no need to render most things twice to a secondary bitmap), and just looks better. 
    >
 - do not stretch GUI [`fad67d962`](https://github.com/ZQuestClassic/ZQuestClassic/commit/fad67d9622faee27c14d945b08c6c68232d58236)
+- tall grass on layers not applying its sfx/sprite [`76f952fc9`](https://github.com/ZQuestClassic/ZQuestClassic/commit/76f952fc995ba63205743df4a419586f6766ce08)
+- fix snapshot with NOSUBSCR not supplying a palette and not accounting for NOSUBSCROFFSET [`45bf325cb`](https://github.com/ZQuestClassic/ZQuestClassic/commit/45bf325cb7da34b59a64959280d9195eb6f163a6)
+- set default volume to 100% instead of 25% [`8a4f7cf2e`](https://github.com/ZQuestClassic/ZQuestClassic/commit/8a4f7cf2eba993436cb610ac4a5b6f68cdb0cf0e)
+- prevent grid aligning while jumping, which broke jumping for some old quests [`2d8a18875`](https://github.com/ZQuestClassic/ZQuestClassic/commit/2d8a188758c5b6676537c893a00378adf6b71a46)
 
 ### Editor
 
@@ -211,6 +215,7 @@ tags:
 - crash related to 'Scroll to page' for aliases/pools/autocombos [`7f8d8236c`](https://github.com/ZQuestClassic/ZQuestClassic/commit/7f8d8236c4f87a4cc5b862497d68d3474f6a103f)
 - midi edit dialog not showing in new rendering system [`7ff03e46b`](https://github.com/ZQuestClassic/ZQuestClassic/commit/7ff03e46bcb5202388da97092520edbc87624469)
 - handle quest path/title with spaces in package export [`432dfe42c`](https://github.com/ZQuestClassic/ZQuestClassic/commit/432dfe42cb310c4698b959751a96186c089928b9)
+- transparent tiles not drawing correctly in map preview [`80f94a9ea`](https://github.com/ZQuestClassic/ZQuestClassic/commit/80f94a9ea39b7aa671c93d95e9be273f7f2ca8b7)
 
 ### ZScript Standard Library (std.zh)
 
@@ -249,6 +254,7 @@ tags:
    >
 - clear jit-compiled scripts as intended when loading new quest [`ddf96eddd`](https://github.com/ZQuestClassic/ZQuestClassic/commit/ddf96eddd335f42b607285ab18ea2c25ace7e7e4)
 - fix crash when creating too many paldatas [`83a3bc867`](https://github.com/ZQuestClassic/ZQuestClassic/commit/83a3bc8672c7149823f19b72f2227d854d4ddff3)
+- fix paldata->CopyCSet() referencing the wrong pointer [`2a305c182`](https://github.com/ZQuestClassic/ZQuestClassic/commit/2a305c1823de27e830b914a10f7659eb3522633c)
 
 ### Web
 
@@ -272,6 +278,10 @@ tags:
 
 - fix missing libpng for web build [`a6c345e5a`](https://github.com/ZQuestClassic/ZQuestClassic/commit/a6c345e5a359e90f8825067eba14a273f9dadda1)
 - fix missing libogg for web build [`a5254efa0`](https://github.com/ZQuestClassic/ZQuestClassic/commit/a5254efa02e0533cd375b1bd8da60c41f3ce6af2)
+- upgrade to latest asmjit [`65ae72c6d`](https://github.com/ZQuestClassic/ZQuestClassic/commit/65ae72c6de7770f86ae93504514c66bdf02f11d5)
+   &nbsp;
+   >Resolves MSVC release mode bug: https://github.com/asmjit/asmjit/issues/427 
+   >
 
 # Refactors
 
@@ -383,6 +393,7 @@ tags:
 - Add hotkey for rebinding hotkeys [`af954f385`](https://github.com/ZQuestClassic/ZQuestClassic/commit/af954f3851c9fb8d5a81386bc4a05956e32406f5)
 - fix some text, add divine escape help text for warp types [`1b058a4b7`](https://github.com/ZQuestClassic/ZQuestClassic/commit/1b058a4b78b9c346a50b4852c6fbac5631035450)
 - clean up 'Door Combo Set' dialog/hotkeys and document them [`a4503c640`](https://github.com/ZQuestClassic/ZQuestClassic/commit/a4503c640801eb062d490ca7cdef66fc66b311b5)
+- upgrade combo 'advanced paste' dialog, add 'Adv. Paste' to rclick menu [`7ac1da426`](https://github.com/ZQuestClassic/ZQuestClassic/commit/7ac1da4262e2d18b32f50d2a6e6f4c646fee7af6)
 
 ### ZScript
 
