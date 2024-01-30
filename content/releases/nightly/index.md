@@ -1,26 +1,26 @@
 ---
-title: Nightly 2024-01-25
+title: Nightly 2024-01-30
 since_last_stable: true
-date: 2024-01-24T23:04:42Z
+date: 2024-01-30T07:52:08Z
 assets: 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-25/nightly-2024-01-25-linux.tar.gz
-    name: nightly-2024-01-25-linux.tar.gz
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-30/nightly-2024-01-30-linux.tar.gz
+    name: nightly-2024-01-30-linux.tar.gz
     platform: linux
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-25/nightly-2024-01-25-mac.dmg
-    name: nightly-2024-01-25-mac.dmg
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-30/nightly-2024-01-30-mac.dmg
+    name: nightly-2024-01-30-mac.dmg
     platform: mac
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-25/nightly-2024-01-25-windows-x64.zip
-    name: nightly-2024-01-25-windows-x64.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-30/nightly-2024-01-30-windows-x64.zip
+    name: nightly-2024-01-30-windows-x64.zip
     platform: windows-x64
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-25/nightly-2024-01-25-windows-x86.zip
-    name: nightly-2024-01-25-windows-x86.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-30/nightly-2024-01-30-windows-x86.zip
+    name: nightly-2024-01-30-windows-x86.zip
     platform: windows-win32
 prerelease: true
-id: 138447964
-tag_name: 'nightly-2024-01-25'
+id: 139075511
+tag_name: 'nightly-2024-01-30'
 channel: '2.55'
 tags:
   - releases
@@ -52,6 +52,24 @@ tags:
 - Hotkey cheatsheet, open with Shift+? [`2f0f07d43`](https://github.com/ZQuestClassic/ZQuestClassic/commit/2f0f07d438ce505dc082c0519a2ac5402ae7f1bb)
 - Item Wizard (Shields) [`bcf109db2`](https://github.com/ZQuestClassic/ZQuestClassic/commit/bcf109db2779480d98a7c0fef8ebee1fc60e28e3)
 - support multiple palettes in map preview/image export [`f207fda3f`](https://github.com/ZQuestClassic/ZQuestClassic/commit/f207fda3f4deebcae4d523dd9765154cf315e0da)
+- various updates to default.qst (File->New) [`0a53ec393`](https://github.com/ZQuestClassic/ZQuestClassic/commit/0a53ec393fbff49ec745a48ea071c1f796b64fe9)
+   &nbsp;
+   >- Add sideview swimming tiles
+   >- Add charge-swimming sprites
+   >- Add Bunny Link - this required expanding the pages per LTM from 1 to 2
+   >- Add BS/Z3 swimming tiles
+   >- Add the missing enemy tiles from Outlands
+   >- Magic Pols Voice now uses CSet 10, to make room for ...
+   >- Add Whistle Pols Voice: blocks arrows like a Magic Pols Voice, but is
+   >  a One-Hit Kill via the whistle. Uses CSet 7
+   >- Improve the lifting and holding sprites
+   >- Improve Z3 Octorok tiles (Slow Fire and Bomb Octorok)
+   >- Update credits on page 109
+   >- Convert Bug Net to use 4-bit colour
+   >- Fix enemy bombs using CSet 6
+   >- Delete unused scripts in the tiles
+   >- Delete unimplemented Sprite 088 (Firework)
+   >
 
 ### ZLauncher
 
@@ -176,6 +194,7 @@ tags:
 - fix snapshot with NOSUBSCR not supplying a palette and not accounting for NOSUBSCROFFSET [`45bf325cb`](https://github.com/ZQuestClassic/ZQuestClassic/commit/45bf325cb7da34b59a64959280d9195eb6f163a6)
 - set default volume to 100% instead of 25% [`8a4f7cf2e`](https://github.com/ZQuestClassic/ZQuestClassic/commit/8a4f7cf2eba993436cb610ac4a5b6f68cdb0cf0e)
 - prevent grid aligning while jumping, which broke jumping for some old quests [`2d8a18875`](https://github.com/ZQuestClassic/ZQuestClassic/commit/2d8a188758c5b6676537c893a00378adf6b71a46)
+- for replay mode, whistle sfx pauses game for number of frames proportional to sfx length instead of 0 frames [`1f38de5b0`](https://github.com/ZQuestClassic/ZQuestClassic/commit/1f38de5b0f02464606850ea4352369a96d1775c2)
 
 ### Editor
 
@@ -216,6 +235,7 @@ tags:
 - midi edit dialog not showing in new rendering system [`7ff03e46b`](https://github.com/ZQuestClassic/ZQuestClassic/commit/7ff03e46bcb5202388da97092520edbc87624469)
 - handle quest path/title with spaces in package export [`432dfe42c`](https://github.com/ZQuestClassic/ZQuestClassic/commit/432dfe42cb310c4698b959751a96186c089928b9)
 - transparent tiles not drawing correctly in map preview [`80f94a9ea`](https://github.com/ZQuestClassic/ZQuestClassic/commit/80f94a9ea39b7aa671c93d95e9be273f7f2ca8b7)
+- error message on failure to load enhanced music in the dmap editor [`06cee90fa`](https://github.com/ZQuestClassic/ZQuestClassic/commit/06cee90fa2a31165a25f0bee00426e145e258011)
 
 ### ZScript Standard Library (std.zh)
 
@@ -399,6 +419,25 @@ tags:
 
 - internal label errors now prevent compile [`1b0d63bfa`](https://github.com/ZQuestClassic/ZQuestClassic/commit/1b0d63bfaba434f12f157611a4aa33c65e011073)
 - add 'itemdata->LAttributes[]' to access attributes as a full 32-bit long value [`83f9d2d03`](https://github.com/ZQuestClassic/ZQuestClassic/commit/83f9d2d0388d11d9eafe0b41992cf22fa2c6f85b)
+- add Region in anticipation of z3 scrolling [`403c19750`](https://github.com/ZQuestClassic/ZQuestClassic/commit/403c19750d456cb3542251cbebb62575cb504e3f)
+   &nbsp;
+   >To enable scripts to work in 2.55 and in a future release with z3 scrolling, we are adding a non-functional `Region`:  
+   >
+   >- `Region->Width`: width in pixels (today, always 256)
+   >- `Region->Height`: height in pixels (176)
+   >- `Region->ScreenWidth`: width in screens (1)
+   >- `Region->ScreenHeight`: height in screens (1)
+   >- `Region->NumCombos`: number of combo positions (176)
+   >- `Region->ID`: region id (0 - meaning just a normal 1x1 area)
+   >- `Region->OriginScreen`: top-left screen in the region
+   >- `Region->GetScreenForComboPos(int pos)`: given a combo position, returns the screen index associated with it
+   >- `Region->TriggerSecrets(int screen_index)`: trigger secrets for given screen. The screen must be in the region
+   >
+   >
+   >&nbsp;
+   >
+   >For example, if a script uses `Region->NumCombos` instead of `176` to iterate all the combos in the current area, it will work in both regions and non-regions. Additionally you should use `ComboAt(x, y)` rather than anything else to translate between pixel coordinates and a combo position. 
+   >
 
 
 
