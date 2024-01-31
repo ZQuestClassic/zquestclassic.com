@@ -1,26 +1,26 @@
 ---
-title: Nightly 2024-01-30
+title: Nightly 2024-01-31
 since_last_stable: true
-date: 2024-01-30T07:52:08Z
+date: 2024-01-31T06:15:20Z
 assets: 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-30/nightly-2024-01-30-linux.tar.gz
-    name: nightly-2024-01-30-linux.tar.gz
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-31/nightly-2024-01-31-linux.tar.gz
+    name: nightly-2024-01-31-linux.tar.gz
     platform: linux
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-30/nightly-2024-01-30-mac.dmg
-    name: nightly-2024-01-30-mac.dmg
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-31/nightly-2024-01-31-mac.dmg
+    name: nightly-2024-01-31-mac.dmg
     platform: mac
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-30/nightly-2024-01-30-windows-x64.zip
-    name: nightly-2024-01-30-windows-x64.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-31/nightly-2024-01-31-windows-x64.zip
+    name: nightly-2024-01-31-windows-x64.zip
     platform: windows-x64
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-30/nightly-2024-01-30-windows-x86.zip
-    name: nightly-2024-01-30-windows-x86.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-01-31/nightly-2024-01-31-windows-x86.zip
+    name: nightly-2024-01-31-windows-x86.zip
     platform: windows-win32
 prerelease: true
-id: 139075511
-tag_name: 'nightly-2024-01-30'
+id: 139267405
+tag_name: 'nightly-2024-01-31'
 channel: '2.55'
 tags:
   - releases
@@ -195,6 +195,11 @@ tags:
 - set default volume to 100% instead of 25% [`8a4f7cf2e`](https://github.com/ZQuestClassic/ZQuestClassic/commit/8a4f7cf2eba993436cb610ac4a5b6f68cdb0cf0e)
 - prevent grid aligning while jumping, which broke jumping for some old quests [`2d8a18875`](https://github.com/ZQuestClassic/ZQuestClassic/commit/2d8a188758c5b6676537c893a00378adf6b71a46)
 - for replay mode, whistle sfx pauses game for number of frames proportional to sfx length instead of 0 frames [`1f38de5b0`](https://github.com/ZQuestClassic/ZQuestClassic/commit/1f38de5b0f02464606850ea4352369a96d1775c2)
+- hero action "swimhit" incorrectly unset due to broken isSwimming() check [`8b10722d8`](https://github.com/ZQuestClassic/ZQuestClassic/commit/8b10722d8567566d65850a7b7a15d691549dfc74)
+- combo cycling reset too early for animations with frame skips [`601cba74f`](https://github.com/ZQuestClassic/ZQuestClassic/commit/601cba74fc45b445a22516e21ec706947fdb9382)
+   &nbsp;
+   >Turns out this never worked properly! 
+   >
 
 ### Editor
 
@@ -236,6 +241,7 @@ tags:
 - handle quest path/title with spaces in package export [`432dfe42c`](https://github.com/ZQuestClassic/ZQuestClassic/commit/432dfe42cb310c4698b959751a96186c089928b9)
 - transparent tiles not drawing correctly in map preview [`80f94a9ea`](https://github.com/ZQuestClassic/ZQuestClassic/commit/80f94a9ea39b7aa671c93d95e9be273f7f2ca8b7)
 - error message on failure to load enhanced music in the dmap editor [`06cee90fa`](https://github.com/ZQuestClassic/ZQuestClassic/commit/06cee90fa2a31165a25f0bee00426e145e258011)
+- skipy broken in combo preview animation [`590e9f59c`](https://github.com/ZQuestClassic/ZQuestClassic/commit/590e9f59ce58650522fee3118535b015898a3315)
 
 ### ZScript Standard Library (std.zh)
 
@@ -438,6 +444,7 @@ tags:
    >
    >For example, if a script uses `Region->NumCombos` instead of `176` to iterate all the combos in the current area, it will work in both regions and non-regions. Additionally you should use `ComboAt(x, y)` rather than anything else to translate between pixel coordinates and a combo position. 
    >
+- mark combo->CSet deprecated, in favor for the better named ->CSet2 [`81cd99579`](https://github.com/ZQuestClassic/ZQuestClassic/commit/81cd99579d4ee79bc9c61f6d33387bc92567b198)
 
 
 
