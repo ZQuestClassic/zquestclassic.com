@@ -1,26 +1,26 @@
 ---
-title: Nightly 2024-02-07
+title: Nightly 2024-02-09
 since_last_stable: true
-date: 2024-02-07T08:12:49Z
+date: 2024-02-09T08:03:38Z
 assets: 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-07/nightly-2024-02-07-linux.tar.gz
-    name: nightly-2024-02-07-linux.tar.gz
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-09/nightly-2024-02-09-linux.tar.gz
+    name: nightly-2024-02-09-linux.tar.gz
     platform: linux
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-07/nightly-2024-02-07-mac.dmg
-    name: nightly-2024-02-07-mac.dmg
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-09/nightly-2024-02-09-mac.dmg
+    name: nightly-2024-02-09-mac.dmg
     platform: mac
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-07/nightly-2024-02-07-windows-x64.zip
-    name: nightly-2024-02-07-windows-x64.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-09/nightly-2024-02-09-windows-x64.zip
+    name: nightly-2024-02-09-windows-x64.zip
     platform: windows-x64
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-07/nightly-2024-02-07-windows-x86.zip
-    name: nightly-2024-02-07-windows-x86.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-09/nightly-2024-02-09-windows-x86.zip
+    name: nightly-2024-02-09-windows-x86.zip
     platform: windows-win32
 prerelease: true
-id: 140260185
-tag_name: 'nightly-2024-02-07'
+id: 140754110
+tag_name: 'nightly-2024-02-09'
 channel: '2.55'
 tags:
   - releases
@@ -220,6 +220,7 @@ tags:
    >
    >Additionally, fixed a bug in the sound dialog that skipped the first sfx when adjusting currently playing sounds to the new volume. That first sfx is often a background sfx. 
    >
+- various slope improvements, like fixing ffc slopes [`f80e024ca`](https://github.com/ZQuestClassic/ZQuestClassic/commit/f80e024ca35a39b2b9a4bae45ffc940d2ac37ff2)
 
 ### Editor
 
@@ -336,6 +337,10 @@ tags:
 - upgrade to latest asmjit [`65ae72c6d`](https://github.com/ZQuestClassic/ZQuestClassic/commit/65ae72c6de7770f86ae93504514c66bdf02f11d5)
    &nbsp;
    >Resolves MSVC release mode bug: https://github.com/asmjit/asmjit/issues/427 
+   >
+- add default file for compiler "signature" [`26e8cd4db`](https://github.com/ZQuestClassic/ZQuestClassic/commit/26e8cd4db8760c4b8d4638e16c6b511b90156546)
+   &nbsp;
+   >This is to make the build _just work_ in a clean checkout until I get around to removing this pointless thing altogether. 
    >
 
 # Refactors
