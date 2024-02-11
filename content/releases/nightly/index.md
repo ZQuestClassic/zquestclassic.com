@@ -1,26 +1,26 @@
 ---
-title: Nightly 2024-02-09
+title: Nightly 2024-02-11
 since_last_stable: true
-date: 2024-02-09T08:03:38Z
+date: 2024-02-11T07:50:02Z
 assets: 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-09/nightly-2024-02-09-linux.tar.gz
-    name: nightly-2024-02-09-linux.tar.gz
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-11/nightly-2024-02-11-linux.tar.gz
+    name: nightly-2024-02-11-linux.tar.gz
     platform: linux
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-09/nightly-2024-02-09-mac.dmg
-    name: nightly-2024-02-09-mac.dmg
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-11/nightly-2024-02-11-mac.dmg
+    name: nightly-2024-02-11-mac.dmg
     platform: mac
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-09/nightly-2024-02-09-windows-x64.zip
-    name: nightly-2024-02-09-windows-x64.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-11/nightly-2024-02-11-windows-x64.zip
+    name: nightly-2024-02-11-windows-x64.zip
     platform: windows-x64
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-09/nightly-2024-02-09-windows-x86.zip
-    name: nightly-2024-02-09-windows-x86.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-11/nightly-2024-02-11-windows-x86.zip
+    name: nightly-2024-02-11-windows-x86.zip
     platform: windows-win32
 prerelease: true
-id: 140754110
-tag_name: 'nightly-2024-02-09'
+id: 141526585
+tag_name: 'nightly-2024-02-11'
 channel: '2.55'
 tags:
   - releases
@@ -221,6 +221,12 @@ tags:
    >Additionally, fixed a bug in the sound dialog that skipped the first sfx when adjusting currently playing sounds to the new volume. That first sfx is often a background sfx. 
    >
 - various slope improvements, like fixing ffc slopes [`f80e024ca`](https://github.com/ZQuestClassic/ZQuestClassic/commit/f80e024ca35a39b2b9a4bae45ffc940d2ac37ff2)
+- fix mirror shield not resetting the last used mirror combo position [`2c375403a`](https://github.com/ZQuestClassic/ZQuestClassic/commit/2c375403a92f3492288e7f30cbc57c2bd5d390ee)
+- save select screen not showing new hp after save->reset [`8d15352e5`](https://github.com/ZQuestClassic/ZQuestClassic/commit/8d15352e58c164ff3f050e64e8fbc9bf43733ec9)
+- load default quest for sfx when loading replay [`4bc56aef2`](https://github.com/ZQuestClassic/ZQuestClassic/commit/4bc56aef26c1aa3fa1c2ca3486acb00738d5cb3c)
+   &nbsp;
+   >Quests before custom sfx rely on the default quest providing sfx, but that wasn't being loaded when playing back a replay. So it would either use whatever the last quest loaded, or have nothing, which was the case for the replay test script. 
+   >
 
 ### Editor
 
@@ -420,6 +426,8 @@ tags:
 - add link_to_the_heavens.zplay [`b1309cc47`](https://github.com/ZQuestClassic/ZQuestClassic/commit/b1309cc474cad2c492eb3c640f71fd3763f900cc)
 - add dinus.zplay [`9807de3e7`](https://github.com/ZQuestClassic/ZQuestClassic/commit/9807de3e75d4c606d8c5bc70738cefadd242f9db)
 - add grassland_attack.zplay [`8970b2cbd`](https://github.com/ZQuestClassic/ZQuestClassic/commit/8970b2cbd74a90c989f8265ea1d280ff34121151)
+- make the editor File->New test do what it says it does [`f0b6972ea`](https://github.com/ZQuestClassic/ZQuestClassic/commit/f0b6972ea44477da773ddd4670876f5ae33ed7a5)
+- add goriya_moblin_war.zplay [`bbce9f9fb`](https://github.com/ZQuestClassic/ZQuestClassic/commit/bbce9f9fbb438fd24e94815856172b49a92eb64c)
 
 # CI
 
