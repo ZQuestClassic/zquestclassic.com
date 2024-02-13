@@ -1,26 +1,26 @@
 ---
-title: Nightly 2024-02-11
+title: Nightly 2024-02-13
 since_last_stable: true
-date: 2024-02-11T07:50:02Z
+date: 2024-02-13T07:12:05Z
 assets: 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-11/nightly-2024-02-11-linux.tar.gz
-    name: nightly-2024-02-11-linux.tar.gz
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-13/nightly-2024-02-13-linux.tar.gz
+    name: nightly-2024-02-13-linux.tar.gz
     platform: linux
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-11/nightly-2024-02-11-mac.dmg
-    name: nightly-2024-02-11-mac.dmg
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-13/nightly-2024-02-13-mac.dmg
+    name: nightly-2024-02-13-mac.dmg
     platform: mac
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-11/nightly-2024-02-11-windows-x64.zip
-    name: nightly-2024-02-11-windows-x64.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-13/nightly-2024-02-13-windows-x64.zip
+    name: nightly-2024-02-13-windows-x64.zip
     platform: windows-x64
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-11/nightly-2024-02-11-windows-x86.zip
-    name: nightly-2024-02-11-windows-x86.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-13/nightly-2024-02-13-windows-x86.zip
+    name: nightly-2024-02-13-windows-x86.zip
     platform: windows-win32
 prerelease: true
-id: 141526585
-tag_name: 'nightly-2024-02-11'
+id: 141754788
+tag_name: 'nightly-2024-02-13'
 channel: '2.55'
 tags:
   - releases
@@ -227,6 +227,7 @@ tags:
    &nbsp;
    >Quests before custom sfx rely on the default quest providing sfx, but that wasn't being loaded when playing back a replay. So it would either use whatever the last quest loaded, or have nothing, which was the case for the replay test script. 
    >
+- use correct graphic when holding up purchase from bottle shop [`03d123012`](https://github.com/ZQuestClassic/ZQuestClassic/commit/03d123012a6317123bfc2b48ff675140ef4bbf9f)
 
 ### Editor
 
@@ -270,6 +271,10 @@ tags:
 - error message on failure to load enhanced music in the dmap editor [`06cee90fa`](https://github.com/ZQuestClassic/ZQuestClassic/commit/06cee90fa2a31165a25f0bee00426e145e258011)
 - skipy broken in combo preview animation [`590e9f59c`](https://github.com/ZQuestClassic/ZQuestClassic/commit/590e9f59ce58650522fee3118535b015898a3315)
 - combo animations not resetting after using combo selector in dialogs [`99ab2ae95`](https://github.com/ZQuestClassic/ZQuestClassic/commit/99ab2ae959ffeb3a2c28340456166e17e8f845ad)
+- weapon type names drop down being empty [`53cdacc3d`](https://github.com/ZQuestClassic/ZQuestClassic/commit/53cdacc3d0d0323c509d42c2b36a8bc8210bd156)
+   &nbsp;
+   >This broke from recent addition of reflected arrows/fire (e3b23aa) 
+   >
 
 ### ZScript Standard Library (std.zh)
 
@@ -428,6 +433,16 @@ tags:
 - add grassland_attack.zplay [`8970b2cbd`](https://github.com/ZQuestClassic/ZQuestClassic/commit/8970b2cbd74a90c989f8265ea1d280ff34121151)
 - make the editor File->New test do what it says it does [`f0b6972ea`](https://github.com/ZQuestClassic/ZQuestClassic/commit/f0b6972ea44477da773ddd4670876f5ae33ed7a5)
 - add goriya_moblin_war.zplay [`bbce9f9fb`](https://github.com/ZQuestClassic/ZQuestClassic/commit/bbce9f9fbb438fd24e94815856172b49a92eb64c)
+- update test_compile_and_quick_assign to compile replays/scripting quests [`1084e5c54`](https://github.com/ZQuestClassic/ZQuestClassic/commit/1084e5c54fc97736653e80c7731b2c1f6a8197cc)
+   &nbsp;
+   >This is the first of more planned script replay tests, which along with the playground.qst replays will be re-compiled with the latest zscript in CI and their replays re-verified. Should result in better test coverage for newer compiler features. 
+   >
+- add 100_rooms_of_wisdom.zplay [`a59b6141e`](https://github.com/ZQuestClassic/ZQuestClassic/commit/a59b6141e1922ca8b758b12c9f2cbe2860ec2df0)
+- add dragon_ball_z.zplay [`27e215665`](https://github.com/ZQuestClassic/ZQuestClassic/commit/27e215665f364ce1cdb83dac8e7033c70134ca8c)
+- add new_beginnings.zplay [`27424bb8b`](https://github.com/ZQuestClassic/ZQuestClassic/commit/27424bb8b2ab77a399b3c45f9b1342f3d3a87114)
+- add kriztles_3.zplay [`eb92a96b4`](https://github.com/ZQuestClassic/ZQuestClassic/commit/eb92a96b4331f6033e0e2c78a373642c7b9325a3)
+- add final_fantasy.zplay [`2b5572cce`](https://github.com/ZQuestClassic/ZQuestClassic/commit/2b5572cceaec76ecec2b72f6f30c4d751bf09a24)
+- add zelda_3000.zplay [`145976d57`](https://github.com/ZQuestClassic/ZQuestClassic/commit/145976d5793f2c0356047ea53b36c0572c65a35e)
 
 # CI
 
