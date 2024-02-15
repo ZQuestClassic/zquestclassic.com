@@ -1,26 +1,26 @@
 ---
-title: Nightly 2024-02-13
+title: Nightly 2024-02-15
 since_last_stable: true
-date: 2024-02-13T07:12:05Z
+date: 2024-02-15T08:54:31Z
 assets: 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-13/nightly-2024-02-13-linux.tar.gz
-    name: nightly-2024-02-13-linux.tar.gz
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-15/nightly-2024-02-15-linux.tar.gz
+    name: nightly-2024-02-15-linux.tar.gz
     platform: linux
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-13/nightly-2024-02-13-mac.dmg
-    name: nightly-2024-02-13-mac.dmg
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-15/nightly-2024-02-15-mac.dmg
+    name: nightly-2024-02-15-mac.dmg
     platform: mac
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-13/nightly-2024-02-13-windows-x64.zip
-    name: nightly-2024-02-13-windows-x64.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-15/nightly-2024-02-15-windows-x64.zip
+    name: nightly-2024-02-15-windows-x64.zip
     platform: windows-x64
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-13/nightly-2024-02-13-windows-x86.zip
-    name: nightly-2024-02-13-windows-x86.zip
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/nightly-2024-02-15/nightly-2024-02-15-windows-x86.zip
+    name: nightly-2024-02-15-windows-x86.zip
     platform: windows-win32
 prerelease: true
-id: 141754788
-tag_name: 'nightly-2024-02-13'
+id: 142118277
+tag_name: 'nightly-2024-02-15'
 channel: '2.55'
 tags:
   - releases
@@ -71,6 +71,16 @@ tags:
    >- Delete unimplemented Sprite 088 (Firework)
    >
 - set test_mode_record option in test dialog directly [`356066ed5`](https://github.com/ZQuestClassic/ZQuestClassic/commit/356066ed56f2ee7f52659299194b4e6d7f2b0816)
+- export/import strings to .tsv text file [`1e1af9db1`](https://github.com/ZQuestClassic/ZQuestClassic/commit/1e1af9db174083b3676390fc1d9284458e875aee)
+   &nbsp;
+   >Allows for exporting strings to a spreadsheet, text editor, or other program for modification, then importing them back to ZC.  
+   >
+   >The first row of the `.tsv` (tab separated values) file are the column names, followed by an example row to designate where the first three lines begin and end for each string (but you can add more lines than that).  
+   >
+   >For best results in a spreadsheet, "Freeze" the first two rows and use a monospace font for the "message" column.  
+   >
+   >Example: https://docs.google.com/spreadsheets/d/197-NSvNQJ174Ri9GVlxYDX4oFp8w1SZbmOXuDohKZZk/edit?usp=sharing 
+   >
 
 ### ZLauncher
 
@@ -322,6 +332,8 @@ tags:
    &nbsp;
    >Setting `item->X,Y` on fairy items additionally sets the position of the corresponding fairy enemy sprite. However, the getter returns the item coordinate. This resulted in unexpected behavior from something harmless like `item->X = item->X` causing the engine fairy movement to halt. 
    >
+- fix sideview sprites becoming unable to jump when on the ground [`673eb859d`](https://github.com/ZQuestClassic/ZQuestClassic/commit/673eb859d95ad95eae660c2e27a0607fe18db156)
+- compat rule for old sprite jump behavior [`2b7275305`](https://github.com/ZQuestClassic/ZQuestClassic/commit/2b727530530ea46e53a82a2d2da70b96eee20075)
 
 ### Web
 
@@ -443,6 +455,7 @@ tags:
 - add kriztles_3.zplay [`eb92a96b4`](https://github.com/ZQuestClassic/ZQuestClassic/commit/eb92a96b4331f6033e0e2c78a373642c7b9325a3)
 - add final_fantasy.zplay [`2b5572cce`](https://github.com/ZQuestClassic/ZQuestClassic/commit/2b5572cceaec76ecec2b72f6f30c4d751bf09a24)
 - add zelda_3000.zplay [`145976d57`](https://github.com/ZQuestClassic/ZQuestClassic/commit/145976d5793f2c0356047ea53b36c0572c65a35e)
+- use original qst for combo rotator replay [`3552ee8f5`](https://github.com/ZQuestClassic/ZQuestClassic/commit/3552ee8f584762b37a0cda55844546e67dcd47bc)
 
 # CI
 
