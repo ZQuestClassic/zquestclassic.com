@@ -57,10 +57,6 @@
 					<span>The Classic Adventure Game Engine</span>
 				</div>
 
-				{% if page.url == "/" %}
-					<div style="flex-grow: 1; font-size: 1em">🚧⚔️ Under Construction ⚔️🚧</div>
-				{% endif %}
-
 				<nav class="nav">
 					<a class="nav-item" href="/releases/"{% if '/releases' == page.url %} aria-current="page"{% endif %}>Get ZC!</a>
 				{%- for entry in collections.all | eleventyNavigation %}
