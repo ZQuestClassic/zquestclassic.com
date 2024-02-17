@@ -4,9 +4,9 @@ layout: layouts/base.njk
 
 # ZQuest Classic: 2.55 Development Summary
 
-ZQuest Classic has grown by a ***huge*** amount between 2.50.2/2.53 and 2.55 versions. There are many new features, for gameplay, editing, UI, ease-of-use, scripting, and really every possible part of the engine you could imagine. We also now fully report Mac and Linux again, and newly support playing in a [browser](https://web.zquestclassic.com).
+ZQuest Classic has grown by a ***huge*** amount between 2.50.2/2.53 and 2.55 versions. There are many new features, for gameplay, editing, UI, ease-of-use, scripting, and really every possible part of the engine you could imagine. We fully support Mac and Linux again, in addition to an experimental [web](https://web.zquestclassic.com) version.
 
-This page will detail all the new features added in 2.55. Unmentioned is all the bugs that have been fixed. You can check out the [2.55 alpha release notes](/releases/) for more detailed information.
+This page details many of the new features added in 2.55. Unmentioned is all the bugs that have been fixed. You can check out the [2.55 alpha release notes](/releases/) for an exhaustive list of what changed.
 
 ## Editor
 
@@ -131,10 +131,11 @@ By using the special command `WaitEvent()`, the script will wait for a specific 
 
 
 ## Quest Features
-There are plenty of new features that can be used in your quests. Some used to be popularly scripted, but are now in engine; others are brand-new ideas that were added. Altogether the focus when adding new features has been to give questmakers all the options we possibly can. This does have the effect of some systems being more difficult to learn, though in most cases we try to aim for "easy to use, difficult to master".
 
-Features below are not listed in any particular order, though I will attempt to group similar features together.
+There are plenty of new features that can be used in your quests. Some used to be popular scripts, but are now in engine; others are brand-new ideas. Altogether the focus when adding new features has been to give questmakers all the options we possibly can. This does have the effect of some systems being more difficult to learn, though in most cases we try to aim for "easy to use, difficult to master".
+
 ### New Item Types
+
 * `Attack Ring` items increase the damage of swords/wands/hammers (similar to whimsical ring, but 100% of the time)
 * [`Bottle Fillers` / `Bottles` / `Bug Nets`](#new-bottles) work together, allowing bottles that can be filled with multiple different types of potions/fairies/etc.
 * The `Custom Weapon 01` through `Custom Weapon 10` itemclasses spawn a basic customizable weapon of types `LW_SCRIPT1` through `LW_SCRIPT10` respectively. Especially useful when combined with the new `lweapon script` type.
@@ -149,6 +150,7 @@ Features below are not listed in any particular order, though I will attempt to 
 * `SwitchHooks` work mostly identically to hookshots, except instead of grabbing hookable targets and pulling the player towards them, they grab switchable targets and teleport the player and the target, swapping their positions. Enemies with the `(None)` defense are swapped with the player when hit, as well. (The new `Switch w/ Player` defense type can be used to cause this effect when an enemy is hit with other weapon types, as well!)
 
 ### Improved Item Types
+
 * `Arrows`
   * Being able to pick up items is a per-arrow flag, instead of tied to a QR
   * Can be set to be able to pick up ANY item (instead of just 'dropped' items)
@@ -191,6 +193,7 @@ Features below are not listed in any particular order, though I will attempt to 
 * `Stomp Boots` allow bouncing off of enemies, and can also be configured to bounce off of certain enemy projectiles
 
 ### New Combo Features (all types)
+
 Combos in general have been improved drastically.
 * Each combo type has up to 8 attribytes (0 to 255 values), 8 attrishorts (-32768 to +32767 values), 4 attributes (-214748.3648 to +214748.3647 values), and 16 flags (checkboxes) for custom configuration that is specific to the combo type. Not all of these type-specific features will be covered in this summary, as many of the features are simple small customizations of the type (like damage dealt by damage combos, conveyor speed and direction, etc). Many combo types have a special "Wizard" dialog available via a button in the combo editor which is designed to make these easier to set up.
 * Every combo has checkboxes for if they are hookshot-grabbable or switch-hookable, allowing things like chests and signs to be hookable inherently.
@@ -206,6 +209,7 @@ Combos in general have been improved drastically.
 * And finally, combos now have their own script type which can be assigned to each combo.
 
 ### New Combo Types
+
 * `Block Weapon (Custom)` can block any variety of weapons as set in the `Triggers` tab
 * `Bridge` combos can "cover up" combos on layers below them (making the covered combos solidity and type-effects not occur)
 * `Button Prompt` combos can display a prompt (ex. above player's head) when faced
@@ -227,6 +231,7 @@ Combos in general have been improved drastically.
 * `Torch` combos light up [New Dark Rooms](#real-dark-rooms)
 
 ### Improved Combo Types
+
 * `Armos` combos can now have either 1 or 2 enemies directly configured to them. They also have a flag which allows multiple statues placed touching to act as a single large statue, when spawning large enemies. (`Triggers` tab features can cause the statue to come to life)
 * Various warp type combos (`Auto Side Warp`, `Direct Warp`, `Dive Warp`, `Sensitive Warp`, `Stairs`, `Swim Warp`) can have a custom warp sound effect set to play. (`Triggers` tab features can cause the player to warp via the warp)
 * `BS Grave`/`Grave` combos can now have either 1 or 2 enemies directly configured to them.
@@ -245,11 +250,13 @@ Combos in general have been improved drastically.
 * `Save Point` type combos can be set to restore a percentage of the player's Life and/or Magic when interacted with, in addition to popping up the save menu. (`Triggers` tab features can 'interact' with the save point)
 
 ### Fire Types
+
 Previously, there were 4 different types of fire; 'Level 1 candle' (any), 'Level 2+ candle' (red candle), 'Magic' (book), 'Din's Fire'. The exact way some of these worked (such is if Din's Fire fire would trigger 'Magic' fire flags) actually changed several times in the program's history... but now these are all customizable! The system has been slightly tweaked, and now there are 4 distinctly labelled levels of fire (`Any`, `Strong`, `Magic`, `Divine`). Any `Fire` type weapon will always trigger `Any` type fire, but what other types it can trigger are completely configurable on the items (or via scripts). `Boomerang` items also have these settings, though must be specifically set to trigger `Any` type fire.
 
 Additionally, via the combo editor `Triggers` tab, a combo can "ignite" certain weapons that touch it, granting them the property of one or more of these fire types (ex. 'shooting an arrow through a torch'). This does NOT have a graphical effect on the weapon by default, that must be scripted if desired.
 
 ### New Bottles
+
 The `Bottle` item type can be set to one of up to 256 separate 'slots'- you usually want at most one item per slot. When either the player picks up an item of the `Bottle Fillers` item type, makes a purchase in a `Bottle Shop` room type, or collects a Fairy with a `Bug Net`, a bottle can be filled with a type of "contents". In `Quest->Misc Data->Bottle Types`, these contents can be configured.<br/><img src="bottletype1.png" alt="Screenshot of the editor, showing a 'Red Potion' bottle type that restores 100% of the 'Life' counter" width="50%" height="50%"/><img src="bottletype2.png" alt="Screenshot of the editor, showing a 'Fairy' bottle type that restores 48 of the 'Life' counter, and is used automatically on death" width="50%" height="50%"/>
 The effects configured for these contents occur when a bottle item of that type is used, or automatically when the player dies while they have it if that flag is set for the type. Additionally, items of the `Bottle` itemclass will use different tiles depending on what their contents is. The tile set in the item editor is used when the type is `0`, which always represents an empty bottle. It will use the next tile (or set of tiles, if animated) when the type is `1`, the next after that for `2`, etc.
 
@@ -263,8 +270,8 @@ The player can now be turned into a bunny as a status effect. This is script-acc
 Enabled via the Quest Rule `New Dark Rooms`, this changes from the classic dark room style which darkens the entire palette, and changes to a style which allows circles/cones of light to reveal what's underneath the darkness.
 * `Lantern` itemclass allows the player to cast a shape of your choice of light (from the options that have been implemented, which are currently `Circle`, `Cone`, and `Square`, as well as having a configurable size for the shape.
 * `Torch` combo type functions similarly, but, placed instead of being the player's light.
-* New dark rooms can be previewed in the editor via `View->Show Darkness` (default hotkey `L`)<br/><img src="dark_preview.png" alt="Screenshot of the editor previewing a dark room" width="50%" height="50%"/>
-* Various options are available in `Init Data->Vars` which can configure how new dark rooms look!<br/><img src = "dark_initdata.png" alt="Init Data dialog, showcasing the settings related to dark rooms"/>
+* Preview dark rooms in the editor via `View->Show Darkness` (default hotkey `L`)<br/><img src="dark_preview.png" alt="Screenshot of the editor previewing a dark room" width="50%" height="50%"/>
+* Dark rooms can be configured in `Init Data->Vars`:
   * `Dither Type`/`Dither Arg` can be used to configure what dithering effect is used. Changing the 'type' will change the whole shape, such as checkerboard, vertical bars, diagonal bars, seemingly-random static, and more. Changing the 'arg' changes something ABOUT the shape, such as the size of each square of the checkerboard, width of each bar, thickness of the static, etc.
   * `Dither Percentage` indicates how much dithered light will be cast beyond normal light- ex. a circle of light with radius 32, with a dither percentage of 50, would cast a fully-clear 32 radius circle of light, and a dithered 48 radius circle of light (50% greater radius).
   * `Transp. Percentage` works similarly to `Dither Percentage`, except the larger radius that it casts is *transparent* rather than *dithered*, giving an alternative to how you want to cast light. Additionally, these settings can *combine*- if they were both 50% for example, the larger radius shape would be drawn transparently-dithered.
@@ -272,16 +279,19 @@ Enabled via the Quest Rule `New Dark Rooms`, this changes from the classic dark 
   * `Darkness Color`, which defaults to a hardcoded system-black (will always be pure black in any tileset), is the color to use for the darkness itself.
 
 ### Pitfalls
+
 The new `Pitfall` combo type acts as a classic bottomless pit, either dealing damage to you or possibly warping you somewhere (as if 'falling down a level'). The falling works similar to drowning mechanically, though has a separate `Falling` sprite. Enemies that fall use a sprite from `Quest->Graphics->Sprites->Misc Sprites`, while the player has a separate animation for this, which *regardless of animation style*, is 7 frames 10 speed animation, for a total of 70 frames duration.
 The Hover Boots and Ladder are able to interact with pitfalls.
 
 ### Paired Switches
+
 `Switch` and `Switch Block` combos together form what's needed for basic "red/blue switch blocks".
 * You can have up to 32 pairs that are "level-specific" (per level), which can only toggle between `on` and `off` states
 * You can have up to 256 that are "global" (quest wide), which can either be `on`/`off` toggles, or can be ***timed switches***, which toggle `on` for a set time before toggling back to `off` on their own.
 * You can optionally set switch blocks to allow the player to walk along the tops of them if the player is inside them when they become solid. This additionally adds a "pseudo height layer" to the engine (not used by anything outside of these combos).
 
 ### New Pushblock Features
+
 Multiple quest rules affect new push block features, of which there are several.
 * Moving blocks can have "real solidity" (helps prevent clipping through a moving block, allows the block to *push enemies*)
 * Blocks on layers can be pushed. These will use the undercombo *of that layer*, which will be placed *on that layer*. (Push flags must be on the layer, or inherent to the combo on the layer).
@@ -290,7 +300,20 @@ Multiple quest rules affect new push block features, of which there are several.
 * The `Push (Generic)` combo type is a new type of pushblock, which does NOT use push *flags* at all- instead, the ways in which it can be pushed are defined as part of the combo's attributes. These combos can be set to be pushable in many unique ways, such as "down up to 3 times and left up to 3 times, but not right or up", or "left up to 2 times, and you can undo the push by pushing it back to the right, but not past its' starting point".
 * Sliding blocks can exist, either via a `Push (Generic)` with the `Icy Block` flag checked, or by any block sliding across `Icy Floor` combos with the `Slides Blocks` flag checked. (Currently, this is the ONLY use of `Icy Floor`, though more non-block-related uses are planned eventually)
 
+### Music/sound enhancements
+
+Enhanced music (everything but MIDI) and scripted sfx gained some new features.
+
+* Loop points can be set (OGG and MP3 only)
+* Crossfading between the old and new music on change
+* Various scripting additions
+* * `GetMusicPos`, `SetMusicPos`, `SetMusicSpeed`, `GetMusicLength`, `SetMusicLoop`, `CrossfadeEnhancedMusic`, `AdjustSound`, `GetSoundCompletion`
+* * `PlaySoundEx` plays a sound with specified volume, pan, frequency, and looping control
+
+See [the 2.55 Alpha 117 changelog](/releases/2.55-alpha-117/) for an example script.
+
 ### Light Beam Puzzles
+
 <img src="lightbeam.png" alt="Screenshot of the player, showcasing a beam of light reflecting off of two mirrors before hitting a wall" width="50%" height="50%"/>
 
 * Light Beams are shot out of `Spotlight` combos, in any of the 4 main directions, or aimed from the camera at the screen for a true "spotlight" effect. These beams will bounce off of any mirror combos and be duplicated by prism combos in the same way weapon reflection works.
@@ -310,3 +333,7 @@ Multiple quest rules affect new push block features, of which there are several.
   * You can set a "Prompt Combo" which will display at a given x,y offset from the player (ex. above the player's head) when they are able to interact with it. For locked chests/blocks, you can also set a secondary combo to display *instead* when you are unable to unlock them.
 * Locked chests/blocks can be given various lock settings, instead of just "1 key unlocks it"
 * Locked chests/blocks can be given a message string to display when the player tries and fails to unlock it (ex. "You do not have a Small Key!")
+
+### Misc.
+
+* Invicibility flicker animation timing and colors are configurable (see `Init Data > Vars > Misc 2`)
