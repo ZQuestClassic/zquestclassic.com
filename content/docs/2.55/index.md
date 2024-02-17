@@ -126,10 +126,12 @@ We published [an extension](https://marketplace.visualstudio.com/items?itemName=
 * `itemsprite` scripts are set in the item editor for each item (running on the item itself when the item is onscreen)
 * `itemdata` scripts were renamed from `item` scripts (to differentiate them from `itemsprite` scripts)
 * `combodata` scripts are set in the combo editor for each combo
-* [`generic` scripts](#generic-scripts) are extra-special and can do many fancy things
+* `generic` scripts are extra-special and can do many fancy things (see next section)
 * `subscreendata` scripts are set in the subscreen editor for each Active Subscreen and run while it is open
+
 ### Generic Scripts
 Generic scripts are designed to allow several things that other script types can't handle. There are overall 3 different ways that they can be used.
+
 #### Frozen Mode
 Generic scripts can run in `Frozen` mode when launched in several ways-
 * via script command `genericdata->RunFrozen()`
