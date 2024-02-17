@@ -88,9 +88,12 @@ The entire subscreen editor and backend functionality of subscreens has been rew
 * Scripts - The new `subscreendata` script type runs while the active subscreen it is assigned to is open. Additionally, any widget that is visitable by the selector can be given a [`generic` script](#generic-scripts) to run in `Frozen` mode when a specified button (from A,B,L,R,Ex1-Ex4) is pressed while it is selected.
 * 4 Item Buttons - Quest Rules allow new `X` and `Y` item buttons (which use `Ex1` and `Ex2` respectively) in-engine!
 
-### Map preview
+### Misc. Editor improvements
 
-The Map preview is no longer limited to using a single palette, and now shows the correct colors for every individual screen.
+* The Map preview is no longer limited to using a single palette, and now shows the correct colors for every individual screen
+* The "Favorite Command" and hotkey systems have merged, so now all commands can be assigned a hotkey
+* A hotkey cheatsheet can be summoned with `Shift`+`/`
+* Strings can be exported and re-imported into the editor via a `.tsv` file, which is easily editable in a spreadsheet program or text editor. [Example](https://docs.google.com/spreadsheets/d/197-NSvNQJ174Ri9GVlxYDX4oFp8w1SZbmOXuDohKZZk/edit?usp=sharing)
 
 ## Scripting
 
