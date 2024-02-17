@@ -6,7 +6,20 @@ layout: layouts/base.njk
 
 ZQuest Classic has grown by a ***huge*** amount between 2.50.2/2.53 and 2.55 versions. There are many new features, for gameplay, editing, UI, ease-of-use, scripting, and really every possible part of the engine you could imagine. We fully support Mac and Linux again, in addition to an experimental [web](https://web.zquestclassic.com) version.
 
-This page details many of the new features added in 2.55. Unmentioned is all the bugs that have been fixed. You can check out the [2.55 alpha release notes](/releases/) for an exhaustive list of what changed.
+This page details many of the new features added in 2.55. Unmentioned is all the bugs that have been fixed. You can check out the [2.55 alpha release notes](/changelog/) for an exhaustive list of what changed.
+
+## Updater
+
+You can now quickly update ZC using the software updater. Either run `zupdater.exe` or use the Update tab in the launcher to check for and grab the latest version. The updater will only grab the latest version of the release channel you are using - so the updater run in 2.55 will only get 2.55 updates, and never update to 3.0 or beyond.
+
+## Player
+
+* The maximum saves limit of 15 is no more
+* Save files are now saved as individual files in a folder named `saves/`. You can easily import your old `zc.sav` file by placing it in the `saves/` folder. On start up, ZC will split up your saves and store the original in `saves/backups/`
+* Every time you save ZC will store a backup of the `.sav` file in `saves/backups/`
+* Play sessions can be recorded and saved to a replay file (`.zplay`). This is primarily for testing purposes, but you may also use it to share with others you playing your favorite quest, or as a tool for testing parts of your own quest. To record your new games, select the option `ZC > Replay > Enable recording new saves`. Sending your `.zplay` files to the developers is a great way contribute to ZC development, because we can turn it into a test that prevents bugs from ever breaking that quest!
+* Some wider support for gamepads
+* Configurable snapshot image scale (also for the editor)
 
 ## Editor
 
@@ -75,7 +88,9 @@ The entire subscreen editor and backend functionality of subscreens has been rew
 * Scripts - The new `subscreendata` script type runs while the active subscreen it is assigned to is open. Additionally, any widget that is visitable by the selector can be given a [`generic` script](#generic-scripts) to run in `Frozen` mode when a specified button (from A,B,L,R,Ex1-Ex4) is pressed while it is selected.
 * 4 Item Buttons - Quest Rules allow new `X` and `Y` item buttons (which use `Ex1` and `Ex2` respectively) in-engine!
 
+### Map preview
 
+The Map preview is no longer limited to using a single palette, and now shows the correct colors for every individual screen.
 
 ## Scripting
 
@@ -229,6 +244,7 @@ Combos in general have been improved drastically.
 * [`Switch Block` combos](#paired-switches) can change based on various either level-based or global states.
 * `SwitchHook Block` combos can be swapped with by the `SwitchHook` item, and can be customized with some additional settings.
 * `Torch` combos light up [New Dark Rooms](#real-dark-rooms)
+* `Crumbling` combos, for making crumbling floors
 
 ### Improved Combo Types
 
