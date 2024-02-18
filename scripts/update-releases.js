@@ -199,8 +199,8 @@ if (mode === 'all') {
 	}
 	
 	writeReleaseChannelJson('2.55', /^(2\.55|nightly-)/);
-	writeReleaseChannelJson('3', /^3\.0/);
-	writeReleaseChannelJson('latest', /^3\.0/);
+	writeReleaseChannelJson('3', /^3\./);
+	writeReleaseChannelJson('latest', /^3\./);
 }
 {
 	const ghResponse = await octokit.rest.repos.listReleases({
