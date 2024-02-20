@@ -78,15 +78,18 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addFilter('changelogPageReleases', (releases) => {
-		const nightly = releases.find(r => r.data.since_last_stable);
-		return releases.filter(r => {
+		const result = releases.filter(r => {
 			if (r.data.prerelease) return false;
 			if (r.data.tag_name.includes('2.55-alpha-')) {
 				const v = Number(r.data.tag_name.replace('2.55-alpha-', ''));
 				return v >= 108;
 			}
 			return true;
-		}).concat(nightly);
+		})
+		const nightly = releases.find(r => r.data.since_last_stable);
+		if (nightly)
+			result.push(nightly);
+		return result;
 	});
 
 	// Get the first `n` elements of a collection.
