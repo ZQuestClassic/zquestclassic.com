@@ -1,5 +1,5 @@
 ---
-title: '2.55.0'
+title: 2.55.0
 description: The one that is official.
 date: 2024-02-20T00:07:18Z
 assets: 
@@ -26,6 +26,7 @@ tags:
   - releases
 ---
 
+[View a summary of what's new in 2.55](https://zquestclassic.com/docs/2.55/).
 
 # Features
 

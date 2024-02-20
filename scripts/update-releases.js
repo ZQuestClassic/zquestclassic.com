@@ -109,7 +109,11 @@ async function handleRelease(id) {
 		throw new Error();
 	}
 
-	const {description, content} = parseChangelog(release.body);
+	let {description, content} = parseChangelog(release.body);
+	// TODO
+	if (release.tag_name == '2.55.0') {
+		content = `[View a summary of what's new in 2.55](https://zquestclassic.com/docs/2.55/).\n` + content;
+	}
 
 	const output = `---
 title: ${title}
