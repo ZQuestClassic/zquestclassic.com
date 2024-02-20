@@ -27,7 +27,7 @@ function getTree(array) {
 function makeId(text) {
 	const id = text
 		.toLowerCase()
-		.replace(/\.|%[0-9a-z]{2}/gi, '')
+		.replace(/%[0-9a-z]{2}/gi, '')
 		.replace(/\s+/g, '-');
 	if (!id) return '';
 	if (id[0] >= '0' && id[0] <= '9') return 'v' + id;
@@ -88,7 +88,7 @@ window.onload = function () {
 	handleNode(tree, rootNavEl);
 	document.querySelector('.toc').append(rootNavEl);
 
-	const el = location.hash && document.querySelector(location.hash);
+	const el = location.hash && document.querySelector(location.hash.replaceAll('.', '\\.'));
 	if (el) el.scrollIntoView();
 
 	var toc = document.querySelector('.toc');

@@ -1,6 +1,6 @@
 ---
-title: 2.55.0
-description: 
+title: '2.55.0'
+description: The one that is official.
 date: 2024-02-20T00:07:18Z
 assets: 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.0/2.55.0-linux.tar.gz
@@ -25,6 +25,7 @@ channel: '2.55'
 tags:
   - releases
 ---
+
 
 # Features
 

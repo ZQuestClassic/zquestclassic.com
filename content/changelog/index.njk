@@ -24,7 +24,7 @@
 		<div class="content">
 			{% for release in release_list | reverse -%}
 				<h1 class="version">
-					<a href="{{ release.url }}" class="release-list-link">{% if release.data.title %}{{ release.data.title }}{% else %}<code>{{ release.url }}</code>{% endif %}</a>
+					<a href="{{ release.url }}" class="release-list-link">{{ release.data.title }}</a>
 				</h1>
 				<time class="release-list-date" datetime="{{ release.date | htmlDateString }}">{{ release.date | readableDate("LLLL dd yyyy") }}</time>
 

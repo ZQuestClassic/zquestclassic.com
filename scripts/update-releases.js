@@ -15,7 +15,7 @@ function parseChangelog(body, getMainChangelog = true) {
 	const lines = body.trim().split('\n');
 
 	let description = '';
-	if (lines[0].startsWith('The one with')) {
+	if (lines[0].startsWith('The one')) {
 		description = lines[0];
 	}
 
@@ -36,7 +36,7 @@ function parseChangelog(body, getMainChangelog = true) {
 			if (line.startsWith('The one ')) return false;
 			if (line.startsWith('To download this release')) return false;
 
-			if (line.startsWith('# Downloads available')) {
+			if (line.startsWith('#') && line.includes('Download')) {
 				deleteMode = true;
 				return false;
 			}
@@ -235,33 +235,6 @@ if (mode === 'all') {
 		tag: latest255.tagName,
 	});
 	const release = ghResponse.data;
-	const title = (release.name || '').trim() || release.tag_name;
-	let {content} = parseChangelog(release.body, false);
-	content = content.replace(`<details>\n<summary>Expand changelog</summary>`, '');
-	content = content.substring(0, content.lastIndexOf('</details>'));
-
-	const assets = parseAssets(release);
-
-	const output = `---
-title: ${title}
-since_last_stable: true
-date: ${release.created_at}
-assets: ${assets}
-prerelease: ${release.prerelease}
-id: ${release.id}
-tag_name: '${release.tag_name}'
-channel: '${latest255.channel}'
-tags:
-  - releases
----
-
-${content}
-`;
-
-	const folder = `content/releases/nightly`;
-	fs.mkdirSync(folder, {recursive: true});
-	fs.writeFileSync(`${folder}/index.md`, output);
-
 
 	let redirects = fs.readFileSync('_redirects', 'utf-8').split('\n');
 	const index = redirects.findIndex(l => l.startsWith('# nightly page'));
