@@ -1,31 +1,26 @@
 {
   "channel": "latest",
-  "tagName": "3.0.0-prerelease.41+2024-02-17",
+  "tagName": "3.0.0-prerelease.42+2024-02-20",
   "assets": [
     {
-      "name": "3.0.0-prerelease.41+2024-02-17-linux.tar.gz",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.41%2B2024-02-17/3.0.0-prerelease.41%2B2024-02-17-linux.tar.gz",
-      "size": 32384830
+      "name": "3.0.0-prerelease.42+2024-02-20-linux.tar.gz",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.42%2B2024-02-20/3.0.0-prerelease.42%2B2024-02-20-linux.tar.gz",
+      "size": 32387224
     },
     {
-      "name": "3.0.0-prerelease.41+2024-02-17-mac.dmg",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.41%2B2024-02-17/3.0.0-prerelease.41%2B2024-02-17-mac.dmg",
-      "size": 28110231
+      "name": "3.0.0-prerelease.42+2024-02-20-mac.dmg",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.42%2B2024-02-20/3.0.0-prerelease.42%2B2024-02-20-mac.dmg",
+      "size": 28111914
     },
     {
-      "name": "3.0.0-prerelease.41+2024-02-17-web.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.41%2B2024-02-17/3.0.0-prerelease.41%2B2024-02-17-web.zip",
-      "size": 84877386
+      "name": "3.0.0-prerelease.42+2024-02-20-windows-x64.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.42%2B2024-02-20/3.0.0-prerelease.42%2B2024-02-20-windows-x64.zip",
+      "size": 29296039
     },
     {
-      "name": "3.0.0-prerelease.41+2024-02-17-windows-x64.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.41%2B2024-02-17/3.0.0-prerelease.41%2B2024-02-17-windows-x64.zip",
-      "size": 29296408
-    },
-    {
-      "name": "3.0.0-prerelease.41+2024-02-17-windows-x86.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.41%2B2024-02-17/3.0.0-prerelease.41%2B2024-02-17-windows-x86.zip",
-      "size": 27222497
+      "name": "3.0.0-prerelease.42+2024-02-20-windows-x86.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.42%2B2024-02-20/3.0.0-prerelease.42%2B2024-02-20-windows-x86.zip",
+      "size": 27224674
     }
   ]
 }
