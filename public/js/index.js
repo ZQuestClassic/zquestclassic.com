@@ -48,6 +48,13 @@ async function getReleaseInfo(tag) {
 	return json;
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+	for (const el of document.querySelectorAll('time')) {
+		const date = new Date(el.dateTime);
+		el.textContent = date.toLocaleString(undefined, {year: 'numeric', month: 'long', day: '2-digit'});
+	}
+});
+
 window.Website = {
 	getPlatform,
 	getChannel,
