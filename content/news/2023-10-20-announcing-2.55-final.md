@@ -1,7 +1,7 @@
 ---
 title: Announcing the final release of 2.55, and what's next
 description: 
-date: 2023-10-20
+date: 2023-10-19T23:18:20-07:00
 ---
 
 > NOTE (Nov. 5): the release date has been [pushed to ~mid December](/news/2023-11-05-2.55-release-update-and-contest/).
