@@ -119,6 +119,8 @@ a[href]:active {
 .content {
 	padding: 10px;
     width: 60vw;
+	max-width: 100vw;
+	word-wrap: break-word;
 }
 @media (max-width: 780px) {
 	.content {
