@@ -1,26 +1,26 @@
 {
   "channel": "2.55",
-  "tagName": "2.55.0",
+  "tagName": "2.55.1",
   "assets": [
     {
-      "name": "2.55.0-linux.tar.gz",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.0/2.55.0-linux.tar.gz",
-      "size": 28180199
+      "name": "2.55.1-linux.tar.gz",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.1/2.55.1-linux.tar.gz",
+      "size": 33145581
     },
     {
-      "name": "2.55.0-mac.dmg",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.0/2.55.0-mac.dmg",
-      "size": 24476901
+      "name": "2.55.1-mac.dmg",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.1/2.55.1-mac.dmg",
+      "size": 29445794
     },
     {
-      "name": "2.55.0-windows-x64.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.0/2.55.0-windows-x64.zip",
-      "size": 25219901
+      "name": "2.55.1-windows-x64.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.1/2.55.1-windows-x64.zip",
+      "size": 30183239
     },
     {
-      "name": "2.55.0-windows-x86.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.0/2.55.0-windows-x86.zip",
-      "size": 23268174
+      "name": "2.55.1-windows-x86.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.1/2.55.1-windows-x86.zip",
+      "size": 28232850
     }
   ]
 }
