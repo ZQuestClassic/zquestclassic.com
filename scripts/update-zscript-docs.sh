@@ -14,12 +14,15 @@ if [ ! -f .tmp/zscript/$SHA.html ]; then
 
     if [[ "$NETLIFY" ]]; then
         brew install python3
-        PYTHON=/home/linuxbrew/.linuxbrew/bin/python3
+        PYTHON=$(brew --prefix python)/libexec/bin/python
+        $PYTHON -m venv .venv
+        source .venv/bin/activate
+        $(brew --prefix python)/libexec/bin/pip install pytz --break-system-packages
     else
         PYTHON=python
+        $PYTHON -m pip install pytz
     fi
 
-    $PYTHON -m pip install pytz
     $PYTHON webdocs/docjson_main.py --in webdocs/zsdocs_main.json --out ../../.tmp/zscript/$SHA.html -c
     cd ../..
 fi
