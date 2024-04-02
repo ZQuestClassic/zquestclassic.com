@@ -39,7 +39,7 @@ tags:
    &nbsp;
    >The following internal functions have switched from using `untyped` to template types:  
    >
-   >```c++
+   >```cpp
    >void ArrayPushBack(T[] arr, T val)
    >void ArrayPushFront(T[] arr, T val)
    >void ArrayPushAt(T[] arr, T val, int index)
@@ -62,7 +62,7 @@ tags:
    >
    > This means that the type `T` must match other occurrences of `T` throughout the entire signature, given the types of the parameters used by the callsite. For example, this code no longer compiles:  
    >
-   >```c++
+   >```cpp
    >printfa("hello %d", 1) // Second param is not an array
    >Object objects[] = {new Object()};
    >ArrayPushBack(objects, 1) // Second param is not an Object
@@ -112,7 +112,7 @@ tags:
    &nbsp;
    >A bug in type conversion allowed this code to compile:  
    >
-   >```c++
+   >```cpp
    >Object obj = new Object();
    >int number = obj;
    >int numbers[] = {obj};
