@@ -1,5 +1,3 @@
-/releases/* /404-releases.html 404
-
 /play/ https://web.zquestclassic.com/play/ 301
 /create/ https://web.zquestclassic.com/create/ 301
 
@@ -9,3 +7,5 @@
 
 # 2.55
 /releases/2.55/ https://zquestclassic.com/releases/2.55.1/ 302
+
+/releases/* /404-releases.html 404
