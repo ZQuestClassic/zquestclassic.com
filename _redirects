@@ -3,5 +3,9 @@
 /play/ https://web.zquestclassic.com/play/ 301
 /create/ https://web.zquestclassic.com/create/ 301
 
-# nightly page
-/releases/nightly/ https://zquestclassic.com/releases/2.55.1/ 302
+# nightly
+/releases/nightly/ https://zquestclassic.com/releases/3.0.0-prerelease.49+2024-04-06/ 302
+/releases/latest/ https://zquestclassic.com/releases/3.0.0-prerelease.49+2024-04-06/ 302
+
+# 2.55
+/releases/2.55/ https://zquestclassic.com/releases/2.55.1/ 302

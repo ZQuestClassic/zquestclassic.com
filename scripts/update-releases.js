@@ -110,8 +110,7 @@ async function handleRelease(id) {
 	}
 
 	let {description, content} = parseChangelog(release.body);
-	// TODO
-	if (release.tag_name == '2.55.0') {
+	if (release.tag_name.startsWith('2.55')) {
 		content = `[View a summary of what's new in 2.55](https://zquestclassic.com/docs/2.55/).\n` + content;
 	}
 	content = content.replaceAll('```c++', '```cpp');
@@ -232,17 +231,31 @@ if (mode === 'all') {
 	writeReleaseChannelJson('z3', /z3/);
 }
 
+const redirects = fs.readFileSync('_redirects', 'utf-8').split('\n');
 {
-	const latest255 = JSON.parse(fs.readFileSync('public/releases/2.55.json', 'utf-8'));
+	const {tagName} = JSON.parse(fs.readFileSync('public/releases/latest.json', 'utf-8'));
 	const ghResponse = await octokit.rest.repos.getReleaseByTag({
 		owner: 'ZQuestClassic',
 		repo: 'ZQuestClassic',
-		tag: latest255.tagName,
+		tag: tagName,
 	});
 	const release = ghResponse.data;
 
-	let redirects = fs.readFileSync('_redirects', 'utf-8').split('\n');
-	const index = redirects.findIndex(l => l.startsWith('# nightly page'));
+	const index = redirects.findIndex(l => l.startsWith('# nightly'));
 	redirects[index + 1] = `/releases/nightly/ https://zquestclassic.com/releases/${release.tag_name}/ 302`;
-	fs.writeFileSync('_redirects', redirects.join('\n'));
+	redirects[index + 1] += `\n/releases/latest/ https://zquestclassic.com/releases/${release.tag_name}/ 302`;
 }
+{
+	const {tagName} = JSON.parse(fs.readFileSync('public/releases/2.55.json', 'utf-8'));
+	const ghResponse = await octokit.rest.repos.getReleaseByTag({
+		owner: 'ZQuestClassic',
+		repo: 'ZQuestClassic',
+		tag: tagName,
+	});
+	const release = ghResponse.data;
+
+	const index = redirects.findIndex(l => l.startsWith('# 2.55'));
+	redirects[index + 1] = `/releases/2.55/ https://zquestclassic.com/releases/${release.tag_name}/ 302`;
+}
+
+fs.writeFileSync('_redirects', redirects.join('\n'));
