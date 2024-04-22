@@ -4,6 +4,11 @@ set -ex
 
 mkdir -p .tmp/zscript
 
+# Netlify + python sucks.
+if [[ "$NETLIFY" ]]; then
+    exit 0;
+fi
+
 curl -L https://api.github.com/repos/ZQuestClassic/ZQuestClassic/commits?path=webdocs > .tmp/latest.json
 SHA=$(jq -r '.[0].sha' .tmp/latest.json)
 
@@ -14,7 +19,7 @@ if [ ! -f .tmp/zscript/$SHA.html ]; then
 
     if [[ "$NETLIFY" ]]; then
         brew install python3
-        PYTHON=$(brew --prefix python)/libexec/bin/python
+        PYTHON=/home/linuxbrew/.linuxbrew/bin/python3
         $PYTHON -m venv .venv
         source .venv/bin/activate
         $(brew --prefix python)/libexec/bin/pip install pytz --break-system-packages
