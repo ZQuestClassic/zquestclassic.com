@@ -7,6 +7,10 @@ assets:
     name: 3.0.0-prerelease.51+2024-04-14-linux.tar.gz
     platform: linux
 
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.51%2B2024-04-14/3.0.0-prerelease.51%2B2024-04-14-mac.dmg
+    name: 3.0.0-prerelease.51+2024-04-14-mac.dmg
+    platform: mac
+
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.51%2B2024-04-14/3.0.0-prerelease.51%2B2024-04-14-windows-x64.zip
     name: 3.0.0-prerelease.51+2024-04-14-windows-x64.zip
     platform: windows-x64
@@ -64,3 +68,4 @@ tags:
 ### Editor
 
 - re-organize the combo editor 'Triggers' tab [`53310a254`](https://github.com/ZQuestClassic/ZQuestClassic/commit/53310a2541ee9ebd4c50d48c2de1b349659fc34a)
+
