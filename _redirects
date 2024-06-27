@@ -4,6 +4,7 @@
 # nightly
 /releases/nightly/ https://zquestclassic.com/releases/3.0.0-prerelease.56+2024-06-21/ 302
 /releases/latest/ https://zquestclassic.com/releases/3.0.0-prerelease.56+2024-06-21/ 302
+/releases/latest/ https://zquestclassic.com/releases/3.0.0-prerelease.56+2024-06-21/ 302
 /releases/latest/ https://zquestclassic.com/releases/3.0.0-prerelease.55+2024-05-29/ 302
 /releases/latest/ https://zquestclassic.com/releases/3.0.0-prerelease.54+2024-05-26/ 302
 /releases/latest/ https://zquestclassic.com/releases/3.0.0-prerelease.53+2024-05-08/ 302
@@ -20,6 +21,6 @@
 /releases/latest/ https://zquestclassic.com/releases/3.0.0-prerelease.49+2024-04-06/ 302
 
 # 2.55
-/releases/2.55/ https://zquestclassic.com/releases/2.55.3/ 302
+/releases/2.55/ https://zquestclassic.com/releases/2.55.4/ 302
 
 /releases/* /404-releases.html 404
