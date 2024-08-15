@@ -2,7 +2,8 @@
 /create/ https://web.zquestclassic.com/create/ 301
 
 # nightly
-/releases/nightly/ https://zquestclassic.com/releases/3.0.0-prerelease.61+2024-08-05/ 302
+/releases/nightly/ https://zquestclassic.com/releases/3.0.0-prerelease.62+2024-08-15/ 302
+/releases/latest/ https://zquestclassic.com/releases/3.0.0-prerelease.62+2024-08-15/ 302
 /releases/latest/ https://zquestclassic.com/releases/3.0.0-prerelease.61+2024-08-05/ 302
 /releases/latest/ https://zquestclassic.com/releases/3.0.0-prerelease.61+2024-08-05/ 302
 /releases/latest/ https://zquestclassic.com/releases/3.0.0-prerelease.60+2024-08-04/ 302
