@@ -1,26 +1,26 @@
 {
   "channel": "3",
-  "tagName": "3.0.0-prerelease.65+2024-08-27",
+  "tagName": "3.0.0-prerelease.66+2024-09-01",
   "assets": [
     {
-      "name": "3.0.0-prerelease.65+2024-08-27-linux.tar.gz",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.65%2B2024-08-27/3.0.0-prerelease.65%2B2024-08-27-linux.tar.gz",
-      "size": 30914424
+      "name": "3.0.0-prerelease.66+2024-09-01-linux.tar.gz",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.66%2B2024-09-01/3.0.0-prerelease.66%2B2024-09-01-linux.tar.gz",
+      "size": 30919745
     },
     {
-      "name": "3.0.0-prerelease.65+2024-08-27-mac.dmg",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.65%2B2024-08-27/3.0.0-prerelease.65%2B2024-08-27-mac.dmg",
-      "size": 26365279
+      "name": "3.0.0-prerelease.66+2024-09-01-mac.dmg",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.66%2B2024-09-01/3.0.0-prerelease.66%2B2024-09-01-mac.dmg",
+      "size": 26370852
     },
     {
-      "name": "3.0.0-prerelease.65+2024-08-27-windows-x64.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.65%2B2024-08-27/3.0.0-prerelease.65%2B2024-08-27-windows-x64.zip",
-      "size": 28278482
+      "name": "3.0.0-prerelease.66+2024-09-01-windows-x64.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.66%2B2024-09-01/3.0.0-prerelease.66%2B2024-09-01-windows-x64.zip",
+      "size": 28320767
     },
     {
-      "name": "3.0.0-prerelease.65+2024-08-27-windows-x86.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.65%2B2024-08-27/3.0.0-prerelease.65%2B2024-08-27-windows-x86.zip",
-      "size": 26191765
+      "name": "3.0.0-prerelease.66+2024-09-01-windows-x86.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.66%2B2024-09-01/3.0.0-prerelease.66%2B2024-09-01-windows-x86.zip",
+      "size": 26228682
     }
   ]
 }
