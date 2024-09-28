@@ -48,7 +48,7 @@ We've also been making steady progress on 3.0 and releasing frequent prerelease 
 
 But there's still a few major features to finish before calling 3.0 "done". Here's a quick rundown.
 
-* Z3 scrolling - more on this later. I hope to have something resembling a beta by end of October.
+* Z3 scrolling - more on this later. I hope to have something resembling a beta by end of November.
 * Enemy improvments - Jambu is all over this.
 * Enabling JIT compilation by default for 5-20x more efficient ZScript - the largest blocker for this was compilation time, but that has been reduced significantly (~85% reduction). This just needs a little more improvement to prevent any interruption to gameplay.
 * Adding JSON support to ZScript - with the addition of WebSockets, communicating with external services makes many new ideas for quests possible now. But without support for JSON this is very tedious. In addition, we might just add support for generic dictionaries (like Python dicts/JavaScript objects).
