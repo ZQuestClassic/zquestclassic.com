@@ -243,7 +243,7 @@ const redirects = fs.readFileSync('_redirects', 'utf-8').split('\n');
 
 	const index = redirects.findIndex(l => l.startsWith('# nightly'));
 	redirects[index + 1] = `/releases/nightly/ https://zquestclassic.com/releases/${release.tag_name}/ 302`;
-	redirects[index + 1] += `\n/releases/latest/ https://zquestclassic.com/releases/${release.tag_name}/ 302`;
+	redirects[index + 2] = `/releases/latest/ https://zquestclassic.com/releases/${release.tag_name}/ 302`;
 }
 {
 	const {tagName} = JSON.parse(fs.readFileSync('public/releases/2.55.json', 'utf-8'));
