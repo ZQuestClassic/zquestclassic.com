@@ -341,7 +341,8 @@
 <body class = "pagecont">
 <header class = "pagecont">
 	<h1>ZScript Documentation (WIP)</h1>
-	<p>Last Updated: April 21, 2024 02:00 EST (<a href="https://zquestclassic.com/docs/zscript" target="_blank" rel="noopener noreferrer">Latest</a>)</p>
+	<p>Last Updated: November 18, 2024 22:48 EST (<a href="https://zquestclassic.com/docs/zscript" target="_blank" rel="noopener noreferrer">Latest</a>)</p>
+	<div style="margin: 5px; font-size: larger">NOTE: this will soon be replaced by <a href="https://docs.zquestclassic.com/zscript/">the new docs</a></div>
 </header>
 <main class = "pagecont">
 	<div class='modal' id = 'ttipmodal'>
@@ -1657,7 +1658,7 @@ Access colors of the paldata as <a class = 'link' data-link = 'PalData::rgb'>rgb
 <h3>int R[256];</h3>
 <h3>int G[256];</h3>
 <h3>int B[256];</h3>
-Access the R/G/B values of the paldata, ranging from 0-63. Reading an invalid color will return -1. To write a color as invalid, use ClearColor() instead.
+Access the R/G/B values of the paldata, ranging from 0-255. Reading an invalid color will return -1. To write a color as invalid, use ClearColor() instead.
 
 <h3>void ClearColor(int index);</h3>
 Clears the color at index on the paldata. Cleared colors will be skipped when writing to a palette.
@@ -2399,7 +2400,7 @@ The 'Level' used by 'TrigLItems'. -1 represents the 'current level', otherwise a
 <h3>int TrigTintR;</h3>
 <h3>int TrigTintG;</h3>
 <h3>int TrigTintB;</h3>
-The R/G/B values to tint the palette by when triggered. -63 to 63.
+The R/G/B values to tint the palette by when triggered. -255 to 255.
 
 <h3>int TrigLvlPal;</h3>
 The level palette to change to when triggered. -1 for none.
@@ -5929,8 +5930,8 @@ Draws a number, in the font specified using <span class = "code1 iblock">FONT_</
         int opacity = OP_OPAQUE);</h3>
 
 Draws a single character, in the font specified using <span class = "code1 iblock">FONT_</span> constants, with the top-left at (x,y). The character will be exactly width by height pixels, in the <span class = "code1 iblock">color</span>. If <span class = "code1 iblock">background_color</span> is not <span class = "code1 iblock">-1</span>, it will be drawn behind the character in a rectangle.</div>
-		<div class = "cntnt" data-bid = 344 data-tid = -1 hidden><h3>void DrawString(int layer, int x, int y, int font, int color, int format,
-        int background_color, char32 str[], int opacity = OP_OPAQUE);</h3>
+		<div class = "cntnt" data-bid = 344 data-tid = -1 hidden><h3>void DrawString(int layer, int x, int y, int font, int color, int background_color,
+        int format, char32 str[], int opacity = OP_OPAQUE);</h3>
 
 Draws a string, in the font specified using <span class = "code1 iblock">FONT_</span> constants, in the 'color'. If <span class = "code1 iblock">background_color</span> is not <span class = "code1 iblock">-1</span>, it will be drawn behind the string in a rectangle. Where the string is drawn depends on the <span class = "code1 iblock">format</span>:
 <ul>
@@ -5939,8 +5940,8 @@ Draws a string, in the font specified using <span class = "code1 iblock">FONT_</
 <li>TF_RIGHT: Top-right of string is at (x,y)</li>
 </ul>
 
-<h3>void DrawString(int layer, int x, int y, int font, int color, int format,
-        int background_color, char32 str[], int opacity,
+<h3>void DrawString(int layer, int x, int y, int font, int color, int background_color,
+        int format, char32 str[], int opacity,
         int shadow_type, int shadow_color);</h3>
 
 Same as the above version of DrawString(), except the string is drawn with a shadow. The shadow's style is defined as <span class = "code1 iblock">SHD_</span> constants, and the shadow will be drawn in the specified <span class = "code1 iblock">shadow_color</span>.</div>
@@ -6264,8 +6265,8 @@ Color space specifies a color space to interpolate through, changing the resulti
 See also: <a class = 'link' data-link = 'paldata::Mix'>Color Mixing</a></div>
 		<div class = "cntnt" data-bid = 383 data-tid = -1 hidden><h3>rgb CreateRGB(int r, int g, int b);
 rgb CreateRGB(long hexcode);</h3>
-Takes either an (r,g,b) ranging 0 &lt;= n &lt;= 63, or takes a long hexcode (0xRRGGBBL), with each rgb section 0 &lt;= n &lt;= 255.
-Converts whichever is passed into an 'rgb' value, representing a color with 0-63 rgb values, which is used by paldata functions.
+Takes either an (r,g,b) ranging 0 &lt;= n &lt;= 255, or takes a long hexcode (0xRRGGBBL), with each rgb section 0 &lt;= n &lt;= 255.
+Converts whichever is passed into an 'rgb' value, representing a color with 0-255 rgb values, which is used by paldata functions.
 
 See: <a class = 'link' data-link = 'paldata::rgb'>rgb</a></div>
 		<div class = "cntnt" data-bid = 384 data-tid = -1 hidden>The <span class = "code1 iblock">Input-></span> pointer holds various values relating to button, mouse, and keyboard input.</div>
