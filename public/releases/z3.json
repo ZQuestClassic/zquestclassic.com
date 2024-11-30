@@ -1,26 +1,26 @@
 {
   "channel": "z3",
-  "tagName": "3.0.0-prerelease.30+2024-11-29.z3",
+  "tagName": "3.0.0-prerelease.31+2024-11-30.z3",
   "assets": [
     {
-      "name": "3.0.0-prerelease.30+2024-11-29.z3-linux.tar.gz",
-      "url": "https://github.com/connorjclark/ZeldaClassic/releases/download/3.0.0-prerelease.30%2B2024-11-29.z3/3.0.0-prerelease.30%2B2024-11-29.z3-linux.tar.gz",
-      "size": 29405459
+      "name": "3.0.0-prerelease.31+2024-11-30.z3-linux.tar.gz",
+      "url": "https://github.com/connorjclark/ZeldaClassic/releases/download/3.0.0-prerelease.31%2B2024-11-30.z3/3.0.0-prerelease.31%2B2024-11-30.z3-linux.tar.gz",
+      "size": 29413701
     },
     {
-      "name": "3.0.0-prerelease.30+2024-11-29.z3-mac.dmg",
-      "url": "https://github.com/connorjclark/ZeldaClassic/releases/download/3.0.0-prerelease.30%2B2024-11-29.z3/3.0.0-prerelease.30%2B2024-11-29.z3-mac.dmg",
-      "size": 24856017
+      "name": "3.0.0-prerelease.31+2024-11-30.z3-mac.dmg",
+      "url": "https://github.com/connorjclark/ZeldaClassic/releases/download/3.0.0-prerelease.31%2B2024-11-30.z3/3.0.0-prerelease.31%2B2024-11-30.z3-mac.dmg",
+      "size": 24864030
     },
     {
-      "name": "3.0.0-prerelease.30+2024-11-29.z3-windows-x64.zip",
-      "url": "https://github.com/connorjclark/ZeldaClassic/releases/download/3.0.0-prerelease.30%2B2024-11-29.z3/3.0.0-prerelease.30%2B2024-11-29.z3-windows-x64.zip",
-      "size": 26872064
+      "name": "3.0.0-prerelease.31+2024-11-30.z3-windows-x64.zip",
+      "url": "https://github.com/connorjclark/ZeldaClassic/releases/download/3.0.0-prerelease.31%2B2024-11-30.z3/3.0.0-prerelease.31%2B2024-11-30.z3-windows-x64.zip",
+      "size": 26877684
     },
     {
-      "name": "3.0.0-prerelease.30+2024-11-29.z3-windows-x86.zip",
-      "url": "https://github.com/connorjclark/ZeldaClassic/releases/download/3.0.0-prerelease.30%2B2024-11-29.z3/3.0.0-prerelease.30%2B2024-11-29.z3-windows-x86.zip",
-      "size": 24752620
+      "name": "3.0.0-prerelease.31+2024-11-30.z3-windows-x86.zip",
+      "url": "https://github.com/connorjclark/ZeldaClassic/releases/download/3.0.0-prerelease.31%2B2024-11-30.z3/3.0.0-prerelease.31%2B2024-11-30.z3-windows-x86.zip",
+      "size": 24759423
     }
   ]
 }
