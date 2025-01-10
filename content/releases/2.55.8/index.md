@@ -43,7 +43,7 @@ tags:
    &nbsp;
    >Example usage:  
    >
-   >./zquest.exe -smart-assign your_quest.qst 
+   >./zeditor.exe -smart-assign your_quest.qst 
    >
 - Item animation previews now preview 'flash' [`03f304cc3`](https://github.com/ZQuestClassic/ZQuestClassic/commit/03f304cc33deb4165523fc16f9eecf13d593e1ab)
 - add Cambria as tileset option [`7d41dad8b`](https://github.com/ZQuestClassic/ZQuestClassic/commit/7d41dad8b0327e5fb1fa778076d8ac74cbd261a7)
