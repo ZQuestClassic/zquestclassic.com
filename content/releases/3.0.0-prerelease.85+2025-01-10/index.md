@@ -7,6 +7,10 @@ assets:
     name: 3.0.0-prerelease.85+2025-01-10-linux.tar.gz
     platform: linux
 
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.85%2B2025-01-10/3.0.0-prerelease.85%2B2025-01-10-mac.dmg
+    name: 3.0.0-prerelease.85+2025-01-10-mac.dmg
+    platform: mac
+
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.85%2B2025-01-10/3.0.0-prerelease.85%2B2025-01-10-windows-x64.zip
     name: 3.0.0-prerelease.85+2025-01-10-windows-x64.zip
     platform: windows-x64
@@ -112,3 +116,4 @@ tags:
 - ensure directory exists in database/collect.ts setReleaseResourceHashes [`1384a4a9b`](https://github.com/ZQuestClassic/ZQuestClassic/commit/1384a4a9bd2de0f524ddb95006a266ae710e9b3c)
 - add 2.55.8 changelog [`c8fdd74db`](https://github.com/ZQuestClassic/ZQuestClassic/commit/c8fdd74dbd7c6e3574e4b6f863a97bd00910184c)
 - fix mistake in 2.55.8 changelog [`441bd7be7`](https://github.com/ZQuestClassic/ZQuestClassic/commit/441bd7be706fa0776553d87f08ad0b68aa71d339)
+
