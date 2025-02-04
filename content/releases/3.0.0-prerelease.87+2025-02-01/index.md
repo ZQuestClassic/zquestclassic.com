@@ -43,7 +43,8 @@ tags:
    &nbsp;
    >This annotation turns an enum into a bitflags enum:  
    >
-   >1. Auto-incrementing values starting at 1 and doubling the previous for    each new enum member 2. For type safety, bitwise operations on enum bitflags are only allowed    with the same type  
+   >1. Auto-incrementing values starting at 1 and doubling the previous for    each new enum member
+   >2. For type safety, bitwise operations on enum bitflags are only allowed    with the same type  
    >
    >For example:  
    >
