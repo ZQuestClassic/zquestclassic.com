@@ -16,6 +16,16 @@
       "name": "3.0.0-prerelease.96+2025-03-27-web.zip",
       "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.96%2B2025-03-27/3.0.0-prerelease.96%2B2025-03-27-web.zip",
       "size": 89149277
+    },
+    {
+      "name": "3.0.0-prerelease.96+2025-03-27-windows-x64.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.96%2B2025-03-27/3.0.0-prerelease.96%2B2025-03-27-windows-x64.zip",
+      "size": 33242854
+    },
+    {
+      "name": "3.0.0-prerelease.96+2025-03-27-windows-x86.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.96%2B2025-03-27/3.0.0-prerelease.96%2B2025-03-27-windows-x86.zip",
+      "size": 31058581
     }
   ]
 }

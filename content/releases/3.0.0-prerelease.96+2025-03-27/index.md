@@ -10,6 +10,14 @@ assets:
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.96%2B2025-03-27/3.0.0-prerelease.96%2B2025-03-27-mac.dmg
     name: 3.0.0-prerelease.96+2025-03-27-mac.dmg
     platform: mac
+
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.96%2B2025-03-27/3.0.0-prerelease.96%2B2025-03-27-windows-x64.zip
+    name: 3.0.0-prerelease.96+2025-03-27-windows-x64.zip
+    platform: windows-x64
+
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.96%2B2025-03-27/3.0.0-prerelease.96%2B2025-03-27-windows-x86.zip
+    name: 3.0.0-prerelease.96+2025-03-27-windows-x86.zip
+    platform: windows-win32
 prerelease: true
 id: 208746457
 tag_name: '3.0.0-prerelease.96+2025-03-27'
