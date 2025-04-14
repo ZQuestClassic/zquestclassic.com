@@ -1,26 +1,26 @@
 {
   "channel": "z3",
-  "tagName": "3.0.0-prerelease.98+2025-04-08",
+  "tagName": "3.0.0-prerelease.99+2025-04-14",
   "assets": [
     {
-      "name": "3.0.0-prerelease.98+2025-04-08-linux.tar.gz",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.98%2B2025-04-08/3.0.0-prerelease.98%2B2025-04-08-linux.tar.gz",
-      "size": 35621840
+      "name": "3.0.0-prerelease.99+2025-04-14-linux.tar.gz",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.99%2B2025-04-14/3.0.0-prerelease.99%2B2025-04-14-linux.tar.gz",
+      "size": 35624706
     },
     {
-      "name": "3.0.0-prerelease.98+2025-04-08-mac.dmg",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.98%2B2025-04-08/3.0.0-prerelease.98%2B2025-04-08-mac.dmg",
-      "size": 31276806
+      "name": "3.0.0-prerelease.99+2025-04-14-mac.dmg",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.99%2B2025-04-14/3.0.0-prerelease.99%2B2025-04-14-mac.dmg",
+      "size": 31279805
     },
     {
-      "name": "3.0.0-prerelease.98+2025-04-08-windows-x64.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.98%2B2025-04-08/3.0.0-prerelease.98%2B2025-04-08-windows-x64.zip",
-      "size": 33439228
+      "name": "3.0.0-prerelease.99+2025-04-14-windows-x64.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.99%2B2025-04-14/3.0.0-prerelease.99%2B2025-04-14-windows-x64.zip",
+      "size": 33445785
     },
     {
-      "name": "3.0.0-prerelease.98+2025-04-08-windows-x86.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.98%2B2025-04-08/3.0.0-prerelease.98%2B2025-04-08-windows-x86.zip",
-      "size": 31250979
+      "name": "3.0.0-prerelease.99+2025-04-14-windows-x86.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.99%2B2025-04-14/3.0.0-prerelease.99%2B2025-04-14-windows-x86.zip",
+      "size": 31256920
     }
   ]
 }
