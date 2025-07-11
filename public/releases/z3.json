@@ -1,26 +1,21 @@
 {
   "channel": "z3",
-  "tagName": "3.0.0-prerelease.117+2025-07-07",
+  "tagName": "3.0.0-prerelease.118+2025-07-11",
   "assets": [
     {
-      "name": "3.0.0-prerelease.117+2025-07-07-linux.tar.gz",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.117%2B2025-07-07/3.0.0-prerelease.117%2B2025-07-07-linux.tar.gz",
-      "size": 35949063
+      "name": "3.0.0-prerelease.118+2025-07-11-linux.tar.gz",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.118%2B2025-07-11/3.0.0-prerelease.118%2B2025-07-11-linux.tar.gz",
+      "size": 38234969
     },
     {
-      "name": "3.0.0-prerelease.117+2025-07-07-mac.dmg",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.117%2B2025-07-07/3.0.0-prerelease.117%2B2025-07-07-mac.dmg",
-      "size": 31744733
+      "name": "3.0.0-prerelease.118+2025-07-11-windows-x64.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.118%2B2025-07-11/3.0.0-prerelease.118%2B2025-07-11-windows-x64.zip",
+      "size": 36021392
     },
     {
-      "name": "3.0.0-prerelease.117+2025-07-07-windows-x64.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.117%2B2025-07-07/3.0.0-prerelease.117%2B2025-07-07-windows-x64.zip",
-      "size": 33724387
-    },
-    {
-      "name": "3.0.0-prerelease.117+2025-07-07-windows-x86.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.117%2B2025-07-07/3.0.0-prerelease.117%2B2025-07-07-windows-x86.zip",
-      "size": 31604974
+      "name": "3.0.0-prerelease.118+2025-07-11-windows-x86.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.118%2B2025-07-11/3.0.0-prerelease.118%2B2025-07-11-windows-x86.zip",
+      "size": 33895521
     }
   ]
 }
