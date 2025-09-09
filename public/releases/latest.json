@@ -1,26 +1,26 @@
 {
   "channel": "latest",
-  "tagName": "3.0.0-prerelease.131+2025-08-31",
+  "tagName": "3.0.0-prerelease.132+2025-09-09",
   "assets": [
     {
-      "name": "3.0.0-prerelease.131+2025-08-31-linux.tar.gz",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.131%2B2025-08-31/3.0.0-prerelease.131%2B2025-08-31-linux.tar.gz",
-      "size": 38735732
+      "name": "3.0.0-prerelease.132+2025-09-09-linux.tar.gz",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.132%2B2025-09-09/3.0.0-prerelease.132%2B2025-09-09-linux.tar.gz",
+      "size": 38811821
     },
     {
-      "name": "3.0.0-prerelease.131+2025-08-31-mac.dmg",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.131%2B2025-08-31/3.0.0-prerelease.131%2B2025-08-31-mac.dmg",
-      "size": 34563438
+      "name": "3.0.0-prerelease.132+2025-09-09-mac.dmg",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.132%2B2025-09-09/3.0.0-prerelease.132%2B2025-09-09-mac.dmg",
+      "size": 34665403
     },
     {
-      "name": "3.0.0-prerelease.131+2025-08-31-windows-x64.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.131%2B2025-08-31/3.0.0-prerelease.131%2B2025-08-31-windows-x64.zip",
-      "size": 36730478
+      "name": "3.0.0-prerelease.132+2025-09-09-windows-x64.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.132%2B2025-09-09/3.0.0-prerelease.132%2B2025-09-09-windows-x64.zip",
+      "size": 36776592
     },
     {
-      "name": "3.0.0-prerelease.131+2025-08-31-windows-x86.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.131%2B2025-08-31/3.0.0-prerelease.131%2B2025-08-31-windows-x86.zip",
-      "size": 34738613
+      "name": "3.0.0-prerelease.132+2025-09-09-windows-x86.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.132%2B2025-09-09/3.0.0-prerelease.132%2B2025-09-09-windows-x86.zip",
+      "size": 34799598
     }
   ]
 }
