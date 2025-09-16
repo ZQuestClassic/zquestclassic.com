@@ -14,6 +14,10 @@ assets:
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.133%2B2025-09-14/3.0.0-prerelease.133%2B2025-09-14-windows-x64.zip
     name: 3.0.0-prerelease.133+2025-09-14-windows-x64.zip
     platform: windows-x64
+
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.133%2B2025-09-14/3.0.0-prerelease.133%2B2025-09-14-windows-x86.zip
+    name: 3.0.0-prerelease.133+2025-09-14-windows-x86.zip
+    platform: windows-win32
 prerelease: true
 id: 247111639
 tag_name: '3.0.0-prerelease.133+2025-09-14'

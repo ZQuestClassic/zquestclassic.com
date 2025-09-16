@@ -16,6 +16,11 @@
       "name": "3.0.0-prerelease.133+2025-09-14-windows-x64.zip",
       "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.133%2B2025-09-14/3.0.0-prerelease.133%2B2025-09-14-windows-x64.zip",
       "size": 36795399
+    },
+    {
+      "name": "3.0.0-prerelease.133+2025-09-14-windows-x86.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.133%2B2025-09-14/3.0.0-prerelease.133%2B2025-09-14-windows-x86.zip",
+      "size": 35084674
     }
   ]
 }
