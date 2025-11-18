@@ -45,9 +45,13 @@ tags:
    >- GoIfLevelState
    >- GoIfScreenState
    >- GoIfSecrets
+   >- GoIfScreenExState
+   >- GoIfAnyScreenExState
    >- SetGlobalState
    >- SetLevelItem
    >- SetLevelState
+   >- SetScreenExState
+   >- SetAnyScreenExState
    >
    >
    >&nbsp;
