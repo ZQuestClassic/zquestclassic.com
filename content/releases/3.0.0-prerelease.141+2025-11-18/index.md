@@ -3,6 +3,10 @@ title: 3.0 Prerelease 141 2025-11-18
 description: 
 date: 2025-11-18T22:57:46Z
 assets: 
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.141%2B2025-11-18/3.0.0-prerelease.141%2B2025-11-18-linux.tar.gz
+    name: 3.0.0-prerelease.141+2025-11-18-linux.tar.gz
+    platform: linux
+
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.141%2B2025-11-18/3.0.0-prerelease.141%2B2025-11-18-mac.dmg
     name: 3.0.0-prerelease.141+2025-11-18-mac.dmg
     platform: mac
