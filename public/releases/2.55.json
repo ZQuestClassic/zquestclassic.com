@@ -15,12 +15,12 @@
     {
       "name": "2.55.12-windows-x64.zip",
       "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.12/2.55.12-windows-x64.zip",
-      "size": 31842653
+      "size": 31597411
     },
     {
       "name": "2.55.12-windows-x86.zip",
       "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.12/2.55.12-windows-x86.zip",
-      "size": 29938972
+      "size": 29700335
     }
   ]
 }
