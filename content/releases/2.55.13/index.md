@@ -42,10 +42,6 @@ tags:
    &nbsp;
    >This introduces a new convention: place your scripts in a folder called `scripts` next to your `.qst` file, and you'll be able to compile your quest without ever modifying your include paths. 
    >
-- implicitly add `<qst dir>/scripts` to include paths [`774573f24`](https://github.com/ZQuestClassic/ZQuestClassic/commit/774573f246c6ab49609f653198d7e3b11597fe79)
-   &nbsp;
-   >This introduces a new convention: place your scripts in a folder called `scripts` next to your `.qst` file, and you'll be able to compile your quest without ever modifying your include paths. 
-   >
 
 ### ZScript Standard Library (std.zh)
 
