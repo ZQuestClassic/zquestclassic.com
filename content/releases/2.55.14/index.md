@@ -1,13 +1,25 @@
 ---
 title: 2.55.14
 description: 
-date: 2026-05-02T03:29:05Z
+date: 2026-05-02T05:54:08Z
 assets: 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.14/2.55.14-linux.tar.gz
     name: 2.55.14-linux.tar.gz
+    platform: linux
+
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.14/2.55.14-mac.dmg
+    name: 2.55.14-mac.dmg
+    platform: mac
+
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.14/2.55.14-windows-x64.zip
+    name: 2.55.14-windows-x64.zip
+    platform: windows-x64
+
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.14/2.55.14-windows-x86.zip
+    name: 2.55.14-windows-x86.zip
     platform: windows-win32
 prerelease: false
-id: 316645812
+id: 316657997
 tag_name: '2.55.14'
 channel: '2.55'
 tags:
