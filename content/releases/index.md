@@ -118,7 +118,13 @@ eleventyNavigation:
 
 </div>
 
-<h2>Supported Operating Systems</h2>
+<h2>How to play a quest</h2>
+
+<div>
+	<div>To learn how to play a quest, see <a target="_blank" href="https://docs.zquestclassic.com/about/how-to-play">these instructions</a>.</div>
+</div>
+
+<h2>Supported operating systems</h2>
 
 <div>
 	<div>Windows 7+</div>
@@ -164,7 +170,7 @@ if (!channel) {
 
 </script>
 
-<h2>Web Version (Experimental)</h2>
+<h2>Web version (experimental)</h2>
 
 An experimental web version is available here: [play](https://web.zquestclassic.com/play/) or [create](https://web.zquestclassic.com/create/).
 
