@@ -87,10 +87,7 @@ tags:
    >these unknown instructions. Now, the tile drawing code checks if the CPU
    >supports these instructions, and if not uses the slower drawing code.
    >
-- Preserve scroll position in new listers [`e352f8e7b5`](https://github.com/ZQuestClassic/ZQuestClassic/commit/e352f8e7b5cb13d7fd5dc993be0221e3ecf08e27)
-   &nbsp;
-   >Discord: https://discord.com/channels/876899628556091432/1497521931979853854 
-   >
+- Preserve scroll position in new listers [`e352f8e7b5`](https://github.com/ZQuestClassic/ZQuestClassic/commit/e352f8e7b5cb13d7fd5dc993be0221e3ecf08e27) [Discord](https://discord.com/channels/876899628556091432/1497521931979853854)
 - Switchhook Block combo attributes overlapping [`0b38f9e5d4`](https://github.com/ZQuestClassic/ZQuestClassic/commit/0b38f9e5d40c607a77b6e3c88cafd30210b78183)
    &nbsp;
    >The 'Item/Dropset' attribute was in the same spot as the 'Break SFX' attribute! The 'Item/Dropset' attribute has been moved to fix this. If you were using 'Item/Dropset' before, you'll want to update your Switchhook Block combos. 
@@ -99,7 +96,7 @@ tags:
    &nbsp;
    >This led to high continue heart values wrapping around to lower values.  
    >
-   >Regressed in 2.55-alpha-120 (acb7c84). 
+   >Regressed in 2.55-alpha-120 ([acb7c84](https://github.com/ZQuestClassic/ZQuestClassic/commit/acb7c84)). 
    >
 - Prevent out-of-bounds write when loading a quest with an invalid combo count [`722bcf936c`](https://github.com/ZQuestClassic/ZQuestClassic/commit/722bcf936c119e062b9a8e1841d0f51bb30cc5dd)
    &nbsp;
@@ -240,7 +237,7 @@ tags:
    >
 - Stomp Boots block flags being backwards [`68ef97426d`](https://github.com/ZQuestClassic/ZQuestClassic/commit/68ef97426d0c9842a79e437bb8052ab8e79c6069)
    &nbsp;
-   >Regressed in 2.55.0 (de1cb2b). 
+   >Regressed in 2.55.0 ([de1cb2b](https://github.com/ZQuestClassic/ZQuestClassic/commit/de1cb2b)). 
    >
 - Frozen scripts wrongly having draws stopped by running strings [`98b0be2340`](https://github.com/ZQuestClassic/ZQuestClassic/commit/98b0be23403c3c70af2e1c79dce26963b67d6974)
 - SCC setting screen state of non-current screen using wrong map [`94b4872336`](https://github.com/ZQuestClassic/ZQuestClassic/commit/94b48723361acb16791da3f33445dcf60ffc0d9e)
@@ -266,11 +263,9 @@ tags:
 ### Editor
 
 - Remove unused wand attributes/flags from item editor [`14ede02c46`](https://github.com/ZQuestClassic/ZQuestClassic/commit/14ede02c4670836f66ead03e7ad9d3cdd00f7f1b)
-- Tile editor rotations sometimes undone [`a1d15cc88b`](https://github.com/ZQuestClassic/ZQuestClassic/commit/a1d15cc88be7657df4e5550e00454c3f1a9d1994)
+- Tile editor rotations sometimes undone [`a1d15cc88b`](https://github.com/ZQuestClassic/ZQuestClassic/commit/a1d15cc88be7657df4e5550e00454c3f1a9d1994) [Discord](https://discord.com/channels/876899628556091432/1497685063649726545)
    &nbsp;
-   >Caused by a bug in tile caching code.  
-   >
-   > Discord: https://discord.com/channels/876899628556091432/1497685063649726545 
+   >Caused by a bug in tile caching code. 
    >
 - Preview mode combo cycling using bad colors for Ignore CSet [`13636edb06`](https://github.com/ZQuestClassic/ZQuestClassic/commit/13636edb06d0fd464c20f5643c50e60fc9de71d3)
 - Water/shallow water combo wizard not setting levels properly [`fec4002703`](https://github.com/ZQuestClassic/ZQuestClassic/commit/fec4002703c47ac5ab19ee4c4dbe8aae96cce791)
@@ -295,7 +290,7 @@ tags:
 ### ZScript
 
 - Show correct code location for script drawing errors [`6fdd14f83e`](https://github.com/ZQuestClassic/ZQuestClassic/commit/6fdd14f83e21fc8ea187bae744e31aae83f85594)
-- Prevent DMap and hero scripts running twice on init [`8285221f7e`](https://github.com/ZQuestClassic/ZQuestClassic/commit/8285221f7ecea84a097dc1f76db133b60cfef85a)
+- Prevent DMap and hero scripts running twice on init [`8285221f7e`](https://github.com/ZQuestClassic/ZQuestClassic/commit/8285221f7ecea84a097dc1f76db133b60cfef85a) [Discord](https://discord.com/channels/876899628556091432/1494501078564339911)
    &nbsp;
    >The first frame of these scripts were incorrectly running twice. The exact behavior depended on whether these QRs are enabled:  
    >
@@ -305,14 +300,12 @@ tags:
    >
    >&nbsp;
    >
-   >This bug only occurred if one of these QRs was enabled.  
-   >
-   >Discord: https://discord.com/channels/876899628556091432/1494501078564339911 
+   >This bug only occurred if one of these QRs was enabled. 
    >
 - Prevent crash from out-of-bounds sprite script IDs [`9202045134`](https://github.com/ZQuestClassic/ZQuestClassic/commit/9202045134c5f04a02f3356ec70a0a4abb287a8e)
 - Use proper gfx for script created sword beams [`559bdddf2a`](https://github.com/ZQuestClassic/ZQuestClassic/commit/559bdddf2a93e9768a070cc77076c6bf61b939b5)
    &nbsp;
-   >This regressed in 9ca67c7b0 (2.55-alpha-120). 
+   >This regressed in [9ca67c7b0](https://github.com/ZQuestClassic/ZQuestClassic/commit/9ca67c7b0) (2.55-alpha-120). 
    >
 - `Game->CurrentItemID()` using a bad default value for bitflags [`fca4d972d0`](https://github.com/ZQuestClassic/ZQuestClassic/commit/fca4d972d0f7d25fcdfbbfa5516b65abb642e057)
 - Strcmp-family functions now always return -1, 0, or 1 [`6d55503949`](https://github.com/ZQuestClassic/ZQuestClassic/commit/6d55503949b1ddcbc4c180e646b7aec1b7af34ec)
@@ -337,11 +330,9 @@ tags:
 
 ### ZConsole
 
-- [win] prevent debug console from freezing [`bd68efde70`](https://github.com/ZQuestClassic/ZQuestClassic/commit/bd68efde70dbb45c73b36b6a19ef49f33087f1f5)
+- [win] prevent debug console from freezing [`bd68efde70`](https://github.com/ZQuestClassic/ZQuestClassic/commit/bd68efde70dbb45c73b36b6a19ef49f33087f1f5) [Discord](https://discord.com/channels/876899628556091432/1466588316492234815)
    &nbsp;
-   >The named-pipe connection was treated as a hard failure when it didn't complete instantly, popping a modal dialog that could hide behind the game window (appearing as a frozen black screen) and orphaning the helper console in an endless retry loop. Connect now waits with a bounded timeout so a slow-to-start console attaches normally, and any setup failure quietly disables the console instead of blocking the app.  
-   >
-   > Discord: https://discord.com/channels/876899628556091432/1466588316492234815 
+   >The named-pipe connection was treated as a hard failure when it didn't complete instantly, popping a modal dialog that could hide behind the game window (appearing as a frozen black screen) and orphaning the helper console in an endless retry loop. Connect now waits with a bounded timeout so a slow-to-start console attaches normally, and any setup failure quietly disables the console instead of blocking the app. 
    >
 
 # Refactors
@@ -349,11 +340,9 @@ tags:
 ### Player
 
 - Copy cpos_update optimization from combos to ffcs [`07f75a7887`](https://github.com/ZQuestClassic/ZQuestClassic/commit/07f75a788749d33f6371c57a58c9bf1fe3b8c9b8)
-- Greatly speed up refresh_rgb_tables using last key cache [`809dd2019b`](https://github.com/ZQuestClassic/ZQuestClassic/commit/809dd2019b0489189a934aa6044ec0560cbc129c)
+- Greatly speed up refresh_rgb_tables using last key cache [`809dd2019b`](https://github.com/ZQuestClassic/ZQuestClassic/commit/809dd2019b0489189a934aa6044ec0560cbc129c) [Discord](https://discord.com/channels/876899628556091432/1507587209308409996)
    &nbsp;
-   >This greatly speeds up the program within fade effects. For terror_of_necromancy_demo6_32_of_54.zplay it reduced the total CPU time being spent in `refresh_rgb_tables` from 60% to 0.3%.  
-   >
-   > Discord: https://discord.com/channels/876899628556091432/1507587209308409996 
+   >This greatly speeds up the program within fade effects. For terror_of_necromancy_demo6_32_of_54.zplay it reduced the total CPU time being spent in `refresh_rgb_tables` from 60% to 0.3%. 
    >
 - Optimize code for common dithering args [`af60e181aa`](https://github.com/ZQuestClassic/ZQuestClassic/commit/af60e181aadcf1652119f751be46fff4cac93a63)
    &nbsp;
@@ -363,10 +352,7 @@ tags:
    &nbsp;
    >Remove a Windows-only screen-tearing workaround from the Vista/Win7 era, along with its hidden use_dwm_flush config option, which is now ignored if set. It was off by default and is redundant now: the display backend owns frame presentation, and desktop composition is always on in modern Windows. 
    >
-- Greatly speed up dithercircfill [`d50e8a9da3`](https://github.com/ZQuestClassic/ZQuestClassic/commit/d50e8a9da3f2848957621abd2193748811f0efd2)
-   &nbsp;
-   >Discord: https://discord.com/channels/876899628556091432/1498203179395842058 
-   >
+- Greatly speed up dithercircfill [`d50e8a9da3`](https://github.com/ZQuestClassic/ZQuestClassic/commit/d50e8a9da3f2848957621abd2193748811f0efd2) [Discord](https://discord.com/channels/876899628556091432/1498203179395842058)
 
 ### Editor
 
