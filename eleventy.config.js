@@ -130,9 +130,30 @@ module.exports = function(eleventyConfig) {
 		// Release notes are generated from GitHub release bodies, which almost
 		// always use a bare ``` fence. Prism can't tag those, so they render as
 		// unstyled plain text. ZScript is close enough to C++ to highlight well.
+		//
+		// But plenty of those bare fences hold plain prose -- changelog dumps,
+		// directory trees, commit messages -- which we don't want tokenized. So
+		// only default the language when enough of the block looks like code.
+		const isCodeLine = (line) => {
+			// Drop a trailing line comment so `x = {1}; // note` still counts.
+			// The [^:] guard keeps http:// urls in prose from matching.
+			const s = line.replace(/(^|[^:])\/\/.*$/, '$1').trim();
+			if (!s) return /^\s*\/\//.test(line); // whole-line comment
+			return /[;{},]$/.test(s) || /^[{}]/.test(s) || /^[#@]/.test(s) ||
+				/->|\+\+|==|&&|\|\|/.test(s);
+		};
+		const looksLikeCode = (src) => {
+			const lines = src.split('\n').filter(l => l.trim());
+			if (!lines.length) return false;
+			// Across every release note this scores real code at >= 0.57 and
+			// prose at <= 0.10, so the exact cutoff isn't delicate.
+			return lines.filter(isCodeLine).length / lines.length >= 0.3;
+		};
+
 		const defaultFence = mdLib.renderer.rules.fence;
 		mdLib.renderer.rules.fence = (tokens, idx, ...rest) => {
-			if (!tokens[idx].info.trim()) tokens[idx].info = 'cpp';
+			const token = tokens[idx];
+			if (!token.info.trim() && looksLikeCode(token.content)) token.info = 'cpp';
 			return defaultFence(tokens, idx, ...rest);
 		};
 
