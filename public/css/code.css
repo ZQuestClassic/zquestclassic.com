@@ -1,0 +1,19 @@
+/* Loaded after prism-okaidia.css so these win over the theme's defaults. */
+
+/* The theme hardcodes 1em, which is 20px here -- far too chunky for a 20-line
+   code sample sitting inside a blockquote. */
+pre[class*="language-"],
+pre:not([class*="language-"]) {
+	font-size: 0.8em;
+	line-height: 1.5;
+	padding: 1em 1.15em;
+	border-radius: 6px;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* The theme's text-shadow smears glyphs at this size. */
+pre[class*="language-"],
+pre[class*="language-"] *,
+code[class*="language-"] {
+	text-shadow: none;
+}

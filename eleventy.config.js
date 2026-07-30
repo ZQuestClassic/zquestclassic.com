@@ -127,6 +127,15 @@ module.exports = function(eleventyConfig) {
 
 	// Customize Markdown library settings:
 	eleventyConfig.amendLibrary("md", mdLib => {
+		// Release notes are generated from GitHub release bodies, which almost
+		// always use a bare ``` fence. Prism can't tag those, so they render as
+		// unstyled plain text. ZScript is close enough to C++ to highlight well.
+		const defaultFence = mdLib.renderer.rules.fence;
+		mdLib.renderer.rules.fence = (tokens, idx, ...rest) => {
+			if (!tokens[idx].info.trim()) tokens[idx].info = 'cpp';
+			return defaultFence(tokens, idx, ...rest);
+		};
+
 		mdLib.use(markdownItAnchor, {
 			// permalink: markdownItAnchor.permalink.ariaHidden({
 			// 	placement: "after",

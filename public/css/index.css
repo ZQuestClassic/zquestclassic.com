@@ -20,7 +20,7 @@
 /* Defaults */
 :root {
 	--font-family: zcfont, zcfont-fallback, -apple-system, system-ui, sans-serif;
-	--font-family-monospace: zcfont, zcfont-fallback, Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 }
 
 /* Theme colors */
@@ -186,9 +186,15 @@ pre,
 code[class*="language-"] {
 	font-family: var(--font-family-monospace);
 }
+/* Fallback for any block Prism couldn't tag: match the theme's panel styling
+   so it doesn't render as bare unstyled text. Sizing lives in code.css. */
 pre:not([class*="language-"]) {
 	margin: .5em 0;
-	line-height: 1.375; /* 22px /16 */
+	padding: 1em;
+	line-height: 1.5;
+	border-radius: 0.3em;
+	background: #272822;
+	color: #f8f8f2;
 	-moz-tab-size: var(--syntax-tab-size);
 	-o-tab-size: var(--syntax-tab-size);
 	tab-size: var(--syntax-tab-size);
@@ -198,6 +204,7 @@ pre:not([class*="language-"]) {
 	direction: ltr;
 	text-align: left;
 	white-space: pre;
+	overflow: auto;
 	word-spacing: normal;
 	word-break: normal;
 }
