@@ -349,7 +349,11 @@ h2 + .header-anchor {
 	display: none;
 }
 
-:not(pre) code {
+/* Must be a child combinator. `:not(pre) code` is a *descendant* selector, so
+   it also matches `pre > code` -- every such code has some non-pre ancestor
+   (blockquote, li, body) -- painting a grey chip behind each line of a code
+   block and forcing break-spaces onto it. */
+:not(pre) > code {
 	padding: 0.2em 0.4em;
 	margin: 0;
 	font-size: 85%;
