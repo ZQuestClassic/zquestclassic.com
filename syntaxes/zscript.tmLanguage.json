@@ -295,7 +295,12 @@
           "match": "\"[^\"\\n]*\"",
           "name": "string.quoted.double.zscript"
         }
-      ]
+      ],
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.control.directive.zscript"
+        }
+      }
     }
   },
   "scopeName": "source.zscript"

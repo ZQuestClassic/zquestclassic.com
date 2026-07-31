@@ -116,6 +116,19 @@ print('preprocessor scopes: ' +
       ('already fixed' if before == json.dumps(grammar['repository'])
        else 'meta.* -> conventional colorable scopes'))
 
+#    The `#` is consumed by the block's `begin`, so it only carried the
+#    enclosing meta.preprocessor scope and rendered uncolored -- splitting
+#    `#option` into a plain `#` plus a pink `option`. Scoping it as part of the
+#    directive keyword makes the two adjacent tokens share a style, which the
+#    highlighter then emits as a single `#option` token.
+hash_rule = grammar['repository']['hash']
+if hash_rule.get('beginCaptures'):
+    print('# prefix: already scoped')
+else:
+    hash_rule['beginCaptures'] = {
+        '0': {'name': 'keyword.control.directive.zscript'}}
+    print('# prefix: scoped with the directive keyword')
+
 # 5. The remaining white text on preprocessor lines: the macro name after
 #    #define, and the quoted path after #include.
 hash_pats = grammar['repository']['hash']['patterns']
