@@ -1,19 +1,27 @@
-/* Loaded after prism-okaidia.css so these win over the theme's defaults. */
+/* Shiki highlights at build time and inlines every color on the elements
+   themselves, so nothing here sets colors -- this is layout and sizing only.
+   Untagged (prose) blocks render as a plain <pre> and are styled in index.css. */
 
-/* The theme hardcodes 1em, which is 20px here -- far too chunky for a 20-line
-   code sample sitting inside a blockquote. */
-pre[class*="language-"],
-pre:not([class*="language-"]) {
+/* 1em would be 20px here -- far too chunky for a 20-line sample sitting inside
+   a blockquote. Applies to prose blocks too, so both sizes stay in step. */
+pre {
 	font-size: 0.8em;
 	line-height: 1.5;
-	padding: 1em 1.15em;
-	border-radius: 6px;
-	border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* The theme's text-shadow smears glyphs at this size. */
-pre[class*="language-"],
-pre[class*="language-"] *,
-code[class*="language-"] {
-	text-shadow: none;
+pre.shiki {
+	padding: 1em 1.15em;
+	margin: .5em 0;
+	border-radius: 6px;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	overflow: auto;
+	tab-size: var(--syntax-tab-size);
+}
+
+pre.shiki code {
+	/* Shiki wraps each line in a block-level span; keep them from inheriting
+	   the inline-code chip styling. */
+	display: block;
+	width: fit-content;
+	min-width: 100%;
 }

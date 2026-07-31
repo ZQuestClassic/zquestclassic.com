@@ -1,9 +1,10 @@
+const fs = require("fs");
+const path = require("path");
 const { DateTime } = require("luxon");
 const markdownItAnchor = require("markdown-it-link-attributes");
 
 
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginBundle = require("@11ty/eleventy-plugin-bundle");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
@@ -18,7 +19,6 @@ module.exports = function(eleventyConfig) {
 	// For example, `./public/css/` ends up in `_site/css/`
 	eleventyConfig.addPassthroughCopy({
 		"./public/": "/",
-		"./node_modules/prismjs/themes/prism-okaidia.css": "/css/prism-okaidia.css",
 		"./content/**/*.png": true,
 	});
 
@@ -34,9 +34,6 @@ module.exports = function(eleventyConfig) {
 
 	// Official plugins
 	eleventyConfig.addPlugin(pluginRss);
-	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
-		preAttributes: { tabindex: 0 }
-	});
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 	eleventyConfig.addPlugin(pluginBundle);
@@ -125,11 +122,33 @@ module.exports = function(eleventyConfig) {
 		return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
 	});
 
+	// Syntax highlighting via Shiki, which runs the same TextMate engine as
+	// VS Code and so can load ZScript's own grammar directly -- Prism couldn't,
+	// and approximating with C++ mis-colored builtins (Screen, Waitframe) and
+	// missed keywords entirely (nonstatic). Refresh the grammar with
+	// `npm run update-zscript-grammar`.
+	//
+	// Shiki is ESM-only and createHighlighter is async, so it's built once in a
+	// before-build hook; codeToHtml itself is sync, which is what the markdown
+	// fence renderer needs.
+	const THEME = 'monokai';
+	let highlighter = null;
+	eleventyConfig.on('eleventy.before', async () => {
+		if (highlighter) return;
+		const { createHighlighter } = await import('shiki');
+		const grammar = JSON.parse(fs.readFileSync(
+			path.join(__dirname, 'syntaxes/zscript.tmLanguage.json'), 'utf-8'));
+		highlighter = await createHighlighter({
+			themes: [THEME],
+			langs: [{ ...grammar, name: 'zscript' }, 'ini'],
+		});
+	});
+
 	// Customize Markdown library settings:
 	eleventyConfig.amendLibrary("md", mdLib => {
 		// Release notes are generated from GitHub release bodies, which almost
-		// always use a bare ``` fence. Prism can't tag those, so they render as
-		// unstyled plain text. ZScript is close enough to C++ to highlight well.
+		// always use a bare ``` fence. Untagged blocks get no highlighting at
+		// all, so infer the language.
 		//
 		// But plenty of those bare fences hold plain prose -- changelog dumps,
 		// directory trees, commit messages -- which we don't want tokenized. So
@@ -153,7 +172,17 @@ module.exports = function(eleventyConfig) {
 		const defaultFence = mdLib.renderer.rules.fence;
 		mdLib.renderer.rules.fence = (tokens, idx, ...rest) => {
 			const token = tokens[idx];
-			if (!token.info.trim() && looksLikeCode(token.content)) token.info = 'cpp';
+			let lang = token.info.trim().toLowerCase();
+
+			// Every c/cpp-tagged block in the release notes is really ZScript --
+			// scripters reach for the nearest familiar tag. `ini` is genuinely ini.
+			if (lang === 'c' || lang === 'cpp' || lang === 'c++') lang = 'zscript';
+			if (!lang && looksLikeCode(token.content)) lang = 'zscript';
+
+			if (highlighter && highlighter.getLoadedLanguages().includes(lang))
+				return highlighter.codeToHtml(token.content, { lang, theme: THEME });
+
+			// Prose blocks, and anything in a language we didn't load, stay plain.
 			return defaultFence(tokens, idx, ...rest);
 		};
 
