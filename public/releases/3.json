@@ -16,6 +16,11 @@
       "name": "3.0.0-prerelease.208+2026-08-04-windows-x64.zip",
       "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.208%2B2026-08-04/3.0.0-prerelease.208%2B2026-08-04-windows-x64.zip",
       "size": 42216774
+    },
+    {
+      "name": "3.0.0-prerelease.208+2026-08-04-windows-x86.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.208%2B2026-08-04/3.0.0-prerelease.208%2B2026-08-04-windows-x86.zip",
+      "size": 39587016
     }
   ]
 }
