@@ -36,8 +36,8 @@ function getChannel() {
 function sortAssets(assets) {
 	const platformChannel = Website.getChannel();
 	return [
-		...assets.filter(a => a.channel === platformChannel),
-		...assets.filter(a => a.channel !== platformChannel),
+		...assets.filter(a => a.platform === platformChannel),
+		...assets.filter(a => a.platform !== platformChannel),
 	];
 }
 

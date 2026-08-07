@@ -126,6 +126,9 @@
 							{% elif asset.platform == 'windows-win32' %}
 								<div>Windows</div>
 								<div>32-bit</div>
+							{% elif asset.platform == 'mac' and 'universal' in asset.name %}
+								<div>Mac</div>
+								<div>Intel &amp; Apple Silicon</div>
 							{% else %}
 								{{ asset.platform | capitalize }}
 							{% endif %}
