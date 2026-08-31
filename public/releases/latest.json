@@ -1,26 +1,26 @@
 {
   "channel": "latest",
-  "tagName": "3.0.0-prerelease.215+2026-08-24",
+  "tagName": "3.0.0-prerelease.216+2026-08-30",
   "assets": [
     {
-      "name": "3.0.0-prerelease.215+2026-08-24-linux.tar.gz",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.215%2B2026-08-24/3.0.0-prerelease.215%2B2026-08-24-linux.tar.gz",
-      "size": 36110391
+      "name": "3.0.0-prerelease.216+2026-08-30-linux.tar.gz",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.216%2B2026-08-30/3.0.0-prerelease.216%2B2026-08-30-linux.tar.gz",
+      "size": 36157681
     },
     {
-      "name": "3.0.0-prerelease.215+2026-08-24-mac-universal.dmg",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.215%2B2026-08-24/3.0.0-prerelease.215%2B2026-08-24-mac-universal.dmg",
-      "size": 51249529
+      "name": "3.0.0-prerelease.216+2026-08-30-mac-universal.dmg",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.216%2B2026-08-30/3.0.0-prerelease.216%2B2026-08-30-mac-universal.dmg",
+      "size": 51356140
     },
     {
-      "name": "3.0.0-prerelease.215+2026-08-24-windows-x64.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.215%2B2026-08-24/3.0.0-prerelease.215%2B2026-08-24-windows-x64.zip",
-      "size": 35572887
+      "name": "3.0.0-prerelease.216+2026-08-30-windows-x64.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.216%2B2026-08-30/3.0.0-prerelease.216%2B2026-08-30-windows-x64.zip",
+      "size": 35612488
     },
     {
-      "name": "3.0.0-prerelease.215+2026-08-24-windows-x86.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.215%2B2026-08-24/3.0.0-prerelease.215%2B2026-08-24-windows-x86.zip",
-      "size": 33752057
+      "name": "3.0.0-prerelease.216+2026-08-30-windows-x86.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.216%2B2026-08-30/3.0.0-prerelease.216%2B2026-08-30-windows-x86.zip",
+      "size": 33789953
     }
   ]
 }
