@@ -7,6 +7,10 @@ assets:
     name: 3.0.0-prerelease.230+2026-10-18-linux.tar.gz
     platform: linux
 
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.230%2B2026-10-18/3.0.0-prerelease.230%2B2026-10-18-mac-universal.dmg
+    name: 3.0.0-prerelease.230+2026-10-18-mac-universal.dmg
+    platform: mac
+
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.230%2B2026-10-18/3.0.0-prerelease.230%2B2026-10-18-windows-x64.zip
     name: 3.0.0-prerelease.230+2026-10-18-windows-x64.zip
     platform: windows-x64
