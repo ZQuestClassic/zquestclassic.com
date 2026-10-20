@@ -27,7 +27,9 @@ function getChannel() {
 	if (!isMobile) {
 		if (isWindows) channel = 'windows-x64';
 		if (isOSX) channel = 'mac';
-		if (isLinux) channel = 'linux';
+		// Firefox reports "Linux aarch64" here, but Chrome always reports x86_64,
+		// so ARM is only detectable sometimes. The download pages link both.
+		if (isLinux) channel = /aarch64|arm64/.test(platform.toLowerCase()) ? 'linux-aarch64' : 'linux';
 	}
 	
 	return channel;
@@ -35,9 +37,11 @@ function getChannel() {
 
 function sortAssets(assets) {
 	const platformChannel = Website.getChannel();
+	// Prefix match, so other builds for the same OS (ex: linux-aarch64) come next.
+	const matches = a => platformChannel && a.platform?.startsWith(platformChannel);
 	return [
-		...assets.filter(a => a.platform === platformChannel),
-		...assets.filter(a => a.platform !== platformChannel),
+		...assets.filter(a => matches(a)),
+		...assets.filter(a => !matches(a)),
 	];
 }
 

@@ -129,7 +129,7 @@ eleventyNavigation:
 <div>
 	<div>Windows 7+</div>
 	<div>MacOS 12+</div>
-	<div>Linux (mileage may vary - best to download the <a href="https://flathub.org/apps/com.zquestclassic.ZQuest">flatpak</a>)</div>
+	<div>Linux: x86-64 with glibc 2.35+ (Ubuntu 22.04, Debian 12, Fedora 36, SteamOS 3, or newer), or the <a href="https://flathub.org/apps/com.zquestclassic.ZQuest">flatpak</a>. Nightlies are also built for ARM (AArch64)</div>
 </div>
 
 <script>
@@ -150,11 +150,21 @@ function renderRelease(nightly) {
 		el.classList.add('failed');
 	}
 
-	if (channel === 'linux' && !nightly) {
+	if (channel === 'linux') {
+		const armAsset = assets.find(asset => asset.platform === 'linux-aarch64');
+		if (armAsset) {
+			const armEl = document.createElement('a');
+			armEl.textContent = 'ARM (AArch64)';
+			armEl.href = armAsset.url;
+			el.querySelector('.meta').append(' | ', armEl);
+		}
+	}
+
+	if (channel.startsWith('linux') && !nightly) {
 		const flatpakEl = document.createElement('a');
 		flatpakEl.textContent = 'Flatpak';
 		flatpakEl.href = 'https://flathub.org/apps/com.zquestclassic.ZQuest';
-		el.querySelector('.meta').append('| ', flatpakEl);
+		el.querySelector('.meta').append(' | ', flatpakEl);
 	}
 }
 

@@ -116,6 +116,8 @@
 					<a class="download-asset" alt="{{ asset.platform }}" data-channel="{{ asset.platform }}" href="{{ asset.url }}">
 						{% if 'windows' in asset.platform %}
 							<img src="/img/windows.svg">
+						{% elif 'linux' in asset.platform %}
+							<img src="/img/linux.svg">
 						{% else %}
 							<img src="/img/{{ asset.platform }}.svg">
 						{% endif %}
@@ -129,6 +131,12 @@
 							{% elif asset.platform == 'mac' and 'universal' in asset.name %}
 								<div>Mac</div>
 								<div>Intel &amp; Apple Silicon</div>
+							{% elif asset.platform == 'linux' and 'linux-x64' in asset.name %}
+								<div>Linux</div>
+								<div>x86-64</div>
+							{% elif asset.platform == 'linux-aarch64' %}
+								<div>Linux</div>
+								<div>ARM (AArch64)</div>
 							{% else %}
 								{{ asset.platform | capitalize }}
 							{% endif %}
