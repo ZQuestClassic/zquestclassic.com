@@ -150,14 +150,18 @@ function renderRelease(nightly) {
 		el.classList.add('failed');
 	}
 
-	if (channel === 'linux') {
-		const armAsset = assets.find(asset => asset.platform === 'linux-aarch64');
-		if (armAsset) {
-			const armEl = document.createElement('a');
-			armEl.textContent = 'ARM (AArch64)';
-			armEl.href = armAsset.url;
-			el.querySelector('.meta').append(' | ', armEl);
-		}
+	// ARM can't be reliably detected from the browser, so link it next to the
+	// default download. (Windows on ARM can also run the x64 build.)
+	const armAlternative = {
+		'linux': {platform: 'linux-aarch64', label: 'ARM (AArch64)'},
+		'windows-x64': {platform: 'windows-arm64', label: 'ARM64'},
+	}[channel];
+	const armAsset = armAlternative && assets.find(asset => asset.platform === armAlternative.platform);
+	if (armAsset) {
+		const armEl = document.createElement('a');
+		armEl.textContent = armAlternative.label;
+		armEl.href = armAsset.url;
+		el.querySelector('.meta').append(' | ', armEl);
 	}
 
 	if (channel.startsWith('linux') && !nightly) {

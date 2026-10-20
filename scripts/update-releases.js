@@ -59,6 +59,8 @@ function parseAssets(release) {
 			platform = 'windows-x64';
 		if (asset.name.includes('windows-x86'))
 			platform = 'windows-win32';
+		if (asset.name.includes('windows-arm64'))
+			platform = 'windows-arm64';
 		if (asset.name.includes('mac'))
 			platform = 'mac';
 		// 'linux' is the x86-64 package ("linux-x64" once arm builds were added, "linux" before).
