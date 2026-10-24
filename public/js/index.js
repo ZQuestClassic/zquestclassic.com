@@ -27,22 +27,38 @@ function getChannel() {
 	if (!isMobile) {
 		if (isWindows) channel = 'windows-x64';
 		if (isOSX) channel = 'mac';
-		// Firefox reports "Linux aarch64" here, but Chrome always reports x86_64,
-		// so ARM is only detectable sometimes. The download pages link both.
+		// Firefox reports "Linux aarch64" here, but Chrome always reports x86_64.
+		// getChannelWithArch can detect ARM in Chromium browsers.
 		if (isLinux) channel = /aarch64|arm64/.test(platform.toLowerCase()) ? 'linux-aarch64' : 'linux';
 	}
-	
+
 	return channel;
 }
 
-function sortAssets(assets) {
-	const platformChannel = Website.getChannel();
-	// Prefix match, so other builds for the same OS (ex: linux-aarch64) come next.
-	const matches = a => platformChannel && a.platform?.startsWith(platformChannel);
-	return [
-		...assets.filter(a => matches(a)),
-		...assets.filter(a => !matches(a)),
-	];
+// Like getChannel, but also asks for the CPU architecture via User-Agent Client Hints.
+// Only Chromium browsers support this; elsewhere this is the same as getChannel.
+async function getChannelWithArch() {
+	const channel = Website.getChannel();
+	let architecture;
+	try {
+		({architecture} = await navigator.userAgentData.getHighEntropyValues(['architecture']));
+	} catch {
+		return channel;
+	}
+
+	if (architecture === 'arm') {
+		if (channel === 'windows-x64') return 'windows-arm64';
+		if (channel === 'linux') return 'linux-aarch64';
+	}
+	return channel;
+}
+
+// Finds the asset for a channel. Windows ARM can run the x64 build, so that is used
+// for releases without an ARM64 build.
+function findAssetForChannel(assets, channel) {
+	const asset = assets.find(a => a.platform === channel);
+	if (!asset && channel === 'windows-arm64') return assets.find(a => a.platform === 'windows-x64');
+	return asset;
 }
 
 async function getReleaseInfo(tag) {
@@ -62,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 window.Website = {
 	getPlatform,
 	getChannel,
-	sortAssets,
+	getChannelWithArch,
+	findAssetForChannel,
 	getReleaseInfo,
 };

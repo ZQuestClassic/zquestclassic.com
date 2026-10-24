@@ -73,6 +73,46 @@ module.exports = function(eleventyConfig) {
 		return releases.findLast(r => r.data.tag_name === tag && !r.data.since_last_stable);
 	});
 
+	// Groups a release's assets by OS, with display labels, for the download section of release pages.
+	eleventyConfig.addFilter('downloadGroups', (assets) => {
+		const groups = [
+			{os: 'windows', label: 'Windows', options: []},
+			{os: 'mac', label: 'macOS', options: []},
+			{os: 'linux', label: 'Linux', options: []},
+		];
+		const describe = (asset) => {
+			switch (asset.platform) {
+				case 'windows-x64': return {order: 0, name: '64-bit', arch: 'x64'};
+				case 'windows-arm64': return {order: 1, name: 'ARM64'};
+				case 'windows-win32': return {order: 2, name: '32-bit', arch: 'x86'};
+				case 'linux': return {order: 0, name: 'x86-64'};
+				case 'linux-aarch64': return {order: 1, name: 'ARM64', arch: 'aarch64'};
+				case 'mac':
+					// Mac builds were Intel-only before universal builds.
+					if (asset.name.includes('universal')) return {order: 0, name: 'Universal', arch: 'Intel and Apple Silicon'};
+					return {order: 0, name: 'Intel'};
+			}
+		};
+
+		for (const asset of assets || []) {
+			const group = groups.find(g => asset.platform?.startsWith(g.os));
+			if (!group) continue;
+
+			const fileType = asset.name.match(/\.(tar\.gz|tgz|dmg|zip)$/)?.[1];
+			const size = asset.size ? `${Math.round(asset.size / 1024 / 1024)} MB` : '';
+			group.options.push({
+				...describe(asset),
+				url: asset.url,
+				fileName: asset.name,
+				platform: asset.platform,
+				file: [fileType && `.${fileType}`, size].filter(Boolean).join(' · '),
+			});
+		}
+
+		for (const group of groups) group.options.sort((a, b) => a.order - b.order);
+		return groups.filter(g => g.options.length);
+	});
+
 	eleventyConfig.addFilter('changelogPageReleases', (releases) => {
 		const result = releases.filter(r => {
 			if (r.data.prerelease) return false;

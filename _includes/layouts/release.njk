@@ -66,105 +66,241 @@
 
 	{# <div> #}
 		<style>
-			.assets {
-				display: flex;
-				flex-wrap: wrap;
-				margin: 10px;
+			.downloads {
+				--download-bg: #423f56;
+				--download-bg-hover: #4d4964;
+				--download-border: #5c5874;
+				--download-accent: hsl(65, 80%, 42%);
+				--download-text: #f2f0fa;
+				--download-text-muted: #b9b5cc;
+				max-width: 760px;
+				margin: 20px 0 40px;
 			}
-	
-			.download-asset {
-				flex: 1;
-				display: flex;
-				align-items: center;
-				justify-content: space-evenly;
-				padding: 10px;
-				margin: 10px;
-				border: 2px solid black;
-				border-radius: 25px;
-				background-color: #423f56;
+
+			.downloads a[href],
+			.downloads a[href]:visited {
+				color: var(--download-text);
 				text-decoration: none;
 			}
-			.download-asset:hover {
-				background-color: #4d4964;
+			.downloads a:focus-visible {
+				outline: 3px solid var(--download-accent);
+				outline-offset: 2px;
 			}
-			.download-asset.selected {
-				border-color: hsl(65, 80%, 42%);
+
+			.os-icon {
+				flex-shrink: 0;
+				width: 24px;
+				height: 24px;
+				background-color: currentColor;
+				mask: var(--icon) center / contain no-repeat;
+				-webkit-mask: var(--icon) center / contain no-repeat;
 			}
-	
-			.download-asset img {
+			.os-icon.windows { --icon: url(/img/windows.svg); }
+			.os-icon.mac { --icon: url(/img/mac.svg); }
+			.os-icon.linux { --icon: url(/img/linux.svg); }
+
+			.download-recommended {
+				display: flex;
+				align-items: center;
+				gap: 20px;
+				padding: 18px 24px;
+				margin-bottom: 24px;
+				border: 2px solid var(--download-accent);
+				border-radius: 16px;
+				background-color: var(--download-bg);
+			}
+			.download-recommended[hidden] {
+				display: none;
+			}
+			.download-recommended:hover {
+				background-color: var(--download-bg-hover);
+			}
+			.download-recommended .os-icon {
 				width: 40px;
 				height: 40px;
 			}
-			.download-asset .label {
-				padding: 10px;
-				text-align: center;
+			.download-recommended .text {
+				flex: 1;
+			}
+			.download-recommended .eyebrow {
+				font-size: 0.75em;
+				color: var(--download-accent);
+			}
+			.download-recommended .heading {
+				font-size: 1.4em;
+				font-weight: bold;
+			}
+			.download-recommended .details {
+				color: var(--download-text-muted);
+			}
+			.download-recommended .button {
+				padding: 10px 22px;
+				border-radius: 10px;
+				background-color: var(--download-accent);
+				color: #15202b;
+				font-weight: bold;
+				white-space: nowrap;
+			}
+
+			.downloads .label {
+				margin-bottom: 4px;
+				color: var(--download-text-muted);
+			}
+
+			.download-group {
+				display: grid;
+				grid-template-columns: 140px minmax(0, 1fr);
+				align-items: center;
+				gap: 12px;
+				padding: 12px 0;
+				border-top: 1px solid var(--download-border);
+			}
+			.download-group .os {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				font-weight: bold;
+			}
+			.download-options {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 10px;
+			}
+
+			.download-option {
+				display: flex;
+				flex-direction: column;
+				min-width: 130px;
+				padding: 6px 14px;
+				border: 2px solid transparent;
+				border-radius: 10px;
+				background-color: var(--download-bg);
+				line-height: 1.3;
+			}
+			.download-option:hover {
+				background-color: var(--download-bg-hover);
+			}
+			.download-option.selected {
+				border-color: var(--download-accent);
+			}
+			.download-option .arch,
+			.download-option .file {
+				color: var(--download-text-muted);
+				font-size: 0.8em;
+			}
+			.download-option .file:empty {
+				display: none;
+			}
+
+			.downloads .footnote {
+				padding-top: 10px;
+				border-top: 1px solid var(--download-border);
+				color: var(--download-text-muted);
+				font-size: 0.85em;
+			}
+			.downloads .footnote a[href],
+			.downloads .footnote a[href]:visited {
+				color: var(--text-color-link);
+				text-decoration: underline;
+			}
+
+			@media (max-width: 600px) {
+				.download-recommended {
+					flex-wrap: wrap;
+					padding: 14px 16px;
+				}
+				.download-recommended .button {
+					width: 100%;
+					text-align: center;
+				}
+				.download-group {
+					grid-template-columns: minmax(0, 1fr);
+					gap: 8px;
+				}
+				.download-option {
+					flex: 1;
+				}
 			}
 		</style>
-	
-		
-	
-	
+
 		<div class="content">
 			<div class="title">{{ title }}</div>
 
 			{%- if description %}
 				<h2 data-exclude-nav>{{ description }}</h2>
 			{%- endif %}
-			
-			<div class="assets">
-				{% for asset in assets %}
-					<a class="download-asset" alt="{{ asset.platform }}" data-channel="{{ asset.platform }}" href="{{ asset.url }}">
-						{% if 'windows' in asset.platform %}
-							<img src="/img/windows.svg">
-						{% elif 'linux' in asset.platform %}
-							<img src="/img/linux.svg">
-						{% else %}
-							<img src="/img/{{ asset.platform }}.svg">
-						{% endif %}
-						<div class="label">
-							{% if asset.platform == 'windows-x64' %}
-								<div>Windows</div>
-								<div>64-bit</div>
-							{% elif asset.platform == 'windows-win32' %}
-								<div>Windows</div>
-								<div>32-bit</div>
-							{% elif asset.platform == 'windows-arm64' %}
-								<div>Windows</div>
-								<div>ARM64</div>
-							{% elif asset.platform == 'mac' and 'universal' in asset.name %}
-								<div>Mac</div>
-								<div>Intel &amp; Apple Silicon</div>
-							{% elif asset.platform == 'linux' and 'linux-x64' in asset.name %}
-								<div>Linux</div>
-								<div>x86-64</div>
-							{% elif asset.platform == 'linux-aarch64' %}
-								<div>Linux</div>
-								<div>ARM (AArch64)</div>
-							{% else %}
-								{{ asset.platform | capitalize }}
-							{% endif %}
+
+			{%- set downloadGroups = assets | downloadGroups %}
+			<div class="downloads">
+				{# Filled in by the script below, once the visitor's platform is known. #}
+				<a class="download-recommended" hidden>
+					<span class="os-icon" aria-hidden="true"></span>
+					<div class="text">
+						<div class="eyebrow">Recommended for your computer</div>
+						<div class="heading"></div>
+						<div class="details"><span class="option-label"></span> · <span class="file"></span></div>
+					</div>
+					<span class="button">Download</span>
+				</a>
+
+				<div class="label">All downloads</div>
+				{% for group in downloadGroups %}
+					<div class="download-group">
+						<div class="os"><span class="os-icon {{ group.os }}" aria-hidden="true"></span>{{ group.label }}</div>
+						<div class="download-options">
+							{% for option in group.options %}
+								<a class="download-option" href="{{ option.url }}" data-platform="{{ option.platform }}" data-file-name="{{ option.fileName }}" aria-label="{{ group.label }} {{ option.name }}{% if option.arch %} ({{ option.arch }}){% endif %}">
+									<span><strong>{{ option.name }}</strong>{% if option.arch %} <span class="arch">{{ option.arch }}</span>{% endif %}</span>
+									<span class="file">{{ option.file }}</span>
+								</a>
+							{% endfor %}
 						</div>
-					</a>
+					</div>
 				{% endfor %}
+
+				<div class="footnote">
+					{%- if downloadGroups[0].os == 'windows' and downloadGroups[0].options.length > 1 %}
+						<div>Not sure which to pick? Most Windows PCs need 64-bit.</div>
+					{%- endif %}
+					<span class="download-count"></span>
+					<a href="/releases/#supported-operating-systems">System requirements</a>
+				</div>
 			</div>
-		
-			<div>Downloads: <span class="download-count"></span></div>
-		
+
 			<script>
-				const assets = Website.sortAssets({{ assets | json | safe }});
-				const channel = Website.getChannel();
-				let order = 0;
-				for (const asset of assets) {
-					const el = document.querySelector(`[data-channel="${asset.platform}"]`);
-					el.style.order = order++;
-					if (asset.platform === channel) el.classList.add('selected');
-				}
-		
+				(async () => {
+					const groups = {{ downloadGroups | json | safe }};
+					const channel = await Website.getChannelWithArch();
+					const group = groups.find(g => g.os === channel.split('-')[0]);
+					const option = group && Website.findAssetForChannel(group.options, channel);
+					if (!option) return;
+
+					const optionEl = document.querySelector(`.download-option[data-platform="${option.platform}"]`);
+					optionEl.classList.add('selected');
+
+					const el = document.querySelector('.download-recommended');
+					el.href = option.url;
+					el.dataset.fileName = option.fileName;
+					el.querySelector('.os-icon').classList.add(group.os);
+					el.querySelector('.heading').textContent = `Download for ${group.label}`;
+					el.querySelector('.option-label').textContent = option.arch ? `${option.name} (${option.arch})` : option.name;
+					el.querySelector('.file').textContent = optionEl.querySelector('.file').textContent;
+					el.hidden = false;
+				})();
+
 				(async () => {
 					const json = await Website.getReleaseInfo('{{ tag_name }}');
 					let downloads = 0;
-					for (const asset of json.assets) downloads += asset.download_count;
-					document.querySelector('.download-count').textContent = downloads;
+					for (const asset of json.assets) {
+						downloads += asset.download_count;
+
+						// Older releases don't have sizes in their data.
+						for (const fileEl of document.querySelectorAll(`[data-file-name="${CSS.escape(asset.name)}"] .file`)) {
+							if (fileEl.textContent.includes('MB')) continue;
+							fileEl.textContent = [fileEl.textContent, `${Math.round(asset.size / 1024 / 1024)} MB`].filter(Boolean).join(' · ');
+						}
+					}
+					document.querySelector('.download-count').textContent = `${downloads.toLocaleString()} downloads ·`;
 				})();
 			</script>
 

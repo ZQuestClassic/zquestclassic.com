@@ -80,10 +80,11 @@ function parseAssets(release) {
 			url: asset.browser_download_url,
 			name: asset.name,
 			platform,
+			size: asset.size,
 		});
 	}
 	assets = assets.map(asset => {
-		return `\n  - url: ${asset.url}\n    name: ${asset.name}\n    platform: ${asset.platform}`;
+		return `\n  - url: ${asset.url}\n    name: ${asset.name}\n    platform: ${asset.platform}\n    size: ${asset.size}`;
 	}).join('\n');
 	return assets;
 }

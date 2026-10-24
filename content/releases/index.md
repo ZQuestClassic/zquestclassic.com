@@ -124,7 +124,7 @@ eleventyNavigation:
 	<div>To learn how to play a quest, see <a target="_blank" href="https://docs.zquestclassic.com/about/how-to-play">these instructions</a>.</div>
 </div>
 
-<h2>Supported operating systems</h2>
+<h2 id="supported-operating-systems">Supported operating systems</h2>
 
 <div>
 	<div>Windows 7+</div>
@@ -134,14 +134,13 @@ eleventyNavigation:
 
 <script>
 const platform = Website.getPlatform();
-const channel = Website.getChannel();
-const stableAssets = Website.sortAssets({{ latest_255_release.data.assets | json | safe }});
-const nightlyAssets = Website.sortAssets({{ latest_nightly_release.data.assets | json | safe }});
+const stableAssets = {{ latest_255_release.data.assets | json | safe }};
+const nightlyAssets = {{ latest_nightly_release.data.assets | json | safe }};
 
-function renderRelease(nightly) {
+function renderRelease(nightly, channel) {
 	const el = document.querySelector(nightly ? '.nightly': '.stable');
 	const assets = nightly ? nightlyAssets : stableAssets;
-	const assetForThisPlatform = assets.find(asset => asset.platform === channel);
+	const assetForThisPlatform = Website.findAssetForChannel(assets, channel);
 
 	const downloadEl = el.querySelector('.download');
 	if (assetForThisPlatform) {
@@ -150,18 +149,20 @@ function renderRelease(nightly) {
 		el.classList.add('failed');
 	}
 
-	// ARM can't be reliably detected from the browser, so link it next to the
-	// default download. (Windows on ARM can also run the x64 build.)
-	const armAlternative = {
-		'linux': {platform: 'linux-aarch64', label: 'ARM (AArch64)'},
+	// ARM can't always be detected from the browser, so link the other
+	// architecture next to the default download.
+	const otherArch = {
+		'linux': {platform: 'linux-aarch64', label: 'ARM64'},
+		'linux-aarch64': {platform: 'linux', label: 'x86-64'},
 		'windows-x64': {platform: 'windows-arm64', label: 'ARM64'},
-	}[channel];
-	const armAsset = armAlternative && assets.find(asset => asset.platform === armAlternative.platform);
-	if (armAsset) {
-		const armEl = document.createElement('a');
-		armEl.textContent = armAlternative.label;
-		armEl.href = armAsset.url;
-		el.querySelector('.meta').append(' | ', armEl);
+		'windows-arm64': {platform: 'windows-x64', label: 'x64'},
+	}[assetForThisPlatform?.platform];
+	const otherArchAsset = otherArch && assets.find(asset => asset.platform === otherArch.platform);
+	if (otherArchAsset) {
+		const otherArchEl = document.createElement('a');
+		otherArchEl.textContent = otherArch.label;
+		otherArchEl.href = otherArchAsset.url;
+		el.querySelector('.meta').append(' | ', otherArchEl);
 	}
 
 	if (channel.startsWith('linux') && !nightly) {
@@ -176,11 +177,14 @@ function setToFailed(message) {
 	document.querySelector('.warning').textContent = message;
 }
 
-renderRelease(false);
-renderRelease(true);
-if (!channel) {
-	setToFailed(`Not supported for ${platform}, try the web version instead!`);
-}
+(async () => {
+	const channel = await Website.getChannelWithArch();
+	renderRelease(false, channel);
+	renderRelease(true, channel);
+	if (!channel) {
+		setToFailed(`Not supported for ${platform}, try the web version instead!`);
+	}
+})();
 
 </script>
 
