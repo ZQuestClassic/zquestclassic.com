@@ -13,6 +13,11 @@ assets:
     platform: linux
     size: 34175692
 
+  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.232%2B2026-10-24/3.0.0-prerelease.232%2B2026-10-24-mac-universal.dmg
+    name: 3.0.0-prerelease.232+2026-10-24-mac-universal.dmg
+    platform: mac
+    size: 40540474
+
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.232%2B2026-10-24/3.0.0-prerelease.232%2B2026-10-24-windows-arm64.zip
     name: 3.0.0-prerelease.232+2026-10-24-windows-arm64.zip
     platform: windows-arm64
