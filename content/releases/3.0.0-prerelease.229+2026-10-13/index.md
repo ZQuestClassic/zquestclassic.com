@@ -6,18 +6,22 @@ assets:
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.229%2B2026-10-13/3.0.0-prerelease.229%2B2026-10-13-linux.tar.gz
     name: 3.0.0-prerelease.229+2026-10-13-linux.tar.gz
     platform: linux
+    size: 36649545
 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.229%2B2026-10-13/3.0.0-prerelease.229%2B2026-10-13-mac-universal.dmg
     name: 3.0.0-prerelease.229+2026-10-13-mac-universal.dmg
     platform: mac
+    size: 52340925
 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.229%2B2026-10-13/3.0.0-prerelease.229%2B2026-10-13-windows-x64.zip
     name: 3.0.0-prerelease.229+2026-10-13-windows-x64.zip
     platform: windows-x64
+    size: 36460172
 
   - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.229%2B2026-10-13/3.0.0-prerelease.229%2B2026-10-13-windows-x86.zip
     name: 3.0.0-prerelease.229+2026-10-13-windows-x86.zip
     platform: windows-win32
+    size: 34527826
 prerelease: true
 id: 411446199
 tag_name: '3.0.0-prerelease.229+2026-10-13'
