@@ -60,6 +60,12 @@ tags:
    &nbsp;
    >An NSF file that enables every expansion sound chip could make the music player read past the end of an internal table as the file loaded. 
    >
+- [win] links in info popups could run any command [`ddacc80aef`](https://github.com/ZQuestClassic/ZQuestClassic/commit/ddacc80aef567576af86901b0d2333a0821f4d60)
+   &nbsp;
+   >Links in info popups can come from a quest (script metadata, ZInfo help), and on Windows they were handed to the command shell, so a quest opened in the editor could offer a button that runs any command. Links are now only opened if they are plain http:// or https:// URLs, and never through a shell.  
+   >
+   >Bug introduced when URL buttons in info popups were added in 2.55.17 ([44ff37880e](https://github.com/ZQuestClassic/ZQuestClassic/commit/44ff37880e)). 
+   >
 - stop long log messages from writing past their buffer [`0672b60931`](https://github.com/ZQuestClassic/ZQuestClassic/commit/0672b60931a6d6cd2576812b20a94237edf72178)
    &nbsp;
    >A message longer than 1024 characters overflowed the buffer it is formatted into. 
