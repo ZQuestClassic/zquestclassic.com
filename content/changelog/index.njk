@@ -26,7 +26,7 @@
 				<h1 class="version">
 					<a href="{{ release.url }}" class="release-list-link">{{ release.data.title }}</a>
 				</h1>
-				<time class="release-list-date" datetime="{{ release.date | htmlDateString }}">{{ release.date | readableDate("LLLL dd yyyy") }}</time>
+				<time class="release-list-date" datetime="{{ release.date | dateToRfc3339 }}">{{ release.date | readableDate("LLLL dd yyyy") }}</time>
 
 				{{ release.content | safe }}
 			{% endfor %}

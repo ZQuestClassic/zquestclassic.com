@@ -228,7 +228,7 @@ app from your desktop or home screen.
 	{%- if not release.data.prerelease -%}
 		<li class="release-list-item{% if release.url == url %} release-list-item-active{% endif %}">
 			<a href="{{ release.url }}" class="release-list-link">{% if release.data.title %}{{ release.data.title }}{% else %}<code>{{ release.url }}</code>{% endif %}</a>
-			<time class="release-list-date" datetime="{{ release.date | htmlDateString }}">{{ release.date | readableDate("LLLL dd yyyy") }}</time>
+			<time class="release-list-date" datetime="{{ release.date | dateToRfc3339 }}">{{ release.date | readableDate("LLLL dd yyyy") }}</time>
 			<span>{{ release.data.description }}</span>
 		</li>
 	{% endif %}
