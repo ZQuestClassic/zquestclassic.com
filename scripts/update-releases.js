@@ -197,6 +197,9 @@ if (mode === 'all') {
 	const ghResponse = await octokit.rest.repos.listReleases({
 		owner: 'ZQuestClassic',
 		repo: 'ZQuestClassic',
+		// The default is 30, which a run of 3.0 prereleases can fill, hiding
+		// the latest 2.55 release.
+		per_page: 100,
 	});
 	const releases = ghResponse.data;
 	
