@@ -6,7 +6,9 @@ layout: layouts/base.njk
 
 ZQuest Classic has grown by a ***huge*** amount between 2.50.2/2.53 and 2.55 versions. There are many new features, for gameplay, editing, UI, ease-of-use, scripting, and really every possible part of the engine you could imagine. We fully support Mac and Linux again, in addition to an experimental [web](https://web.zquestclassic.com) version.
 
-This page details many of the new features added in 2.55. Unmentioned is all the bugs that have been fixed. You can check out the [2.55 alpha release notes](/changelog/) for an exhaustive list of what changed.
+This page details many of the new features added in 2.55.0. Unmentioned is all the bugs that have been fixed. You can check out the [2.55 alpha release notes](/changelog/) for an exhaustive list of what changed.
+
+Since 2.55.0 there have been many smaller updates - see [2.55.x Updates](#v2.55.x-updates) for their highlights.
 
 ## Updater
 
@@ -358,3 +360,24 @@ See [the 2.55 Alpha 117 changelog](/releases/2.55-alpha-117/) for an example scr
 ### Misc.
 
 * Invicibility flicker animation timing and colors are configurable (see `Init Data > Vars > Misc 2`)
+
+## 2.55.x Updates
+
+* [2.55.1](/releases/2.55.1/): The Deep is included in the release package. Fixed generic script `InitD[]` not working, and a few crashes.
+* [2.55.2](/releases/2.55.2/): Per-screen editor notes, and the FFC editor previews large FFCs.
+* [2.55.3](/releases/2.55.3/): Scripts compile much faster with the JIT, and very large scripts can now be compiled too. Fixed the editor's "Used Tiles" calculation.
+* [2.55.4](/releases/2.55.4/): Note item wizard, an enemy flag to opt out of "Kill All Enemies", and an option to use the native OS file dialog. Fixed scripts on large enemies stopping after one frame, and reduced CPU usage.
+* [2.55.5](/releases/2.55.5/): Opt-in automatic uploading of replays, to help the developers catch bugs.
+* [2.55.6](/releases/2.55.6/): Tracker music (mod, it, s3m, xm) supports loop points, and scripts can control its position and speed. Text fields gained Ctrl+Backspace / Alt+Backspace to delete a word or line.
+* [2.55.7](/releases/2.55.7/): An Auto-Save option for test mode (no more unsaved-changes prompt), the editor explains why a quest failed to load, and new Dense Forest and Extension autocombo modes.
+* [2.55.8](/releases/2.55.8/): "Only Grounded Weapons" trigger flag, a "full" color for subscreen counters, the Cambria tileset, and a `-smart-assign` command line switch to compile and assign scripts.
+* [2.55.9](/releases/2.55.9/): The bottom 8 pixels of the screen are now visible, with a quest rule and a player setting to control it. The tile editor gained Reference Tiles. ZScript gained `Screen->DrawOrigin`, more range types, `_` digit separators, and several additions for 3.0 compatibility. The classic NES quests are no longer bundled.
+* [2.55.10](/releases/2.55.10/): A large batch of fixes (lifting, conveyors, the bottom 8 pixels, saving in test mode) and Cambria tileset updates. ZScript gained a writable `Screen->Flag[]` and a quest rule to run weapon scripts during spawn.
+* [2.55.11](/releases/2.55.11/): A "Script Bugfix" option for new quests, and `Trace` accepts strings.
+* [2.55.12](/releases/2.55.12/): Multiple control schemes in the player. The editor's map view can zoom and drag with the mouse, and tile drawing is faster. Fixed sound on many Linux distros.
+* [2.55.13](/releases/2.55.13/): Save files with long replays load much faster, single replays can be uploaded manually, and a `scripts` folder next to the quest is automatically an include path.
+* [2.55.14](/releases/2.55.14/): Better name entry, improved quest auto-backups and timed auto-saves, a "DMap Levels" quest report, and a search bar in some older list dialogs. Fixed sprites drawing over the subscreen in many older quests.
+* [2.55.15](/releases/2.55.15/): Stomp Boots item wizard, tile editor improvements, more invincibility and knockback options, and the subscreen editor outlines otherwise-invisible widgets. Dark rooms and fades are faster, and a crash on older CPUs is fixed.
+* [2.55.16](/releases/2.55.16/): Enhanced music can be found in a subfolder next to the quest, and dropdowns open when clicked anywhere. Fixed console music (NSF, SPC, etc.) playing at half volume and MIDIs sounding detuned, restored macOS 12+ support, and sped up levels with palette cycling.
+* [2.55.17](/releases/2.55.17/): A big controller update - hundreds more controllers work out of the box, and each gets its own control scheme with sensible defaults and a simpler binding screen. Also adds a quest browser on editor startup, more portable save files, and a choice to quit or reload the last save in standalone mode. Older quests load faster and idle CPU usage is much lower. Fixed replay uploading running for users who had not opted in.
+* [2.55.18](/releases/2.55.18/): A [security update](/news/2026-11-19-security-update/) that hardens the script engine and the loading of damaged or malicious quests, saves and music files, along with many crash fixes. Also fixes non-ASCII file paths on Windows, and adds the "Once Per Weapon" combo trigger effect.
