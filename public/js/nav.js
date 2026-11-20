@@ -88,7 +88,7 @@ window.onload = function () {
 	handleNode(tree, rootNavEl);
 	document.querySelector('.toc').append(rootNavEl);
 
-	const el = location.hash && document.querySelector(location.hash.replaceAll('.', '\\.'));
+	const el = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
 	if (el) el.scrollIntoView();
 
 	var toc = document.querySelector('.toc');
