@@ -70,6 +70,7 @@ window.onload = function () {
 	}
 
 	const contentEl = document.body.querySelector('.content');
+	if (!contentEl) return;
 	let hids = 'h1,h2,h3,h4';
 	if (location.pathname === '/docs/2.55/' || location.pathname.startsWith('/news/')) {
 		hids = 'h2,h3,h4';
