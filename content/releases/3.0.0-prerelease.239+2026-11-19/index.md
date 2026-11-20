@@ -1,40 +1,40 @@
 ---
-title: 3.0 Prerelease 239 2026-11-19
-description: 
+title: "3.0 Prerelease 239 2026-11-19"
+description: ""
 date: 2026-11-20T01:58:36Z
 assets: 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.239%2B2026-11-19/3.0.0-prerelease.239%2B2026-11-19-linux-aarch64.tar.gz
-    name: 3.0.0-prerelease.239+2026-11-19-linux-aarch64.tar.gz
+  - url: "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.239%2B2026-11-19/3.0.0-prerelease.239%2B2026-11-19-linux-aarch64.tar.gz"
+    name: "3.0.0-prerelease.239+2026-11-19-linux-aarch64.tar.gz"
     platform: linux-aarch64
     size: 34139738
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.239%2B2026-11-19/3.0.0-prerelease.239%2B2026-11-19-linux-x64.tar.gz
-    name: 3.0.0-prerelease.239+2026-11-19-linux-x64.tar.gz
+  - url: "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.239%2B2026-11-19/3.0.0-prerelease.239%2B2026-11-19-linux-x64.tar.gz"
+    name: "3.0.0-prerelease.239+2026-11-19-linux-x64.tar.gz"
     platform: linux
     size: 34805822
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.239%2B2026-11-19/3.0.0-prerelease.239%2B2026-11-19-mac-universal.dmg
-    name: 3.0.0-prerelease.239+2026-11-19-mac-universal.dmg
+  - url: "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.239%2B2026-11-19/3.0.0-prerelease.239%2B2026-11-19-mac-universal.dmg"
+    name: "3.0.0-prerelease.239+2026-11-19-mac-universal.dmg"
     platform: mac
     size: 40917915
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.239%2B2026-11-19/3.0.0-prerelease.239%2B2026-11-19-windows-arm64.zip
-    name: 3.0.0-prerelease.239+2026-11-19-windows-arm64.zip
+  - url: "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.239%2B2026-11-19/3.0.0-prerelease.239%2B2026-11-19-windows-arm64.zip"
+    name: "3.0.0-prerelease.239+2026-11-19-windows-arm64.zip"
     platform: windows-arm64
     size: 37015569
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.239%2B2026-11-19/3.0.0-prerelease.239%2B2026-11-19-windows-x64.zip
-    name: 3.0.0-prerelease.239+2026-11-19-windows-x64.zip
+  - url: "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.239%2B2026-11-19/3.0.0-prerelease.239%2B2026-11-19-windows-x64.zip"
+    name: "3.0.0-prerelease.239+2026-11-19-windows-x64.zip"
     platform: windows-x64
     size: 36563576
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.239%2B2026-11-19/3.0.0-prerelease.239%2B2026-11-19-windows-x86.zip
-    name: 3.0.0-prerelease.239+2026-11-19-windows-x86.zip
+  - url: "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.239%2B2026-11-19/3.0.0-prerelease.239%2B2026-11-19-windows-x86.zip"
+    name: "3.0.0-prerelease.239+2026-11-19-windows-x86.zip"
     platform: windows-win32
     size: 34598869
 prerelease: true
 id: 452211249
-tag_name: '3.0.0-prerelease.239+2026-11-19'
+tag_name: "3.0.0-prerelease.239+2026-11-19"
 channel: '3'
 tags:
   - releases

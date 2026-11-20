@@ -48,6 +48,13 @@ function parseChangelog(body, getMainChangelog = true) {
 	return {description, content};
 }
 
+// Front matter values come from GitHub, so quote them: a title with ": "
+// or a leading special character would otherwise break the YAML. JSON
+// strings are valid YAML.
+function yamlString(value) {
+	return JSON.stringify(value ?? '');
+}
+
 function parseAssets(release) {
 	let assets = [];
 	for (const asset of release.assets) {
@@ -84,7 +91,7 @@ function parseAssets(release) {
 		});
 	}
 	assets = assets.map(asset => {
-		return `\n  - url: ${asset.url}\n    name: ${asset.name}\n    platform: ${asset.platform}\n    size: ${asset.size}`;
+		return `\n  - url: ${yamlString(asset.url)}\n    name: ${yamlString(asset.name)}\n    platform: ${asset.platform}\n    size: ${asset.size}`;
 	}).join('\n');
 	return assets;
 }
@@ -122,13 +129,13 @@ async function handleRelease(id) {
 	content = content.replaceAll('```c++', '```cpp');
 
 	const output = `---
-title: ${title}
-description: ${description}
+title: ${yamlString(title)}
+description: ${yamlString(description)}
 date: ${release.created_at}
 assets: ${assets}
 prerelease: ${release.prerelease}
 id: ${release.id}
-tag_name: '${release.tag_name}'
+tag_name: ${yamlString(release.tag_name)}
 channel: '${channel}'
 tags:
   - releases

@@ -1,30 +1,30 @@
 ---
-title: 2.55.18
-description: 
+title: "2.55.18"
+description: ""
 date: 2026-11-19T22:30:10Z
 assets: 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.18/2.55.18-linux.tar.gz
-    name: 2.55.18-linux.tar.gz
+  - url: "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.18/2.55.18-linux.tar.gz"
+    name: "2.55.18-linux.tar.gz"
     platform: linux
     size: 29272667
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.18/2.55.18-mac.dmg
-    name: 2.55.18-mac.dmg
+  - url: "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.18/2.55.18-mac.dmg"
+    name: "2.55.18-mac.dmg"
     platform: mac
     size: 29153106
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.18/2.55.18-windows-x64.zip
-    name: 2.55.18-windows-x64.zip
+  - url: "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.18/2.55.18-windows-x64.zip"
+    name: "2.55.18-windows-x64.zip"
     platform: windows-x64
     size: 28046098
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.18/2.55.18-windows-x86.zip
-    name: 2.55.18-windows-x86.zip
+  - url: "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.18/2.55.18-windows-x86.zip"
+    name: "2.55.18-windows-x86.zip"
     platform: windows-win32
     size: 26735485
 prerelease: false
 id: 452160656
-tag_name: '2.55.18'
+tag_name: "2.55.18"
 channel: '2.55'
 tags:
   - releases
