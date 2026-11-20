@@ -187,9 +187,11 @@ if (!process.env.CI) {
 
 let mode = process.argv[2] || 'recent';
 if (mode === 'all') {
-	update('all');
+	await update('all');
 } else if (mode === 'recent') {
-	update(5);
+	// The deploy workflow runs this by hand, so cover more releases than are
+	// likely to be published between runs.
+	await update(30);
 }
 
 // Update release channel json files, used by zupdater.
