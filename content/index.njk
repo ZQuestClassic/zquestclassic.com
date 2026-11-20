@@ -517,7 +517,7 @@ quests:
                 }
 
                 const next = (index + 1) % images.length;
-                const nextUrl = images[index].img;
+                const nextUrl = images[next].img;
                 if (!document.head.querySelector(`link[href="${nextUrl}"]`)) {
                     const el = document.createElement('link');
                     el.href = nextUrl;
