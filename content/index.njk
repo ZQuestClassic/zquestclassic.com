@@ -571,10 +571,14 @@ quests:
             const rootEl = document.querySelector('.gallery');
             const splide = initGallery(rootEl, images, start);
 
-            rootEl.querySelector('.gallery-images').addEventListener('click', (e) => {
+            const galleryImagesEl = rootEl.querySelector('.gallery-images');
+            galleryImagesEl.addEventListener('click', (e) => {
                 e.stopPropagation();
-                const center = rootEl.querySelector('.gallery-images').clientWidth / 2;
-                if (center < e.offsetX) {
+                // The arrows and the credits link handle their own clicks.
+                if (e.target.closest('.splide__arrow, a')) return;
+
+                const rect = galleryImagesEl.getBoundingClientRect();
+                if (e.clientX - rect.left > rect.width / 2) {
                     splide.go('+1');
                 } else {
                     splide.go('-1');
