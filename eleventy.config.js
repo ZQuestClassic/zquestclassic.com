@@ -1,7 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const { DateTime } = require("luxon");
-const markdownItAnchor = require("markdown-it-link-attributes");
+const markdownItAnchor = require("markdown-it-anchor");
+const markdownItLinkAttributes = require("markdown-it-link-attributes");
 
 
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -235,6 +236,11 @@ module.exports = function(eleventyConfig) {
 			// }),
 			level: [1,2,3,4],
 			slugify: eleventyConfig.getFilter("slugify"),
+		});
+
+		// Open links to other sites in a new tab.
+		mdLib.use(markdownItLinkAttributes, {
+			matcher: href => /^https?:\/\//.test(href) && !/^https?:\/\/(www\.)?zquestclassic\.com(\/|$)/.test(href),
 			attrs: {
 				target: "_blank",
 				rel: "noopener"
