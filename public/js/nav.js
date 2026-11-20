@@ -89,7 +89,13 @@ window.onload = function () {
 	handleNode(tree, rootNavEl);
 	document.querySelector('.toc').append(rootNavEl);
 
-	const el = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+	let hashId = location.hash.slice(1);
+	try {
+		hashId = decodeURIComponent(hashId);
+	} catch {
+		// A malformed escape like "%" - look it up as written.
+	}
+	const el = hashId && document.getElementById(hashId);
 	if (el) el.scrollIntoView();
 
 	var toc = document.querySelector('.toc');
