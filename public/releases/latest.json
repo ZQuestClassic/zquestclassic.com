@@ -1,36 +1,36 @@
 {
   "channel": "latest",
-  "tagName": "3.0.0-prerelease.238+2026-11-18",
+  "tagName": "3.0.0-prerelease.239+2026-11-19",
   "assets": [
     {
-      "name": "3.0.0-prerelease.238+2026-11-18-linux-aarch64.tar.gz",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.238%2B2026-11-18/3.0.0-prerelease.238%2B2026-11-18-linux-aarch64.tar.gz",
-      "size": 34133701
+      "name": "3.0.0-prerelease.239+2026-11-19-linux-aarch64.tar.gz",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.239%2B2026-11-19/3.0.0-prerelease.239%2B2026-11-19-linux-aarch64.tar.gz",
+      "size": 34139738
     },
     {
-      "name": "3.0.0-prerelease.238+2026-11-18-linux-x64.tar.gz",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.238%2B2026-11-18/3.0.0-prerelease.238%2B2026-11-18-linux-x64.tar.gz",
-      "size": 34799970
+      "name": "3.0.0-prerelease.239+2026-11-19-linux-x64.tar.gz",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.239%2B2026-11-19/3.0.0-prerelease.239%2B2026-11-19-linux-x64.tar.gz",
+      "size": 34805822
     },
     {
-      "name": "3.0.0-prerelease.238+2026-11-18-mac-universal.dmg",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.238%2B2026-11-18/3.0.0-prerelease.238%2B2026-11-18-mac-universal.dmg",
-      "size": 40919451
+      "name": "3.0.0-prerelease.239+2026-11-19-mac-universal.dmg",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.239%2B2026-11-19/3.0.0-prerelease.239%2B2026-11-19-mac-universal.dmg",
+      "size": 40917915
     },
     {
-      "name": "3.0.0-prerelease.238+2026-11-18-windows-arm64.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.238%2B2026-11-18/3.0.0-prerelease.238%2B2026-11-18-windows-arm64.zip",
-      "size": 37012975
+      "name": "3.0.0-prerelease.239+2026-11-19-windows-arm64.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.239%2B2026-11-19/3.0.0-prerelease.239%2B2026-11-19-windows-arm64.zip",
+      "size": 37015569
     },
     {
-      "name": "3.0.0-prerelease.238+2026-11-18-windows-x64.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.238%2B2026-11-18/3.0.0-prerelease.238%2B2026-11-18-windows-x64.zip",
-      "size": 36561909
+      "name": "3.0.0-prerelease.239+2026-11-19-windows-x64.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.239%2B2026-11-19/3.0.0-prerelease.239%2B2026-11-19-windows-x64.zip",
+      "size": 36563576
     },
     {
-      "name": "3.0.0-prerelease.238+2026-11-18-windows-x86.zip",
-      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.238%2B2026-11-18/3.0.0-prerelease.238%2B2026-11-18-windows-x86.zip",
-      "size": 34596539
+      "name": "3.0.0-prerelease.239+2026-11-19-windows-x86.zip",
+      "url": "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.239%2B2026-11-19/3.0.0-prerelease.239%2B2026-11-19-windows-x86.zip",
+      "size": 34598869
     }
   ]
 }
