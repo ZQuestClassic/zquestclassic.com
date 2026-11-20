@@ -1,26 +1,30 @@
 ---
-title: 3.0 Prerelease 224 2026-09-21
-description: 
+title: "3.0 Prerelease 224 2026-09-21"
+description: ""
 date: 2026-09-21T20:40:11Z
 assets: 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.224%2B2026-09-21/3.0.0-prerelease.224%2B2026-09-21-linux.tar.gz
-    name: 3.0.0-prerelease.224+2026-09-21-linux.tar.gz
+  - url: "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.224%2B2026-09-21/3.0.0-prerelease.224%2B2026-09-21-linux.tar.gz"
+    name: "3.0.0-prerelease.224+2026-09-21-linux.tar.gz"
     platform: linux
+    size: 36619163
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.224%2B2026-09-21/3.0.0-prerelease.224%2B2026-09-21-mac-universal.dmg
-    name: 3.0.0-prerelease.224+2026-09-21-mac-universal.dmg
+  - url: "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.224%2B2026-09-21/3.0.0-prerelease.224%2B2026-09-21-mac-universal.dmg"
+    name: "3.0.0-prerelease.224+2026-09-21-mac-universal.dmg"
     platform: mac
+    size: 52327558
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.224%2B2026-09-21/3.0.0-prerelease.224%2B2026-09-21-windows-x64.zip
-    name: 3.0.0-prerelease.224+2026-09-21-windows-x64.zip
+  - url: "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.224%2B2026-09-21/3.0.0-prerelease.224%2B2026-09-21-windows-x64.zip"
+    name: "3.0.0-prerelease.224+2026-09-21-windows-x64.zip"
     platform: windows-x64
+    size: 36519290
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.224%2B2026-09-21/3.0.0-prerelease.224%2B2026-09-21-windows-x86.zip
-    name: 3.0.0-prerelease.224+2026-09-21-windows-x86.zip
+  - url: "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.224%2B2026-09-21/3.0.0-prerelease.224%2B2026-09-21-windows-x86.zip"
+    name: "3.0.0-prerelease.224+2026-09-21-windows-x86.zip"
     platform: windows-win32
+    size: 34582049
 prerelease: true
 id: 393318175
-tag_name: '3.0.0-prerelease.224+2026-09-21'
+tag_name: "3.0.0-prerelease.224+2026-09-21"
 channel: '3'
 tags:
   - releases

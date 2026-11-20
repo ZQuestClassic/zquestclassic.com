@@ -1,22 +1,25 @@
 ---
-title: 3.0 Prerelease 221 2026-09-12
-description: 
+title: "3.0 Prerelease 221 2026-09-12"
+description: ""
 date: 2026-09-12T05:26:29Z
 assets: 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.221%2B2026-09-12/3.0.0-prerelease.221%2B2026-09-12-linux.tar.gz
-    name: 3.0.0-prerelease.221+2026-09-12-linux.tar.gz
+  - url: "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.221%2B2026-09-12/3.0.0-prerelease.221%2B2026-09-12-linux.tar.gz"
+    name: "3.0.0-prerelease.221+2026-09-12-linux.tar.gz"
     platform: linux
+    size: 36605132
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.221%2B2026-09-12/3.0.0-prerelease.221%2B2026-09-12-windows-x64.zip
-    name: 3.0.0-prerelease.221+2026-09-12-windows-x64.zip
+  - url: "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.221%2B2026-09-12/3.0.0-prerelease.221%2B2026-09-12-windows-x64.zip"
+    name: "3.0.0-prerelease.221+2026-09-12-windows-x64.zip"
     platform: windows-x64
+    size: 35909955
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.221%2B2026-09-12/3.0.0-prerelease.221%2B2026-09-12-windows-x86.zip
-    name: 3.0.0-prerelease.221+2026-09-12-windows-x86.zip
+  - url: "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/3.0.0-prerelease.221%2B2026-09-12/3.0.0-prerelease.221%2B2026-09-12-windows-x86.zip"
+    name: "3.0.0-prerelease.221+2026-09-12-windows-x86.zip"
     platform: windows-win32
+    size: 34074743
 prerelease: true
 id: 387499875
-tag_name: '3.0.0-prerelease.221+2026-09-12'
+tag_name: "3.0.0-prerelease.221+2026-09-12"
 channel: '3'
 tags:
   - releases

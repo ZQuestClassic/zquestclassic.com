@@ -1,26 +1,30 @@
 ---
-title: 2.55.17
-description: 
+title: "2.55.17"
+description: ""
 date: 2026-09-27T21:47:50Z
 assets: 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.17/2.55.17-linux.tar.gz
-    name: 2.55.17-linux.tar.gz
+  - url: "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.17/2.55.17-linux.tar.gz"
+    name: "2.55.17-linux.tar.gz"
     platform: linux
+    size: 29046031
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.17/2.55.17-mac.dmg
-    name: 2.55.17-mac.dmg
+  - url: "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.17/2.55.17-mac.dmg"
+    name: "2.55.17-mac.dmg"
     platform: mac
+    size: 29114585
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.17/2.55.17-windows-x64.zip
-    name: 2.55.17-windows-x64.zip
+  - url: "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.17/2.55.17-windows-x64.zip"
+    name: "2.55.17-windows-x64.zip"
     platform: windows-x64
+    size: 28007701
 
-  - url: https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.17/2.55.17-windows-x86.zip
-    name: 2.55.17-windows-x86.zip
+  - url: "https://github.com/ZQuestClassic/ZQuestClassic/releases/download/2.55.17/2.55.17-windows-x86.zip"
+    name: "2.55.17-windows-x86.zip"
     platform: windows-win32
+    size: 26697987
 prerelease: false
 id: 397860208
-tag_name: '2.55.17'
+tag_name: "2.55.17"
 channel: '2.55'
 tags:
   - releases
