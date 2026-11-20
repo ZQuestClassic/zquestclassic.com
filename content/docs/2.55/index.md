@@ -87,7 +87,7 @@ The entire subscreen editor and backend functionality of subscreens has been rew
 * Better mouse editing - click and drag widgets around the subscreen, finally! (Or swap to how the mouse used to work with a setting, if you'd like)
 * Pages - Active subscreens can have multiple separate pages now, allowing much more to be on your subscreens
 * Selector freedom - any widget, not just items, can be set to be selectable by the selector.
-* Scripts - The new `subscreendata` script type runs while the active subscreen it is assigned to is open. Additionally, any widget that is visitable by the selector can be given a [`generic` script](#generic-scripts) to run in `Frozen` mode when a specified button (from A,B,L,R,Ex1-Ex4) is pressed while it is selected.
+* Scripts - The new `subscreendata` script type runs while the active subscreen it is assigned to is open. Additionally, any widget that is visitable by the selector can be given a [`generic` script](#scripting-generic-scripts) to run in `Frozen` mode when a specified button (from A,B,L,R,Ex1-Ex4) is pressed while it is selected.
 * 4 Item Buttons - Quest Rules allow new `X` and `Y` item buttons (which use `Ex1` and `Ex2` respectively) in-engine!
 
 ### Misc. Editor improvements
@@ -159,14 +159,14 @@ There are plenty of new features that can be used in your quests. Some used to b
 ### New Item Types
 
 * `Attack Ring` items increase the damage of swords/wands/hammers (similar to whimsical ring, but 100% of the time)
-* [`Bottle Fillers` / `Bottles` / `Bug Nets`](#new-bottles) work together, allowing bottles that can be filled with multiple different types of potions/fairies/etc.
+* [`Bottle Fillers` / `Bottles` / `Bug Nets`](#quest-features-new-bottles) work together, allowing bottles that can be filled with multiple different types of potions/fairies/etc.
 * The `Custom Weapon 01` through `Custom Weapon 10` itemclasses spawn a basic customizable weapon of types `LW_SCRIPT1` through `LW_SCRIPT10` respectively. Especially useful when combined with the new `lweapon script` type.
 * `Item Bundle` items can give the player up to 10 other items when collected. Useful for bundling multiple items together, such as a Quiver, Bow, and Arrows.
-* `Lantern` items allow the player to give off light in [new dark rooms](#real-dark-rooms)
-* `Lift Glove` items allow picking up and throwing combos (and `Bomb` type weapons, optionally) based on settings set in the [new combo `Lifting` tab](#new-combo-features-all-types)
+* `Lantern` items allow the player to give off light in [new dark rooms](#quest-features-real-dark-rooms)
+* `Lift Glove` items allow picking up and throwing combos (and `Bomb` type weapons, optionally) based on settings set in the [new combo `Lifting` tab](#quest-features-new-combo-features-(all-types))
 * `Mirrors` allow warping to another dmap at the same screen/x/y position (depending on the dmap) to simulate parallel worlds / time travel / environment shifting type warp effects. They can optionally leave behind a portal to return. If the player tries to warp into a solid or other unsafe situation, the warp will 'bounce' them back. The new `No Mirroring` flag can be placed to prevent using these items in specific spots. Additionally, a dmap can be set to cause a mirror to warp you to the continue point instead of its usual effects.
 * `Note` items can be used to display a message string. Especially useful when combined with String Control Codes.
-* `Pearls` can prevent you from turning into [a bunny](#bunny-effect) on certain dmaps.
+* `Pearls` can prevent you from turning into [a bunny](#quest-features-bunny-effect) on certain dmaps.
 * `Progressive Item`s can be configured with a sequence of up to 10 other items. They will take on the appearance of the first item in their sequence that the player does NOT currently own, and will also grant that item when collected. Especially useful for items intended to be collectible out of sequence, and 'randomizer' style quests.
 * `Refiller` items refill a counter when used. (This can be used for things like 'healing spells')
 * `SwitchHooks` work mostly identically to hookshots, except instead of grabbing hookable targets and pulling the player towards them, they grab switchable targets and teleport the player and the target, swapping their positions. Enemies with the `(None)` defense are swapped with the player when hit, as well. (The new `Switch w/ Player` defense type can be used to cause this effect when an enemy is hit with other weapon types, as well!)
@@ -180,19 +180,19 @@ There are plenty of new features that can be used in your quests. Some used to b
   * Max number of arrow weapons that can be onscreen at once is configurable
 * `Bait` has several new flags to customize its' use
 * `Bombs`/`Super Bombs` have customizable radius, can be set to be liftable by `Lift Glove` items (including optionally having the bomb automatically in your hands when used, instead of placed).
-* `Books` have a couple more flags for how they interact with wand magic, and [customizable fire levels](#fire-types)
+* `Books` have a couple more flags for how they interact with wand magic, and [customizable fire levels](#quest-features-fire-types)
 * `Boomerangs`
   * Similar item pickup settings to `Arrows`
   * Separate settings for `Drags Items` and `Reflects Enemy Projectiles` (shared with `Hookshots` and `SwitchHooks`)
-  * [Customizable fire levels](#fire-types)
+  * [Customizable fire levels](#quest-features-fire-types)
 * `Boots` can be set as `Heavy`, which affects some combo types
 * `Bracelets` can have a set use count per screen, instead of once or infinite
-* `Candles` can have a custom fire step speed, max fires on screen, and use count per screen (instead of once or infinite). Also has [customizable fire levels](#fire-types).
+* `Candles` can have a custom fire step speed, max fires on screen, and use count per screen (instead of once or infinite). Also has [customizable fire levels](#quest-features-fire-types).
 * `Clocks` can be set to be active-use (equipped to a button) instead of on-pickup.
 * `Divine Escape` (previously `Farore's Wind`) can be set to act like F6->Continue when used (which includes the health restore and such)
-* `Divine Fire` (previously `Din's Fire`) has [customizable fire levels](#fire-types)
+* `Divine Fire` (previously `Din's Fire`) has [customizable fire levels](#quest-features-fire-types)
 * `Divine Protection` (previously `Nayru's Love`) was renamed
-* `Fairies` can be tied to a specific [bottle fill type](#new-bottles) which represents what you catch when using a `Bug Net` on them
+* `Fairies` can be tied to a specific [bottle fill type](#quest-features-new-bottles) which represents what you catch when using a `Bug Net` on them
 * `Flippers` can be customized with custom dive duration, cooldown, dive button, and the ability to press dive again while underwater to 'cancel' and resurface.
 * `Hookshots` can (experimentally) shoot diagonally, and have several changes in common with `Boomerangs` related to item pickup and reflecting enemy projectiles.
 * `Kill All Enemies` can be set to be active-use (equipped to a button) instead of on-pickup.
@@ -236,21 +236,21 @@ Combos in general have been improved drastically.
 * `Bridge` combos can "cover up" combos on layers below them (making the covered combos solidity and type-effects not occur)
 * `Button Prompt` combos can display a prompt (ex. above player's head) when faced
 * `Cutscene Trigger` combos, combined with the `Triggers` tab features, can enter/exit a "cutscene mode" that can disable various player inputs
-* `Glass` combos allow [Light Beams](#light-beam-puzzles) to pass through even when solid
+* `Glass` combos allow [Light Beams](#quest-features-light-beam-puzzles) to pass through even when solid
 * `Icy Floor` combos allow customizable slipperiness. Currently, only implemented to be able to slip Pushblocks, though more features are planned.
-* `Light Trigger` combos can trigger secrets as part of [Light Beam Puzzles](#light-beam-puzzles)
+* `Light Trigger` combos can trigger secrets as part of [Light Beam Puzzles](#quest-features-light-beam-puzzles)
 * `Mirror (Custom)` combos can reflect weapons/light beams in fancy custom ways based on directions.
-* [`Pitfall` combos](#pitfalls) act as bottomless pits, with falling similar to drowning.
-* `Push (Generic)` combo types allow fancy custom [pushblock](#new-pushblock-features) stuff
+* [`Pitfall` combos](#quest-features-pitfalls) act as bottomless pits, with falling similar to drowning.
+* `Push (Generic)` combo types allow fancy custom [pushblock](#quest-features-new-pushblock-features) stuff
 * `Shooter` combos act as turrets. They can fire either automatically at a fixed or variable rate, or via `Triggers` tab `->ComboType Effects` flag. They can either fire friendly (player) weapons, or harmful (enemy) weapons.
-* `Signpost` combos can be read, either by walking into them or via any combination of the buttons A,B,L,R,Ex1-Ex4, configured the same way as [chests and lockblocks](#chests--lockblocks)- including the ability to set up a prompt combo. When read they cause a message string to display. (`Triggers` tab features can also trigger the string to play)
+* `Signpost` combos can be read, either by walking into them or via any combination of the buttons A,B,L,R,Ex1-Ex4, configured the same way as [chests and lockblocks](#quest-features-chests-/-lockblocks)- including the ability to set up a prompt combo. When read they cause a message string to display. (`Triggers` tab features can also trigger the string to play)
 * `Slope` combos can create custom diagonal collision. This can be useful for angled mountains in overhead view, or standard 2d sideview slopes. Additionally, in sideview, they can be set to act like optional stairs, which you will walk *past* by default, unless you are holding up/down as you walk past to indicate you want to go on the slope. Additionally, they can be set to be pass-throughable from specific directions.
-* `Spotlight` combos shoot [Light Beams](#light-beam-puzzles).
+* `Spotlight` combos shoot [Light Beams](#quest-features-light-beam-puzzles).
 * `Step->Effects` combos can play a sound when stepped on, and act like a landmine (spawning a weapon). (`Triggers` tab features can trigger the effect)
-* [`Switch` combos](#paired-switches), when triggered via `Triggers` tab `->ComboType Effects`, can toggle various states usable by `Switch Block` combos and the `Triggers` tab.
-* [`Switch Block` combos](#paired-switches) can change based on various either level-based or global states.
+* [`Switch` combos](#quest-features-paired-switches), when triggered via `Triggers` tab `->ComboType Effects`, can toggle various states usable by `Switch Block` combos and the `Triggers` tab.
+* [`Switch Block` combos](#quest-features-paired-switches) can change based on various either level-based or global states.
 * `SwitchHook Block` combos can be swapped with by the `SwitchHook` item, and can be customized with some additional settings.
-* `Torch` combos light up [New Dark Rooms](#real-dark-rooms)
+* `Torch` combos light up [New Dark Rooms](#quest-features-real-dark-rooms)
 * `Crumbling` combos, for making crumbling floors
 
 ### Improved Combo Types
@@ -261,7 +261,7 @@ Combos in general have been improved drastically.
 * The various `Bush`/`Flowers`/`Slash (Item)`/`Slash->Next (Item)` type combos can have a custom 'slashed' sprite, custom item dropset or specific item id to drop, and custom 'slashed' SFX configured. (`Triggers` tab features can 'slash' the bush)
   * `Slash->Next` is similar, but without the item drop configuration
   * `Tall Grass` is similar, and also has its 'walking through grass' sprite customizable
-* [`Chest` combos](#chests--lockblocks) are now highly configurable. (`Triggers` tab features can attempt to open the chest)
+* [`Chest` combos](#quest-features-chests-/-lockblocks) are now highly configurable. (`Triggers` tab features can attempt to open the chest)
 * `Conveyor` combos now can have a custom speed/direction (including diagonals/angles) configured, as well as the ability to:
   * Stun the player to prevent them from fighting the conveyor
   * Force the player's facing direction to match the conveyor's movement
@@ -269,7 +269,7 @@ Combos in general have been improved drastically.
   * Be disabled by owning a `Boots` item that has the `Heavy` flag checked
 * `Damage` combos can have their damage amount as well as whether or not they deal knockback configured. (`Triggers` tab features can cause the player to be hit by the combo)
 * `Liquid` (renamed from `Water`) has had many features added now, including being able to passively heal or damage the player, require higher level flippers to swim in, have a custom drown damage/sfx, and can have some corners of it act as 'shallow' based on some flags. (`Shallow Liquid` was changed from `Shallow Water` similarly)
-* [`Lock Block` combos](#chests--lockblocks) are now highly configurable. (`Triggers` tab features can attempt to unlock the block)
+* [`Lock Block` combos](#quest-features-chests-/-lockblocks) are now highly configurable. (`Triggers` tab features can attempt to unlock the block)
 * `Save Point` type combos can be set to restore a percentage of the player's Life and/or Magic when interacted with, in addition to popping up the save menu. (`Triggers` tab features can 'interact' with the save point)
 
 ### Fire Types
