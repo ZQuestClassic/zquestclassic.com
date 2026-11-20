@@ -129,6 +129,14 @@ module.exports = function(eleventyConfig) {
 		return result;
 	});
 
+	// Remove the ids (and the tabindex that comes with them) markdown gave to
+	// headings. Used where several rendered pages are joined into one, whose
+	// heading ids would collide.
+	eleventyConfig.addFilter('stripHeadingIds', (html) => {
+		return html.replace(/<h([1-6])\b[^>]*>/g, tag =>
+			tag.replace(/ id="[^"]*"/, '').replace(/ tabindex="-1"/, ''));
+	});
+
 	// Get the first `n` elements of a collection.
 	eleventyConfig.addFilter("head", (array, n) => {
 		if(!Array.isArray(array) || array.length === 0) {

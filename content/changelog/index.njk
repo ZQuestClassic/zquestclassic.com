@@ -28,7 +28,7 @@
 				</h1>
 				<time class="release-list-date" datetime="{{ release.date | dateToRfc3339 }}">{{ release.date | readableDate("LLLL dd yyyy") }}</time>
 
-				{{ release.content | safe }}
+				{{ release.content | stripHeadingIds | safe }}
 			{% endfor %}
 		</div>
 	{# </div> #}
